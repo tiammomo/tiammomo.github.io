@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Tiammomo 的 AI 产品工程作品集，展示 LLM 应用、Agent 工作流、数据工具和全栈产品原型。" />
+    <meta property="og:title" content="Tiammomo · AI Product Engineering" />
+    <meta property="og:description" content="LLM 应用、Agent 工作流、数据工具与全栈产品原型。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/hero-workspace.png" />
+    <title>Tiammomo · AI Product Engineering</title>
+    <link rel="icon" href="assets/images/hero-workspace.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ── Header ── -->
+    <header class="header" data-header>
+      <a class="header-brand" href="#top" aria-label="Tiammomo">
+        <span class="header-brand-mark" aria-hidden="true">T</span>
+        <span class="header-brand-text">Tiammomo</span>
+      </a>
+      <button class="header-nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">打开导航</span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="header-nav" id="main-nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#stack">能力</a>
+        <a href="#work">项目</a>
+        <a href="#process">方法</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ── Hero ── -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="hero-label">AI product engineering · LLM applications · agent workflows</p>
+          <h1 class="hero-title" id="hero-title">Tiammomo 的 AI 产品工程作品集</h1>
+          <p class="hero-desc">
+            我把模型能力、Agent 工作流和全栈工程落到可运行的产品切片：模型网关、量化投研工作台、旅行规划 Agent、经营管理系统与电商内容工具。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">查看作品</a>
+            <a class="btn btn-ghost" href="https://github.com/tiammomo" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true"></div>
+      </section>
+
+      <!-- ── Stats ── -->
+      <section class="stats" aria-label="概览">
+        <div class="stats-item">
+          <span class="stats-value">25+</span>
+          <span class="stats-label">公开仓库沉淀</span>
+        </div>
+        <div class="stats-item">
+          <span class="stats-value">6</span>
+          <span class="stats-label">精选项目入口</span>
+        </div>
+        <div class="stats-item">
+          <span class="stats-value">AI</span>
+          <span class="stats-label">LLM / Agent / RAG</span>
+        </div>
+        <div class="stats-item">
+          <span class="stats-value">Product</span>
+          <span class="stats-label">可运行产品原型</span>
+        </div>
+      </section>
+
+      <!-- ── About ── -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">About</span>
+            <h2 id="about-title">把 AI 能力做成能交付的工具</h2>
+          </div>
+          <div class="about-grid">
+            <div class="about-body">
+              <p class="about-lead">
+                我关注 AI 应用层和产品工程之间的交界：既做模型接入、路由、Agent 与数据工作流，也把这些能力放进清晰的前后端系统里，让想法能被真实使用、验证和迭代。
+              </p>
+              <div class="about-numbers">
+                <div class="about-number">
+                  <span class="about-number-value">25+</span>
+                  <span class="about-number-label">公开仓库</span>
+                </div>
+                <div class="about-number">
+                  <span class="about-number-value">6</span>
+                  <span class="about-number-label">精选项目</span>
+                </div>
+                <div class="about-number">
+                  <span class="about-number-value">4</span>
+                  <span class="about-number-label">能力方向</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-item">
+                <span class="about-card-icon">◈</span>
+                <div>
+                  <strong>模型与 Agent 基础设施</strong>
+                  <span>模型网关、协议适配、路由与使用观测</span>
+                </div>
+              </div>
+              <div class="about-card-item">
+                <span class="about-card-icon">◈</span>
+                <div>
+                  <strong>数据与投研工作流</strong>
+                  <span>把数据分析、策略想法和 Agent 协作连接起来</span>
+                </div>
+              </div>
+              <div class="about-card-item">
+                <span class="about-card-icon">◈</span>
+                <div>
+                  <strong>全栈产品落地</strong>
+                  <span>用前后端系统承接业务流程和 AI 能力</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Capability ── -->
+      <section class="stack" id="stack" aria-labelledby="stack-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Capability</span>
+            <h2 id="stack-title">能力不是列表，是项目证据</h2>
+          </div>
+          <div class="stack-grid">
+            <div class="stack-group">
+              <h3 class="stack-group-title">LLM / Agent</h3>
+              <ul class="stack-list">
+                <li class="stack-item" data-level="ModelPort">Anthropic-compatible 模型网关</li>
+                <li class="stack-item" data-level="QuantPilot">量化分析 Agent 工作台</li>
+                <li class="stack-item" data-level="Travel Agent">偏好约束与路线比较 Agent</li>
+                <li class="stack-item" data-level="RAG">文档知识库与检索实验</li>
+              </ul>
+            </div>
+            <div class="stack-group">
+              <h3 class="stack-group-title">Product Engineering</h3>
+              <ul class="stack-list">
+                <li class="stack-item" data-level="Mamoji">经营管理与记账系统</li>
+                <li class="stack-item" data-level="ReviewPilot">跨境电商内容工具</li>
+                <li class="stack-item" data-level="Next.js">前端产品界面与交互</li>
+                <li class="stack-item" data-level="Backend">API、认证、部署与数据模型</li>
+              </ul>
+            </div>
+            <div class="stack-group">
+              <h3 class="stack-group-title">Infra / Data</h3>
+              <ul class="stack-list">
+                <li class="stack-item" data-level="Docker">本地与生产部署编排</li>
+                <li class="stack-item" data-level="Postgres">结构化数据与业务系统存储</li>
+                <li class="stack-item" data-level="Metrics">请求日志、用量统计与成本估算</li>
+                <li class="stack-item" data-level="GitHub">开源项目文档与交付</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Work ── -->
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-tag">Projects</span>
+              <h2 id="work-title">精选项目</h2>
+            </div>
+            <div class="filters" role="group" aria-label="作品筛选">
+              <button class="filter-btn is-active" type="button" data-filter="all">全部</button>
+              <button class="filter-btn" type="button" data-filter="ai">AI / Agent</button>
+              <button class="filter-btn" type="button" data-filter="product">产品系统</button>
+              <button class="filter-btn" type="button" data-filter="data">数据工具</button>
+              <button class="filter-btn" type="button" data-filter="infra">工程基础设施</button>
+            </div>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-category="ai infra product">
+              <div class="project-card-top">
+                <span class="project-num">01</span>
+                <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
+              </div>
+              <h3 class="project-name">ModelPort</h3>
+              <p class="project-desc">自托管 Anthropic-compatible 模型网关，让 Claude Code / VS Code Claude 通过一个本地端口接入多模型路由、协议转换、鉴权、用量观测和管理面板。</p>
+              <div class="project-tags">
+                <span class="tag">Rust</span>
+                <span class="tag">LLM Gateway</span>
+                <span class="tag">Provider Routing</span>
+              </div>
+              <div class="project-meta">
+                <span>Claude workflow</span>
+                <span>Self-hosted</span>
+              </div>
+              <a class="project-link" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">查看项目 →</a>
+            </article>
+
+            <article class="project-card" data-category="ai data product">
+              <div class="project-card-top">
+                <span class="project-num">02</span>
+                <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
+              </div>
+              <h3 class="project-name">QuantPilot</h3>
+              <p class="project-desc">面向量化研究的数据分析 Agent，将策略想法、数据处理、可视化和工作流沉淀在一个可持续迭代的投研工作台里。</p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Quant Agent</span>
+                <span class="tag">Workspace</span>
+              </div>
+              <div class="project-meta">
+                <span>Research</span>
+                <span>Data workflow</span>
+              </div>
+              <a class="project-link" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看项目 →</a>
+            </article>
+
+            <article class="project-card" data-category="ai product">
+              <div class="project-card-top">
+                <span class="project-num">03</span>
+                <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
+              </div>
+              <h3 class="project-name">moyuan-travel-agent</h3>
+              <p class="project-desc">旅行规划 Agent，围绕用户偏好、预算约束、路线比较和行程生成做决策辅助，适合作为 AI 助手产品化的样板项目。</p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Agent</span>
+                <span class="tag">Travel Planning</span>
+              </div>
+              <div class="project-meta">
+                <span>Planner</span>
+                <span>Preference matching</span>
+              </div>
+              <a class="project-link" href="https://github.com/tiammomo/moyuan-travel-agent" rel="noreferrer">查看项目 →</a>
+            </article>
+
+            <article class="project-card" data-category="product">
+              <div class="project-card-top">
+                <span class="project-num">04</span>
+                <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
+              </div>
+              <h3 class="project-name">Mamoji</h3>
+              <p class="project-desc">面向小团队经营管理、记账和业务协作的全栈系统，覆盖前端界面、后端服务、部署脚本和生产环境配置。</p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Full-stack</span>
+                <span class="tag">Business System</span>
+              </div>
+              <div class="project-meta">
+                <span>Accounting</span>
+                <span>Operations</span>
+              </div>
+              <a class="project-link" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">查看项目 →</a>
+            </article>
+
+            <article class="project-card" data-category="ai product">
+              <div class="project-card-top">
+                <span class="project-num">05</span>
+                <span class="project-status" data-status="wip"><span class="status-dot"></span> WIP</span>
+              </div>
+              <h3 class="project-name">ReviewPilot</h3>
+              <p class="project-desc">跨境电商选品与好评内容工具，把商品信息、卖点梳理和评论生成流程产品化，服务商家内容运营效率。</p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Content Tool</span>
+              </div>
+              <div class="project-meta">
+                <span>Review generation</span>
+                <span>Merchant workflow</span>
+              </div>
+              <a class="project-link" href="https://github.com/tiammomo/ReviewPilot" rel="noreferrer">查看项目 →</a>
+            </article>
+
+            <article class="project-card" data-category="ai data">
+              <div class="project-card-top">
+                <span class="project-num">06</span>
+                <span class="project-status" data-status="wip"><span class="status-dot"></span> WIP</span>
+              </div>
+              <h3 class="project-name">moyuan-stock-trading-assistant</h3>
+              <p class="project-desc">围绕股票研究和问财数据的投研辅助项目，用 Python 串联数据获取、分析逻辑和策略探索流程。</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Stock Research</span>
+                <span class="tag">Data Assistant</span>
+              </div>
+              <div class="project-meta">
+                <span>Quant research</span>
+                <span>Data tool</span>
+              </div>
+              <a class="project-link" href="https://github.com/tiammomo/moyuan-stock-trading-assistant" rel="noreferrer">查看项目 →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Process ── -->
+      <section class="process" id="process" aria-labelledby="process-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Method</span>
+            <h2 id="process-title">我怎样做项目</h2>
+          </div>
+          <div class="process-grid">
+            <article class="process-card">
+              <span class="process-step">01</span>
+              <h3>从问题开始</h3>
+              <p>先把用户目标、业务约束和成功标准说清楚，再决定模型、数据、界面和工程边界应该怎样配合。</p>
+            </article>
+            <article class="process-card">
+              <span class="process-step">02</span>
+              <h3>让原型可验证</h3>
+              <p>把模糊想法变成可以点、可以试、可以观察结果的产品切片，让项目尽早接受真实反馈。</p>
+            </article>
+            <article class="process-card">
+              <span class="process-step">03</span>
+              <h3>为迭代留结构</h3>
+              <p>保留清楚的模块边界、可替换的服务入口、部署脚本和能追踪结果的反馈回路。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Contact ── -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="contact-inner">
+            <div>
+              <span class="section-tag section-tag--light">Contact</span>
+              <h2 id="contact-title">一起把 AI 想法做成可用产品</h2>
+              <p class="contact-desc">项目合作、开源交流或 AI 产品工程相关讨论，可以从 GitHub 开始。</p>
+            </div>
+            <div class="contact-actions">
+              <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo" rel="noreferrer">GitHub @tiammomo</a>
+              <button class="btn btn-ghost btn-lg" type="button" data-copy="https://github.com/tiammomo">复制主页链接</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-copy">© <span data-year></span> Tiammomo</span>
+        <a class="footer-top" href="#top">回到顶部 ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
