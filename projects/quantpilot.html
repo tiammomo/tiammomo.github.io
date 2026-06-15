@@ -18,62 +18,67 @@
   </head>
   <body class="case-page">
     <header class="case-header">
-      <a class="header-brand" href="../index.html#top" aria-label="Tiammomo">
-        <span class="header-brand-mark" aria-hidden="true">T</span>
-        <span class="header-brand-text">Tiammomo</span>
+      <a class="case-header-brand" href="../index.html" aria-label="Tiammomo 主页">
+        <span class="case-header-mark" aria-hidden="true">T</span>
+        <span>Tiammomo</span>
       </a>
       <nav class="case-nav" aria-label="案例导航">
-        <a href="../index.html#work">返回项目</a>
-        <a href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub</a>
+        <a href="../index.html#work">← 返回项目</a>
+        <a class="case-nav-gh" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub ↗</a>
       </nav>
     </header>
 
     <main>
       <section class="case-hero">
-        <div class="container case-hero-grid">
-          <div class="case-hero-copy">
-            <span class="section-tag">Case Study</span>
-            <h1>QuantPilot</h1>
-            <p>
-              面向量化研究的 AI 工作台，把策略想法、数据分析、可视化、结果追踪和 Agent 协作放进一个可复用的研究环境里。
-            </p>
-            <div class="case-actions">
-              <a class="btn btn-primary" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看仓库</a>
-              <a class="btn btn-ghost" href="../index.html#work">更多项目</a>
+        <div class="container">
+          <div class="case-hero-grid">
+            <div class="case-hero-text">
+              <span class="section-tag">Case Study</span>
+              <h1>QuantPilot</h1>
+              <p class="case-hero-lead">
+                面向量化研究的 AI 工作台，把策略想法、数据分析、可视化、结果追踪和 Agent 协作放进一个可复用的研究环境里。
+              </p>
+              <div class="case-hero-actions">
+                <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看仓库</a>
+                <a class="btn btn-ghost btn-lg" href="../index.html#work">更多项目</a>
+              </div>
+            </div>
+            <div class="case-hero-visual">
+              <div class="case-hero-glow" aria-hidden="true"></div>
+              <picture>
+                <source srcset="../assets/images/generated/anime-cover-quantpilot.webp" type="image/webp" />
+                <img src="../assets/images/generated/anime-cover-quantpilot.png" alt="QuantPilot 量化投研工作台项目封面" />
+              </picture>
             </div>
           </div>
-          <figure class="case-hero-media">
-            <picture>
-              <source srcset="../assets/images/generated/anime-cover-quantpilot.webp" type="image/webp" />
-              <img src="../assets/images/generated/anime-cover-quantpilot.png" alt="QuantPilot 量化投研工作台项目封面" />
-            </picture>
-          </figure>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div class="container case-content-grid">
-          <article class="case-panel">
-            <span class="case-panel-label">Problem</span>
-            <h2>投研不是一次对话，而是一条可追踪的工作流</h2>
-            <p>
-              量化研究涉及数据源、清洗、特征、策略假设、回测结果和复盘。QuantPilot 的方向是让 Agent 帮忙推进分析，但把中间过程留在结构化工作台里。
-            </p>
-          </article>
-          <article class="case-panel">
-            <span class="case-panel-label">My Role</span>
-            <h2>把数据工具和 AI 助手做成产品界面</h2>
-            <p>
-              这个项目强调产品化能力：不是只做脚本，而是为研究流程设计可交互界面、模块边界和结果沉淀方式，让后续迭代有明确入口。
-            </p>
-          </article>
         </div>
       </section>
 
       <section class="case-section">
         <div class="container">
-          <div class="case-detail-grid">
-            <article>
+          <div class="case-duo">
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◇</div>
+              <span class="case-duo-kicker">Problem</span>
+              <h2>投研不是一次对话，而是一条可追踪的工作流</h2>
+              <p>量化研究涉及数据源、清洗、特征、策略假设、回测结果和复盘。QuantPilot 的方向是让 Agent 帮忙推进分析，但把中间过程留在结构化工作台里。</p>
+            </article>
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◆</div>
+              <span class="case-duo-kicker">My Role</span>
+              <h2>把数据工具和 AI 助手做成产品界面</h2>
+              <p>这个项目强调产品化能力：不是只做脚本，而是为研究流程设计可交互界面、模块边界和结果沉淀方式，让后续迭代有明确入口。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◇</div>
+              <span class="case-duo-kicker">Capabilities</span>
               <h2>核心能力</h2>
               <ul class="case-list">
                 <li>把策略想法转成可执行分析任务。</li>
@@ -82,15 +87,22 @@
                 <li>为投研流程保留可复盘的上下文和结果链路。</li>
               </ul>
             </article>
-            <article>
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◆</div>
+              <span class="case-duo-kicker">Value</span>
               <h2>展示价值</h2>
-              <p>
-                QuantPilot 适合作为“AI + 数据产品”的代表项目：它能展示你如何把 Agent 能力嵌进复杂业务流程，而不是停留在聊天框或一次性脚本里。
-              </p>
+              <p>QuantPilot 适合作为"AI + 数据产品"的代表项目：它能展示你如何把 Agent 能力嵌进复杂业务流程，而不是停留在聊天框或一次性脚本里。</p>
             </article>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="case-footer">
+      <div class="container case-footer-inner">
+        <a href="../index.html#work">← 返回项目列表</a>
+        <a href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub →</a>
+      </div>
+    </footer>
   </body>
 </html>

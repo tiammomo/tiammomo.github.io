@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const alt = escapeHtml(localized(project.image.alt, locale));
     const summary = escapeHtml(localized(project.summary, locale));
     const meta = localized(project.meta, locale);
+    const imageSource = project.image.webp
+      ? `<source srcset="${escapeHtml(project.image.webp)}" type="image/webp" />`
+      : '';
     const caseLink = project.caseUrl
       ? `<a class="project-link" href="${escapeHtml(project.caseUrl)}">${caseLabel} →</a>`
       : '';
@@ -59,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <figure class="project-card-media">
           <picture>
-            <source srcset="${escapeHtml(project.image.webp)}" type="image/webp" />
+            ${imageSource}
             <img src="${escapeHtml(project.image.png)}" alt="${alt}" loading="lazy" />
           </picture>
         </figure>

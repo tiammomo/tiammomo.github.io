@@ -5,21 +5,20 @@
     "status": "active",
     "categories": ["ai", "infra", "product"],
     "image": {
-      "png": "assets/images/generated/anime-cover-modelport.png",
-      "webp": "assets/images/generated/anime-cover-modelport-thumb.webp",
+      "png": "assets/images/modelport/dashboard-overview.png",
       "alt": {
-        "zh": "ModelPort 模型网关项目封面",
-        "en": "ModelPort project cover"
+        "zh": "ModelPort 本地 Dashboard 仪表盘截图",
+        "en": "ModelPort local dashboard overview screenshot"
       }
     },
     "summary": {
-      "zh": "自托管 Anthropic-compatible 模型网关，让 Claude Code / VS Code Claude 通过一个本地端口接入多模型路由、协议转换、鉴权、用量观测和管理面板。",
-      "en": "A self-hosted Anthropic-compatible model gateway for Claude Code and VS Code Claude, with provider routing, protocol conversion, auth, usage observability, and a control dashboard."
+      "zh": "面向 Claude Code / VS Code Claude 的本地 Anthropic-compatible 模型网关，带 Dashboard 控制面，覆盖 Provider 路由、模型库存、API Key、用量成本和健康观测。",
+      "en": "A local Anthropic-compatible model gateway for Claude Code and VS Code Claude, with a dashboard control plane for provider routing, model inventory, API keys, usage cost, and health checks."
     },
-    "tags": ["Rust", "LLM Gateway", "Provider Routing"],
+    "tags": ["Rust", "React Dashboard", "LLM Gateway"],
     "meta": {
-      "zh": ["Claude workflow", "Self-hosted"],
-      "en": ["Claude workflow", "Self-hosted"]
+      "zh": ["Local gateway", "Control plane"],
+      "en": ["Local gateway", "Control plane"]
     },
     "caseUrl": "projects/modelport.html",
     "githubUrl": "https://github.com/tiammomo/ModelPort"

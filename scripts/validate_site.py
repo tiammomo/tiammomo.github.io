@@ -114,12 +114,14 @@ def main() -> int:
                         errors.append(f"data/projects.json:{label}: missing {field}")
                 image = project.get("image", {})
                 if isinstance(image, dict):
-                    for field in ("png", "webp"):
-                        ref = image.get(field)
-                        if isinstance(ref, str):
-                            check_local_ref(ROOT / "index.html", ref, errors)
-                        else:
-                            errors.append(f"data/projects.json:{label}: missing image.{field}")
+                    ref = image.get("png")
+                    if isinstance(ref, str):
+                        check_local_ref(ROOT / "index.html", ref, errors)
+                    else:
+                        errors.append(f"data/projects.json:{label}: missing image.png")
+                    ref = image.get("webp")
+                    if isinstance(ref, str) and ref:
+                        check_local_ref(ROOT / "index.html", ref, errors)
                 for field in ("caseUrl", "githubUrl"):
                     ref = project.get(field)
                     if isinstance(ref, str):
