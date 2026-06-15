@@ -4,19 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="Tiammomo 的 AI 产品工程作品集，展示 LLM 应用、Agent 工作流、数据工具和全栈产品原型。" />
+    <meta name="description" content="AI 产品工程作品集：Tiammomo，ACM 区域赛银牌，主攻数据工程与 Data Agent，围绕 GitHub 公开项目展示大数据平台、数仓开发、离线和实时数据链路实践。" />
     <link rel="canonical" href="https://tiammomo.github.io/" />
     <link rel="alternate" hreflang="zh-CN" href="https://tiammomo.github.io/" />
     <link rel="alternate" hreflang="en" href="https://tiammomo.github.io/en.html" />
     <link rel="alternate" hreflang="x-default" href="https://tiammomo.github.io/" />
     <meta property="og:title" content="Tiammomo · AI Product Engineering" />
-    <meta property="og:description" content="LLM 应用、Agent 工作流、数据工具与全栈产品原型。" />
+    <meta property="og:description" content="ACM 区域赛银牌，主攻数据工程与 Data Agent，围绕 GitHub 公开项目展示数据链路和 AI 产品化实践。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tiammomo.github.io/" />
     <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tiammomo · AI Product Engineering" />
-    <meta name="twitter:description" content="LLM 应用、Agent 工作流、数据工具与全栈产品原型。" />
+    <meta name="twitter:description" content="ACM 区域赛银牌，主攻数据工程与 Data Agent，围绕 GitHub 公开项目展示数据链路和 AI 产品化实践。" />
     <meta name="twitter:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
     <title>Tiammomo · AI Product Engineering</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -34,6 +34,7 @@
         "url": "https://tiammomo.github.io/",
         "sameAs": ["https://github.com/tiammomo"],
         "jobTitle": "AI Product Engineer",
+        "award": "ACM Regional Contest Silver Medal",
         "knowsAbout": ["LLM applications", "Agent workflows", "Model gateways", "Data tools", "Full-stack product prototypes"]
       }
     </script>
@@ -51,11 +52,8 @@
         <span class="header-nav-toggle-bar" aria-hidden="true"></span>
       </button>
       <nav class="header-nav" id="main-nav" aria-label="主导航">
-        <a href="#about">关于</a>
-        <a href="#stack">能力</a>
         <a href="#work">项目</a>
         <a href="#now">动向</a>
-        <a href="notes.html">笔记</a>
         <a href="#process">方法</a>
         <a href="#contact">联系</a>
         <a href="en.html" lang="en">EN</a>
@@ -66,11 +64,17 @@
       <!-- ── Hero ── -->
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="hero-label">AI product engineering · LLM applications · agent workflows</p>
-          <h1 class="hero-title" id="hero-title">Tiammomo 的 AI 产品工程作品集</h1>
+          <p class="hero-label">data engineering · data agent · github projects</p>
+          <h1 class="hero-title" id="hero-title">AI 产品工程作品集</h1>
           <p class="hero-desc">
-            我把模型能力、Agent 工作流和全栈工程落到可运行的产品切片：模型网关、量化投研工作台、旅行规划 Agent、经营管理系统与电商内容工具。
+            我是 Tiammomo，ACM 区域赛银牌获得者，主攻数据工程与 Data Agent。过去持续关注大数据平台、数仓开发、离线与实时数据链路的工程化实践；现在更关心如何让 Agent 接入数据、理解业务问题，并产出可复用的分析流程。这个页面记录我在 GitHub 上沉淀的项目、实验和产品化思考。
           </p>
+          <div class="hero-highlights" aria-label="个人亮点">
+            <span>ACM 区域赛银牌</span>
+            <span>Data Agent</span>
+            <span>大数据平台 / 数仓</span>
+            <span>离线 / 实时数据链路</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">查看作品</a>
             <a class="btn btn-ghost" href="projects/modelport.html">重点案例</a>
@@ -83,113 +87,20 @@
       <!-- ── Stats ── -->
       <section class="stats" aria-label="概览">
         <div class="stats-item">
-          <span class="stats-value">25+</span>
-          <span class="stats-label">公开仓库沉淀</span>
+          <span class="stats-value">31</span>
+          <span class="stats-label">GitHub 公开仓库</span>
         </div>
         <div class="stats-item">
           <span class="stats-value">6</span>
-          <span class="stats-label">精选项目入口</span>
+          <span class="stats-label">精选 GitHub 项目</span>
         </div>
         <div class="stats-item">
-          <span class="stats-value">AI</span>
-          <span class="stats-label">LLM / Agent / RAG</span>
+          <span class="stats-value">37</span>
+          <span class="stats-label">累计 Stars</span>
         </div>
         <div class="stats-item">
-          <span class="stats-value">Product</span>
-          <span class="stats-label">可运行产品原型</span>
-        </div>
-      </section>
-
-      <!-- ── About ── -->
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">About</span>
-            <h2 id="about-title">把 AI 能力做成能交付的工具</h2>
-          </div>
-          <div class="about-grid">
-            <div class="about-body">
-              <p class="about-lead">
-                我关注 AI 应用层和产品工程之间的交界：既做模型接入、路由、Agent 与数据工作流，也把这些能力放进清晰的前后端系统里，让想法能被真实使用、验证和迭代。
-              </p>
-              <div class="about-numbers">
-                <div class="about-number">
-                  <span class="about-number-value">25+</span>
-                  <span class="about-number-label">公开仓库</span>
-                </div>
-                <div class="about-number">
-                  <span class="about-number-value">6</span>
-                  <span class="about-number-label">精选项目</span>
-                </div>
-                <div class="about-number">
-                  <span class="about-number-value">4</span>
-                  <span class="about-number-label">能力方向</span>
-                </div>
-              </div>
-            </div>
-            <div class="about-card">
-              <div class="about-card-item">
-                <span class="about-card-icon">◈</span>
-                <div>
-                  <strong>模型与 Agent 基础设施</strong>
-                  <span>模型网关、协议适配、路由与使用观测</span>
-                </div>
-              </div>
-              <div class="about-card-item">
-                <span class="about-card-icon">◈</span>
-                <div>
-                  <strong>数据与投研工作流</strong>
-                  <span>把数据分析、策略想法和 Agent 协作连接起来</span>
-                </div>
-              </div>
-              <div class="about-card-item">
-                <span class="about-card-icon">◈</span>
-                <div>
-                  <strong>全栈产品落地</strong>
-                  <span>用前后端系统承接业务流程和 AI 能力</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── Capability ── -->
-      <section class="stack" id="stack" aria-labelledby="stack-title">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">Capability</span>
-            <h2 id="stack-title">能力不是列表，是项目证据</h2>
-          </div>
-          <div class="stack-grid">
-            <div class="stack-group">
-              <h3 class="stack-group-title">LLM / Agent</h3>
-              <ul class="stack-list">
-                <li class="stack-item" data-level="ModelPort">Anthropic-compatible 模型网关</li>
-                <li class="stack-item" data-level="QuantPilot">量化分析 Agent 工作台</li>
-                <li class="stack-item" data-level="Travel Agent">偏好约束与路线比较 Agent</li>
-                <li class="stack-item" data-level="RAG">文档知识库与检索实验</li>
-              </ul>
-            </div>
-            <div class="stack-group">
-              <h3 class="stack-group-title">Product Engineering</h3>
-              <ul class="stack-list">
-                <li class="stack-item" data-level="Mamoji">经营管理与记账系统</li>
-                <li class="stack-item" data-level="ReviewPilot">跨境电商内容工具</li>
-                <li class="stack-item" data-level="Next.js">前端产品界面与交互</li>
-                <li class="stack-item" data-level="Backend">API、认证、部署与数据模型</li>
-              </ul>
-            </div>
-            <div class="stack-group">
-              <h3 class="stack-group-title">Infra / Data</h3>
-              <ul class="stack-list">
-                <li class="stack-item" data-level="Docker">本地与生产部署编排</li>
-                <li class="stack-item" data-level="Postgres">结构化数据与业务系统存储</li>
-                <li class="stack-item" data-level="Metrics">请求日志、用量统计与成本估算</li>
-                <li class="stack-item" data-level="GitHub">开源项目文档与交付</li>
-              </ul>
-            </div>
-          </div>
+          <span class="stats-value">18</span>
+          <span class="stats-label">公开 Pull Requests</span>
         </div>
       </section>
 
@@ -408,7 +319,7 @@
               <p>用前后端产品系统承接业务流程，把内容生成、经营管理、旅行规划等能力做成能被日常使用的界面。</p>
             </article>
             <article class="now-card">
-              <span class="now-card-kicker">Open Notes</span>
+              <span class="now-card-kicker">Project Docs</span>
               <h3>把项目经验写成可复用文档</h3>
               <p>持续补充架构边界、部署说明、验收标准和路线图，让仓库不只是代码，也能解释为什么这样设计。</p>
             </article>
