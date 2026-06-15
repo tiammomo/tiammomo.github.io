@@ -78,9 +78,50 @@ https://tiammomo.github.io/
 - 项目筛选通过卡片上的 `data-category` 和筛选按钮的 `data-filter` 对应。
 - 状态灯通过 `data-status` 控制：`active`、`wip`、`archived`。
 - 动漫风格图片资产放在 `assets/images/generated/`，页面优先加载 `webp`，并保留 `png` 作为社交分享和兼容 fallback。
+- 项目图替换源文件放在 `assets/images/replacements/`。该目录下的源图默认不提交到 git，处理后的站点资产会输出到 `assets/images/generated/`。
 - 视觉和响应式样式集中在 `styles.css`。
 - 复制按钮和导航交互集中在 `script.js`。
 - `.nojekyll` 已放在根目录，GitHub Pages 会按普通静态文件发布。
+
+## 替换项目图
+
+准备好项目图后，把源图放到：
+
+```text
+assets/images/replacements/
+```
+
+推荐文件名：
+
+```text
+modelport.png
+quantpilot.png
+travel-agent.png
+mamoji.png
+reviewpilot.png
+stock-assistant.png
+portfolio-og.png
+```
+
+然后运行：
+
+```bash
+python scripts/build_project_images.py
+```
+
+如果本机没有 Pillow，可以使用临时虚拟环境，不会影响项目零构建发布：
+
+```bash
+python3 -m venv /tmp/portfolio-image-tools
+/tmp/portfolio-image-tools/bin/python -m pip install pillow
+/tmp/portfolio-image-tools/bin/python scripts/build_project_images.py
+```
+
+脚本会自动裁切到 `16:9`，并生成站点需要的 `png`、`webp` 和缩略 `webp` 文件。生成完成后运行：
+
+```bash
+python scripts/validate_site.py
+```
 
 ## 站点文件
 
