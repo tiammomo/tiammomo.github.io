@@ -1,0 +1,149 @@
+[
+  {
+    "id": "modelport",
+    "name": "ModelPort",
+    "status": "active",
+    "categories": ["ai", "infra", "product"],
+    "image": {
+      "png": "assets/images/generated/anime-cover-modelport.png",
+      "webp": "assets/images/generated/anime-cover-modelport-thumb.webp",
+      "alt": {
+        "zh": "ModelPort 模型网关项目封面",
+        "en": "ModelPort project cover"
+      }
+    },
+    "summary": {
+      "zh": "自托管 Anthropic-compatible 模型网关，让 Claude Code / VS Code Claude 通过一个本地端口接入多模型路由、协议转换、鉴权、用量观测和管理面板。",
+      "en": "A self-hosted Anthropic-compatible model gateway for Claude Code and VS Code Claude, with provider routing, protocol conversion, auth, usage observability, and a control dashboard."
+    },
+    "tags": ["Rust", "LLM Gateway", "Provider Routing"],
+    "meta": {
+      "zh": ["Claude workflow", "Self-hosted"],
+      "en": ["Claude workflow", "Self-hosted"]
+    },
+    "caseUrl": "projects/modelport.html",
+    "githubUrl": "https://github.com/tiammomo/ModelPort"
+  },
+  {
+    "id": "quantpilot",
+    "name": "QuantPilot",
+    "status": "active",
+    "categories": ["ai", "data", "product"],
+    "image": {
+      "png": "assets/images/generated/anime-cover-quantpilot.png",
+      "webp": "assets/images/generated/anime-cover-quantpilot-thumb.webp",
+      "alt": {
+        "zh": "QuantPilot 量化投研工作台项目封面",
+        "en": "QuantPilot project cover"
+      }
+    },
+    "summary": {
+      "zh": "面向量化研究的数据分析 Agent，将策略想法、数据处理、可视化和工作流沉淀在一个可持续迭代的投研工作台里。",
+      "en": "An AI workspace for quantitative research, connecting strategy ideas, data analysis, visualization, and reusable research workflows."
+    },
+    "tags": ["TypeScript", "Quant Agent", "Workspace"],
+    "meta": {
+      "zh": ["Research", "Data workflow"],
+      "en": ["Research", "Data workflow"]
+    },
+    "caseUrl": "projects/quantpilot.html",
+    "githubUrl": "https://github.com/tiammomo/QuantPilot"
+  },
+  {
+    "id": "travel-agent",
+    "name": "moyuan-travel-agent",
+    "status": "active",
+    "categories": ["ai", "product"],
+    "image": {
+      "png": "assets/images/generated/anime-cover-travel-agent.png",
+      "webp": "assets/images/generated/anime-cover-travel-agent-thumb.webp",
+      "alt": {
+        "zh": "旅行规划 Agent 项目封面",
+        "en": "Travel agent project cover"
+      }
+    },
+    "summary": {
+      "zh": "旅行规划 Agent，围绕用户偏好、预算约束、路线比较和行程生成做决策辅助，适合作为 AI 助手产品化的样板项目。",
+      "en": "A travel planning agent around preferences, budgets, route comparison, and itinerary generation as a productized AI assistant flow."
+    },
+    "tags": ["TypeScript", "Agent", "Travel Planning"],
+    "meta": {
+      "zh": ["Planner", "Preference matching"],
+      "en": ["Planner", "Preference matching"]
+    },
+    "caseUrl": "projects/travel-agent.html",
+    "githubUrl": "https://github.com/tiammomo/moyuan-travel-agent"
+  },
+  {
+    "id": "mamoji",
+    "name": "Mamoji",
+    "status": "active",
+    "categories": ["product"],
+    "image": {
+      "png": "assets/images/generated/anime-cover-mamoji.png",
+      "webp": "assets/images/generated/anime-cover-mamoji-thumb.webp",
+      "alt": {
+        "zh": "Mamoji 经营管理系统项目封面",
+        "en": "Mamoji project cover"
+      }
+    },
+    "summary": {
+      "zh": "面向小团队经营管理、记账和业务协作的全栈系统，覆盖前端界面、后端服务、部署脚本和生产环境配置。",
+      "en": "A full-stack operations, accounting, and collaboration system for small teams, including frontend, backend, deployment scripts, and production configuration."
+    },
+    "tags": ["TypeScript", "Full-stack", "Business System"],
+    "meta": {
+      "zh": ["Accounting", "Operations"],
+      "en": ["Accounting", "Operations"]
+    },
+    "githubUrl": "https://github.com/tiammomo/Mamoji"
+  },
+  {
+    "id": "reviewpilot",
+    "name": "ReviewPilot",
+    "status": "wip",
+    "categories": ["ai", "product"],
+    "image": {
+      "png": "assets/images/generated/anime-cover-reviewpilot.png",
+      "webp": "assets/images/generated/anime-cover-reviewpilot-thumb.webp",
+      "alt": {
+        "zh": "ReviewPilot 电商内容工具项目封面",
+        "en": "ReviewPilot project cover"
+      }
+    },
+    "summary": {
+      "zh": "跨境电商选品与好评内容工具，把商品信息、卖点梳理和评论生成流程产品化，服务商家内容运营效率。",
+      "en": "A cross-border ecommerce product selection and review-content tool that productizes merchant content operations."
+    },
+    "tags": ["TypeScript", "E-commerce", "Content Tool"],
+    "meta": {
+      "zh": ["Review generation", "Merchant workflow"],
+      "en": ["Review generation", "Merchant workflow"]
+    },
+    "githubUrl": "https://github.com/tiammomo/ReviewPilot"
+  },
+  {
+    "id": "stock-assistant",
+    "name": "moyuan-stock-trading-assistant",
+    "status": "wip",
+    "categories": ["ai", "data"],
+    "image": {
+      "png": "assets/images/generated/anime-cover-stock-assistant.png",
+      "webp": "assets/images/generated/anime-cover-stock-assistant-thumb.webp",
+      "alt": {
+        "zh": "股票投研数据助手项目封面",
+        "en": "Stock research assistant project cover"
+      }
+    },
+    "summary": {
+      "zh": "围绕股票研究和问财数据的投研辅助项目，用 Python 串联数据获取、分析逻辑和策略探索流程。",
+      "en": "A Python-based stock research assistant that connects data collection, analysis logic, and strategy exploration around market research workflows."
+    },
+    "tags": ["Python", "Stock Research", "Data Assistant"],
+    "meta": {
+      "zh": ["Quant research", "Data tool"],
+      "en": ["Quant research", "Data tool"]
+    },
+    "githubUrl": "https://github.com/tiammomo/moyuan-stock-trading-assistant"
+  }
+]

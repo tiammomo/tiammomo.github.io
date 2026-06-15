@@ -99,6 +99,34 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         errors.append(f"sitemap.xml: {exc}")
 
+    try:
+        projects = json.loads((ROOT / "data" / "projects.json").read_text(encoding="utf-8"))
+        if not isinstance(projects, list):
+            errors.append("data/projects.json: expected a list")
+        else:
+            for index, project in enumerate(projects):
+                label = project.get("id", f"#{index}") if isinstance(project, dict) else f"#{index}"
+                if not isinstance(project, dict):
+                    errors.append(f"data/projects.json:{label}: expected object")
+                    continue
+                for field in ("id", "name", "status", "categories", "image", "summary", "tags"):
+                    if field not in project:
+                        errors.append(f"data/projects.json:{label}: missing {field}")
+                image = project.get("image", {})
+                if isinstance(image, dict):
+                    for field in ("png", "webp"):
+                        ref = image.get(field)
+                        if isinstance(ref, str):
+                            check_local_ref(ROOT / "index.html", ref, errors)
+                        else:
+                            errors.append(f"data/projects.json:{label}: missing image.{field}")
+                for field in ("caseUrl", "githubUrl"):
+                    ref = project.get(field)
+                    if isinstance(ref, str):
+                        check_local_ref(ROOT / "index.html", ref, errors)
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"data/projects.json: {exc}")
+
     css = (ROOT / "styles.css").read_text(encoding="utf-8")
     for match in re.finditer(r"url\(['\"]?([^'\")]+)['\"]?\)", css):
         ref = match.group(1)

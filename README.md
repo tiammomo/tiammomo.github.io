@@ -72,8 +72,10 @@ https://tiammomo.github.io/
 
 ## 内容维护
 
-- 项目卡片在 `index.html` 的 `#work` 区域维护。
+- 项目区结构在 `index.html` / `en.html` 的 `#work` 区域维护。
+- 项目数据源在 `data/projects.json`，中文首页和英文首页会优先从这里渲染项目卡片；HTML 内仍保留静态卡片作为 fallback。
 - 英文首页在 `en.html`，与中文首页保持同一套视觉与项目入口。
+- Notes / Lab 页面在 `notes.html`，用于沉淀 AI 产品工程相关短札和项目思考。
 - 重点案例页放在 `projects/` 目录，目前包含 ModelPort、QuantPilot 和 Travel Agent。
 - 项目筛选通过卡片上的 `data-category` 和筛选按钮的 `data-filter` 对应。
 - 状态灯通过 `data-status` 控制：`active`、`wip`、`archived`。

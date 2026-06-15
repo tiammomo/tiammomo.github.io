@@ -5,74 +5,162 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.header-nav-toggle');
   const navLinks = document.querySelectorAll('.header-nav a');
   const filters = document.querySelectorAll('[data-filter]');
-  const projects = document.querySelectorAll('.project-card');
   const copyBtn = document.querySelector('[data-copy]');
   const yearEl = document.querySelector('[data-year]');
+  const projectGrid = document.querySelector('[data-project-grid]');
 
-  // ── Year ──
-  yearEl.textContent = new Date().getFullYear();
+  const escapeHtml = (value) =>
+    String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
 
-  // ── Header scroll state ──
-  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 20);
-  onScroll();
-  addEventListener('scroll', onScroll, { passive: true });
-
-  // ── Mobile nav ──
-  const closeNav = () => {
-    document.body.classList.remove('nav-lock');
-    header.classList.remove('nav-open');
-    navToggle.setAttribute('aria-expanded', 'false');
+  const localized = (value, locale) => {
+    if (!value || typeof value !== 'object') return value ?? '';
+    return value[locale] ?? value.zh ?? value.en ?? '';
   };
 
-  navToggle.addEventListener('click', () => {
-    const open = navToggle.getAttribute('aria-expanded') === 'true';
-    document.body.classList.toggle('nav-lock', !open);
-    header.classList.toggle('nav-open', !open);
-    navToggle.setAttribute('aria-expanded', String(!open));
-  });
+  const currentFilter = () =>
+    document.querySelector('[data-filter].is-active')?.dataset.filter ?? 'all';
 
-  navLinks.forEach(link => link.addEventListener('click', closeNav));
+  const applyProjectFilter = (selected = currentFilter()) => {
+    document.querySelectorAll('.project-card').forEach((card) => {
+      const categories = card.dataset.category.split(' ');
+      card.classList.toggle(
+        'is-hidden',
+        selected !== 'all' && !categories.includes(selected),
+      );
+    });
+  };
 
-  // ── Project filters ──
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const sel = btn.dataset.filter;
-      filters.forEach(f => f.classList.toggle('is-active', f === btn));
-      projects.forEach(card => {
-        const cats = card.dataset.category.split(' ');
-        card.classList.toggle('is-hidden', sel !== 'all' && !cats.includes(sel));
-      });
+  const renderProjectCard = (project, index, locale) => {
+    const caseLabel = locale === 'en' ? 'Case Study' : '案例详情';
+    const githubLabel = 'GitHub';
+    const categories = project.categories.join(' ');
+    const status = project.status === 'wip' ? 'WIP' : 'Active';
+    const statusAttr = escapeHtml(project.status);
+    const alt = escapeHtml(localized(project.image.alt, locale));
+    const summary = escapeHtml(localized(project.summary, locale));
+    const meta = localized(project.meta, locale);
+    const caseLink = project.caseUrl
+      ? `<a class="project-link" href="${escapeHtml(project.caseUrl)}">${caseLabel} →</a>`
+      : '';
+    const githubLink = project.githubUrl
+      ? `<a class="project-link project-link-muted" href="${escapeHtml(project.githubUrl)}" rel="noreferrer">${githubLabel} →</a>`
+      : '';
+
+    return `
+      <article class="project-card" data-category="${escapeHtml(categories)}">
+        <div class="project-card-top">
+          <span class="project-num">${String(index + 1).padStart(2, '0')}</span>
+          <span class="project-status" data-status="${statusAttr}"><span class="status-dot"></span> ${status}</span>
+        </div>
+        <figure class="project-card-media">
+          <picture>
+            <source srcset="${escapeHtml(project.image.webp)}" type="image/webp" />
+            <img src="${escapeHtml(project.image.png)}" alt="${alt}" loading="lazy" />
+          </picture>
+        </figure>
+        <h3 class="project-name">${escapeHtml(project.name)}</h3>
+        <p class="project-desc">${summary}</p>
+        <div class="project-tags">
+          ${project.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
+        </div>
+        <div class="project-meta">
+          ${meta.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}
+        </div>
+        <div class="project-actions">
+          ${caseLink}
+          ${githubLink}
+        </div>
+      </article>
+    `;
+  };
+
+  const renderProjects = async () => {
+    if (!projectGrid) return;
+
+    try {
+      const response = await fetch('data/projects.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Project data failed: ${response.status}`);
+      const projects = await response.json();
+      const locale = projectGrid.dataset.locale || 'zh';
+      projectGrid.innerHTML = projects
+        .map((project, index) => renderProjectCard(project, index, locale))
+        .join('');
+      applyProjectFilter();
+    } catch (error) {
+      console.warn('Using static project cards fallback.', error);
+    }
+  };
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 20);
+    onScroll();
+    addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  if (header && navToggle) {
+    const closeNav = () => {
+      document.body.classList.remove('nav-lock');
+      header.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      document.body.classList.toggle('nav-lock', !open);
+      header.classList.toggle('nav-open', !open);
+      navToggle.setAttribute('aria-expanded', String(!open));
+    });
+
+    navLinks.forEach((link) => link.addEventListener('click', closeNav));
+  }
+
+  filters.forEach((button) => {
+    button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      filters.forEach((item) => item.classList.toggle('is-active', item === button));
+      applyProjectFilter(selected);
     });
   });
 
-  // ── Copy contact ──
-  copyBtn.addEventListener('click', async () => {
-    const val = copyBtn.dataset.copy;
-    const label = copyBtn.textContent.trim();
-    const copiedLabel = copyBtn.dataset.copiedLabel || '已复制';
-    try {
-      await navigator.clipboard.writeText(val);
-      copyBtn.textContent = copiedLabel;
-      setTimeout(() => (copyBtn.textContent = label), 1400);
-    } catch {
-      location.href = val.includes('@') ? `mailto:${val}` : val;
-    }
-  });
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const value = copyBtn.dataset.copy;
+      const label = copyBtn.textContent.trim();
+      const copiedLabel = copyBtn.dataset.copiedLabel || '已复制';
+      try {
+        await navigator.clipboard.writeText(value);
+        copyBtn.textContent = copiedLabel;
+        setTimeout(() => (copyBtn.textContent = label), 1400);
+      } catch {
+        location.href = value.includes('@') ? `mailto:${value}` : value;
+      }
+    });
+  }
 
-  // ── Active nav tracking ──
   const sections = document.querySelectorAll('main section[id]');
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          navLinks.forEach(link =>
-            link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`)
-          );
-        }
-      });
-    },
-    { threshold: 0.3, rootMargin: '-64px 0px -50% 0px' }
-  );
-  sections.forEach(s => observer.observe(s));
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach((link) =>
+              link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`),
+            );
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-64px 0px -50% 0px' },
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  renderProjects();
 });
