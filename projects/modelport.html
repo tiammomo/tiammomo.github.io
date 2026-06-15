@@ -13,6 +13,7 @@
     <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-cover-modelport.png" />
     <title>ModelPort · Tiammomo Case Study</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="../assets/images/generated/anime-cover-modelport.webp" type="image/webp" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page">
@@ -42,7 +43,10 @@
             </div>
           </div>
           <figure class="case-hero-media">
-            <img src="../assets/images/generated/anime-cover-modelport.png" alt="ModelPort 模型网关项目封面" />
+            <picture>
+              <source srcset="../assets/images/generated/anime-cover-modelport.webp" type="image/webp" />
+              <img src="../assets/images/generated/anime-cover-modelport.png" alt="ModelPort 模型网关项目封面" />
+            </picture>
           </figure>
         </div>
       </section>
@@ -84,6 +88,60 @@
               <p>
                 对外展示时，ModelPort 是最能说明“AI 产品工程”能力的项目：它不是单个 Prompt Demo，而是把模型接入、工程边界、安全策略、可观测性和开发者体验合在一起的工具系统。
               </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Architecture</span>
+            <h2>请求从编辑器到模型的流转</h2>
+          </div>
+          <div class="flow-grid">
+            <article class="flow-step">
+              <span>01</span>
+              <h3>Claude Client</h3>
+              <p>Claude Code 或 VS Code Claude 仍然调用熟悉的 Anthropic Messages API，不改变开发者日常工作流。</p>
+            </article>
+            <article class="flow-step">
+              <span>02</span>
+              <h3>Local Gateway</h3>
+              <p>ModelPort 在本地入口处理鉴权、请求限制、模型命名、别名解析、路由选择和流式响应稳定性。</p>
+            </article>
+            <article class="flow-step">
+              <span>03</span>
+              <h3>Provider Adapter</h3>
+              <p>不同上游模型通过适配层完成协议转换、超时控制、健康状态、冷却和兼容提供商之间的 fallback。</p>
+            </article>
+            <article class="flow-step">
+              <span>04</span>
+              <h3>Observability</h3>
+              <p>请求日志、Token 用量、延迟、成本估算、预算和 Prometheus 指标进入 Dashboard 与运维视图。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-detail-grid">
+            <article>
+              <h2>适合的场景</h2>
+              <ul class="case-list">
+                <li>个人长期本地使用，希望 Claude Code 能稳定接入多个模型提供商。</li>
+                <li>小团队在可信网络边界内试点统一模型入口、Key 管理和预算控制。</li>
+                <li>需要把模型路由、协议转换、用量观测和项目文档做成可交付工具。</li>
+              </ul>
+            </article>
+            <article>
+              <h2>明确不做的边界</h2>
+              <ul class="case-list">
+                <li>不是公开互联网多租户 SaaS 网关。</li>
+                <li>不替代企业级 SSO、外部计费系统或复杂租户隔离。</li>
+                <li>不把所有模型能力做成大而全平台，而是优先服务开发者本地工作流。</li>
+              </ul>
             </article>
           </div>
         </div>

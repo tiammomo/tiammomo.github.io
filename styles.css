@@ -383,7 +383,10 @@ h3 {
   overflow: hidden;
   background-image:
     linear-gradient(90deg, rgba(7, 11, 24, 0.97) 0%, rgba(7, 11, 24, 0.76) 42%, rgba(7, 11, 24, 0.24) 100%),
-    url("assets/images/generated/anime-portfolio-og.png");
+    image-set(
+      url("assets/images/generated/anime-portfolio-og.webp") type("image/webp"),
+      url("assets/images/generated/anime-portfolio-og.png") type("image/png")
+    );
   background-size: cover;
   background-position: center;
 }
@@ -740,9 +743,14 @@ h3 {
   background: var(--bg-surface);
 }
 
+.project-card-media picture,
 .project-card-media img {
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+.project-card-media img {
   object-fit: cover;
   transition: transform var(--dur) var(--ease), filter var(--dur) var(--ease);
 }
@@ -1068,9 +1076,14 @@ h3 {
   box-shadow: var(--shadow-lg);
 }
 
+.case-hero-media picture,
 .case-hero-media img {
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+.case-hero-media img {
   object-fit: cover;
 }
 
@@ -1124,6 +1137,40 @@ h3 {
   margin-top: 8px;
 }
 
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.flow-step {
+  min-height: 240px;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(103, 232, 249, 0.08), rgba(16, 24, 42, 0.98)),
+    var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.flow-step span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.flow-step h3 {
+  margin-bottom: 12px;
+}
+
+.flow-step p {
+  color: var(--text-2);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
 /* ═══════════════════════════════════════
    Error Page
    ═══════════════════════════════════════ */
@@ -1133,7 +1180,10 @@ h3 {
   place-items: center;
   background:
     linear-gradient(90deg, rgba(7, 11, 24, 0.98), rgba(7, 11, 24, 0.7)),
-    url("assets/images/generated/anime-portfolio-og.png");
+    image-set(
+      url("assets/images/generated/anime-portfolio-og.webp") type("image/webp"),
+      url("assets/images/generated/anime-portfolio-og.png") type("image/png")
+    );
   background-size: cover;
   background-position: center;
 }
@@ -1208,7 +1258,8 @@ h3 {
 
   .case-hero-grid,
   .case-content-grid,
-  .case-detail-grid {
+  .case-detail-grid,
+  .flow-grid {
     grid-template-columns: 1fr;
   }
 

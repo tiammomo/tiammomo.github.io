@@ -6,6 +6,9 @@
     <meta name="color-scheme" content="dark" />
     <meta name="description" content="Tiammomo 的 AI 产品工程作品集，展示 LLM 应用、Agent 工作流、数据工具和全栈产品原型。" />
     <link rel="canonical" href="https://tiammomo.github.io/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://tiammomo.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://tiammomo.github.io/en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tiammomo.github.io/" />
     <meta property="og:title" content="Tiammomo · AI Product Engineering" />
     <meta property="og:description" content="LLM 应用、Agent 工作流、数据工具与全栈产品原型。" />
     <meta property="og:type" content="website" />
@@ -18,11 +21,22 @@
     <title>Tiammomo · AI Product Engineering</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
-    <link rel="preload" as="image" href="assets/images/generated/anime-portfolio-og.png" />
+    <link rel="preload" as="image" href="assets/images/generated/anime-portfolio-og.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tiammomo",
+        "url": "https://tiammomo.github.io/",
+        "sameAs": ["https://github.com/tiammomo"],
+        "jobTitle": "AI Product Engineer",
+        "knowsAbout": ["LLM applications", "Agent workflows", "Model gateways", "Data tools", "Full-stack product prototypes"]
+      }
+    </script>
   </head>
   <body>
     <!-- ── Header ── -->
@@ -43,6 +57,7 @@
         <a href="#now">动向</a>
         <a href="#process">方法</a>
         <a href="#contact">联系</a>
+        <a href="en.html" lang="en">EN</a>
       </nav>
     </header>
 
@@ -201,7 +216,10 @@
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
               <figure class="project-card-media">
-                <img src="assets/images/generated/anime-cover-modelport.png" alt="ModelPort 模型网关项目封面" loading="lazy" />
+                <picture>
+                  <source srcset="assets/images/generated/anime-cover-modelport-thumb.webp" type="image/webp" />
+                  <img src="assets/images/generated/anime-cover-modelport.png" alt="ModelPort 模型网关项目封面" loading="lazy" />
+                </picture>
               </figure>
               <h3 class="project-name">ModelPort</h3>
               <p class="project-desc">自托管 Anthropic-compatible 模型网关，让 Claude Code / VS Code Claude 通过一个本地端口接入多模型路由、协议转换、鉴权、用量观测和管理面板。</p>
@@ -226,7 +244,10 @@
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
               <figure class="project-card-media">
-                <img src="assets/images/generated/anime-cover-quantpilot.png" alt="QuantPilot 量化投研工作台项目封面" loading="lazy" />
+                <picture>
+                  <source srcset="assets/images/generated/anime-cover-quantpilot-thumb.webp" type="image/webp" />
+                  <img src="assets/images/generated/anime-cover-quantpilot.png" alt="QuantPilot 量化投研工作台项目封面" loading="lazy" />
+                </picture>
               </figure>
               <h3 class="project-name">QuantPilot</h3>
               <p class="project-desc">面向量化研究的数据分析 Agent，将策略想法、数据处理、可视化和工作流沉淀在一个可持续迭代的投研工作台里。</p>
@@ -251,7 +272,10 @@
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
               <figure class="project-card-media">
-                <img src="assets/images/generated/anime-cover-travel-agent.png" alt="旅行规划 Agent 项目封面" loading="lazy" />
+                <picture>
+                  <source srcset="assets/images/generated/anime-cover-travel-agent-thumb.webp" type="image/webp" />
+                  <img src="assets/images/generated/anime-cover-travel-agent.png" alt="旅行规划 Agent 项目封面" loading="lazy" />
+                </picture>
               </figure>
               <h3 class="project-name">moyuan-travel-agent</h3>
               <p class="project-desc">旅行规划 Agent，围绕用户偏好、预算约束、路线比较和行程生成做决策辅助，适合作为 AI 助手产品化的样板项目。</p>
@@ -276,7 +300,10 @@
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
               <figure class="project-card-media">
-                <img src="assets/images/generated/anime-cover-mamoji.png" alt="Mamoji 经营管理系统项目封面" loading="lazy" />
+                <picture>
+                  <source srcset="assets/images/generated/anime-cover-mamoji-thumb.webp" type="image/webp" />
+                  <img src="assets/images/generated/anime-cover-mamoji.png" alt="Mamoji 经营管理系统项目封面" loading="lazy" />
+                </picture>
               </figure>
               <h3 class="project-name">Mamoji</h3>
               <p class="project-desc">面向小团队经营管理、记账和业务协作的全栈系统，覆盖前端界面、后端服务、部署脚本和生产环境配置。</p>
@@ -300,7 +327,10 @@
                 <span class="project-status" data-status="wip"><span class="status-dot"></span> WIP</span>
               </div>
               <figure class="project-card-media">
-                <img src="assets/images/generated/anime-cover-reviewpilot.png" alt="ReviewPilot 电商内容工具项目封面" loading="lazy" />
+                <picture>
+                  <source srcset="assets/images/generated/anime-cover-reviewpilot-thumb.webp" type="image/webp" />
+                  <img src="assets/images/generated/anime-cover-reviewpilot.png" alt="ReviewPilot 电商内容工具项目封面" loading="lazy" />
+                </picture>
               </figure>
               <h3 class="project-name">ReviewPilot</h3>
               <p class="project-desc">跨境电商选品与好评内容工具，把商品信息、卖点梳理和评论生成流程产品化，服务商家内容运营效率。</p>
@@ -324,7 +354,10 @@
                 <span class="project-status" data-status="wip"><span class="status-dot"></span> WIP</span>
               </div>
               <figure class="project-card-media">
-                <img src="assets/images/generated/anime-cover-stock-assistant.png" alt="股票投研数据助手项目封面" loading="lazy" />
+                <picture>
+                  <source srcset="assets/images/generated/anime-cover-stock-assistant-thumb.webp" type="image/webp" />
+                  <img src="assets/images/generated/anime-cover-stock-assistant.png" alt="股票投研数据助手项目封面" loading="lazy" />
+                </picture>
               </figure>
               <h3 class="project-name">moyuan-stock-trading-assistant</h3>
               <p class="project-desc">围绕股票研究和问财数据的投研辅助项目，用 Python 串联数据获取、分析逻辑和策略探索流程。</p>
@@ -420,7 +453,7 @@
             </div>
             <div class="contact-actions">
               <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo" rel="noreferrer">GitHub @tiammomo</a>
-              <button class="btn btn-ghost btn-lg" type="button" data-copy="https://github.com/tiammomo">复制主页链接</button>
+              <button class="btn btn-ghost btn-lg" type="button" data-copy="https://github.com/tiammomo" data-copied-label="已复制">复制主页链接</button>
             </div>
           </div>
         </div>

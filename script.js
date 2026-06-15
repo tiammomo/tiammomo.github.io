@@ -49,9 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
   copyBtn.addEventListener('click', async () => {
     const val = copyBtn.dataset.copy;
     const label = copyBtn.textContent.trim();
+    const copiedLabel = copyBtn.dataset.copiedLabel || '已复制';
     try {
       await navigator.clipboard.writeText(val);
-      copyBtn.textContent = '已复制';
+      copyBtn.textContent = copiedLabel;
       setTimeout(() => (copyBtn.textContent = label), 1400);
     } catch {
       location.href = val.includes('@') ? `mailto:${val}` : val;

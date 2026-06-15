@@ -73,10 +73,11 @@ https://tiammomo.github.io/
 ## 内容维护
 
 - 项目卡片在 `index.html` 的 `#work` 区域维护。
+- 英文首页在 `en.html`，与中文首页保持同一套视觉与项目入口。
 - 重点案例页放在 `projects/` 目录，目前包含 ModelPort、QuantPilot 和 Travel Agent。
 - 项目筛选通过卡片上的 `data-category` 和筛选按钮的 `data-filter` 对应。
 - 状态灯通过 `data-status` 控制：`active`、`wip`、`archived`。
-- 动漫风格图片资产放在 `assets/images/generated/`，当前页面引用 `anime-*` 文件。
+- 动漫风格图片资产放在 `assets/images/generated/`，页面优先加载 `webp`，并保留 `png` 作为社交分享和兼容 fallback。
 - 视觉和响应式样式集中在 `styles.css`。
 - 复制按钮和导航交互集中在 `script.js`。
 - `.nojekyll` 已放在根目录，GitHub Pages 会按普通静态文件发布。
@@ -87,3 +88,19 @@ https://tiammomo.github.io/
 - `sitemap.xml`：搜索引擎站点地图。
 - `site.webmanifest`：基础 PWA/安装元数据。
 - `assets/favicon.svg`：站点图标。
+
+## 质量校验
+
+仓库包含 GitHub Actions 工作流：
+
+```text
+.github/workflows/validate-site.yml
+```
+
+它会在 push 和 pull request 时运行：
+
+```bash
+python scripts/validate_site.py
+```
+
+校验内容包括 HTML 内部引用、CSS 图片引用、JSON-LD、`site.webmanifest` 和 `sitemap.xml`。
