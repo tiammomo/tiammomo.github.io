@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="description" content="Tiammomo 的 AI 产品工程作品集，展示 LLM 应用、Agent 工作流、数据工具和全栈产品原型。" />
+    <link rel="canonical" href="https://tiammomo.github.io/" />
     <meta property="og:title" content="Tiammomo · AI Product Engineering" />
     <meta property="og:description" content="LLM 应用、Agent 工作流、数据工具与全栈产品原型。" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/images/hero-workspace.png" />
+    <meta property="og:url" content="https://tiammomo.github.io/" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tiammomo · AI Product Engineering" />
+    <meta name="twitter:description" content="LLM 应用、Agent 工作流、数据工具与全栈产品原型。" />
+    <meta name="twitter:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
     <title>Tiammomo · AI Product Engineering</title>
-    <link rel="icon" href="assets/images/hero-workspace.png" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" as="image" href="assets/images/generated/anime-portfolio-og.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -32,6 +40,7 @@
         <a href="#about">关于</a>
         <a href="#stack">能力</a>
         <a href="#work">项目</a>
+        <a href="#now">动向</a>
         <a href="#process">方法</a>
         <a href="#contact">联系</a>
       </nav>
@@ -48,6 +57,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">查看作品</a>
+            <a class="btn btn-ghost" href="projects/modelport.html">重点案例</a>
             <a class="btn btn-ghost" href="https://github.com/tiammomo" rel="noreferrer">GitHub</a>
           </div>
         </div>
@@ -190,6 +200,9 @@
                 <span class="project-num">01</span>
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
+              <figure class="project-card-media">
+                <img src="assets/images/generated/anime-cover-modelport.png" alt="ModelPort 模型网关项目封面" loading="lazy" />
+              </figure>
               <h3 class="project-name">ModelPort</h3>
               <p class="project-desc">自托管 Anthropic-compatible 模型网关，让 Claude Code / VS Code Claude 通过一个本地端口接入多模型路由、协议转换、鉴权、用量观测和管理面板。</p>
               <div class="project-tags">
@@ -201,7 +214,10 @@
                 <span>Claude workflow</span>
                 <span>Self-hosted</span>
               </div>
-              <a class="project-link" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">查看项目 →</a>
+              <div class="project-actions">
+                <a class="project-link" href="projects/modelport.html">案例详情 →</a>
+                <a class="project-link project-link-muted" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">GitHub →</a>
+              </div>
             </article>
 
             <article class="project-card" data-category="ai data product">
@@ -209,6 +225,9 @@
                 <span class="project-num">02</span>
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
+              <figure class="project-card-media">
+                <img src="assets/images/generated/anime-cover-quantpilot.png" alt="QuantPilot 量化投研工作台项目封面" loading="lazy" />
+              </figure>
               <h3 class="project-name">QuantPilot</h3>
               <p class="project-desc">面向量化研究的数据分析 Agent，将策略想法、数据处理、可视化和工作流沉淀在一个可持续迭代的投研工作台里。</p>
               <div class="project-tags">
@@ -220,7 +239,10 @@
                 <span>Research</span>
                 <span>Data workflow</span>
               </div>
-              <a class="project-link" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看项目 →</a>
+              <div class="project-actions">
+                <a class="project-link" href="projects/quantpilot.html">案例详情 →</a>
+                <a class="project-link project-link-muted" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub →</a>
+              </div>
             </article>
 
             <article class="project-card" data-category="ai product">
@@ -228,6 +250,9 @@
                 <span class="project-num">03</span>
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
+              <figure class="project-card-media">
+                <img src="assets/images/generated/anime-cover-travel-agent.png" alt="旅行规划 Agent 项目封面" loading="lazy" />
+              </figure>
               <h3 class="project-name">moyuan-travel-agent</h3>
               <p class="project-desc">旅行规划 Agent，围绕用户偏好、预算约束、路线比较和行程生成做决策辅助，适合作为 AI 助手产品化的样板项目。</p>
               <div class="project-tags">
@@ -239,7 +264,10 @@
                 <span>Planner</span>
                 <span>Preference matching</span>
               </div>
-              <a class="project-link" href="https://github.com/tiammomo/moyuan-travel-agent" rel="noreferrer">查看项目 →</a>
+              <div class="project-actions">
+                <a class="project-link" href="projects/travel-agent.html">案例详情 →</a>
+                <a class="project-link project-link-muted" href="https://github.com/tiammomo/moyuan-travel-agent" rel="noreferrer">GitHub →</a>
+              </div>
             </article>
 
             <article class="project-card" data-category="product">
@@ -247,6 +275,9 @@
                 <span class="project-num">04</span>
                 <span class="project-status" data-status="active"><span class="status-dot"></span> Active</span>
               </div>
+              <figure class="project-card-media">
+                <img src="assets/images/generated/anime-cover-mamoji.png" alt="Mamoji 经营管理系统项目封面" loading="lazy" />
+              </figure>
               <h3 class="project-name">Mamoji</h3>
               <p class="project-desc">面向小团队经营管理、记账和业务协作的全栈系统，覆盖前端界面、后端服务、部署脚本和生产环境配置。</p>
               <div class="project-tags">
@@ -258,7 +289,9 @@
                 <span>Accounting</span>
                 <span>Operations</span>
               </div>
-              <a class="project-link" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">查看项目 →</a>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">GitHub →</a>
+              </div>
             </article>
 
             <article class="project-card" data-category="ai product">
@@ -266,6 +299,9 @@
                 <span class="project-num">05</span>
                 <span class="project-status" data-status="wip"><span class="status-dot"></span> WIP</span>
               </div>
+              <figure class="project-card-media">
+                <img src="assets/images/generated/anime-cover-reviewpilot.png" alt="ReviewPilot 电商内容工具项目封面" loading="lazy" />
+              </figure>
               <h3 class="project-name">ReviewPilot</h3>
               <p class="project-desc">跨境电商选品与好评内容工具，把商品信息、卖点梳理和评论生成流程产品化，服务商家内容运营效率。</p>
               <div class="project-tags">
@@ -277,7 +313,9 @@
                 <span>Review generation</span>
                 <span>Merchant workflow</span>
               </div>
-              <a class="project-link" href="https://github.com/tiammomo/ReviewPilot" rel="noreferrer">查看项目 →</a>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/tiammomo/ReviewPilot" rel="noreferrer">GitHub →</a>
+              </div>
             </article>
 
             <article class="project-card" data-category="ai data">
@@ -285,6 +323,9 @@
                 <span class="project-num">06</span>
                 <span class="project-status" data-status="wip"><span class="status-dot"></span> WIP</span>
               </div>
+              <figure class="project-card-media">
+                <img src="assets/images/generated/anime-cover-stock-assistant.png" alt="股票投研数据助手项目封面" loading="lazy" />
+              </figure>
               <h3 class="project-name">moyuan-stock-trading-assistant</h3>
               <p class="project-desc">围绕股票研究和问财数据的投研辅助项目，用 Python 串联数据获取、分析逻辑和策略探索流程。</p>
               <div class="project-tags">
@@ -296,7 +337,46 @@
                 <span>Quant research</span>
                 <span>Data tool</span>
               </div>
-              <a class="project-link" href="https://github.com/tiammomo/moyuan-stock-trading-assistant" rel="noreferrer">查看项目 →</a>
+              <div class="project-actions">
+                <a class="project-link" href="https://github.com/tiammomo/moyuan-stock-trading-assistant" rel="noreferrer">GitHub →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Now / Lab ── -->
+      <section class="now" id="now" aria-labelledby="now-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-tag">Now / Lab</span>
+              <h2 id="now-title">正在持续打磨的方向</h2>
+            </div>
+            <p class="section-note">
+              这些方向会不断沉淀到开源仓库、产品原型和项目文档里。
+            </p>
+          </div>
+          <div class="now-grid">
+            <article class="now-card">
+              <span class="now-card-kicker">Model Runtime</span>
+              <h3>本地模型网关与开发者工作流</h3>
+              <p>围绕 Claude Code、VS Code Claude 和多模型提供商，继续完善协议适配、路由策略、用量观测和小团队控制面板。</p>
+            </article>
+            <article class="now-card">
+              <span class="now-card-kicker">Agent Workspace</span>
+              <h3>投研与数据分析工作台</h3>
+              <p>把策略想法、数据处理、可视化、评测和结果追踪串成可复用工作流，让 Agent 不停留在一次性对话里。</p>
+            </article>
+            <article class="now-card">
+              <span class="now-card-kicker">Product Systems</span>
+              <h3>AI 能力进入真实业务界面</h3>
+              <p>用前后端产品系统承接业务流程，把内容生成、经营管理、旅行规划等能力做成能被日常使用的界面。</p>
+            </article>
+            <article class="now-card">
+              <span class="now-card-kicker">Open Notes</span>
+              <h3>把项目经验写成可复用文档</h3>
+              <p>持续补充架构边界、部署说明、验收标准和路线图，让仓库不只是代码，也能解释为什么这样设计。</p>
             </article>
           </div>
         </div>

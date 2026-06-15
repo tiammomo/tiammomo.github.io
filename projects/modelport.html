@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="ModelPort 重点案例：自托管 Anthropic-compatible 模型网关，连接 Claude Code、VS Code Claude 与多模型提供商。" />
+    <link rel="canonical" href="https://tiammomo.github.io/projects/modelport.html" />
+    <meta property="og:title" content="ModelPort · Tiammomo Case Study" />
+    <meta property="og:description" content="自托管模型网关、协议转换、Provider Routing、用量观测与小团队控制面板。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tiammomo.github.io/projects/modelport.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-cover-modelport.png" />
+    <title>ModelPort · Tiammomo Case Study</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="case-header">
+      <a class="header-brand" href="../index.html#top" aria-label="Tiammomo">
+        <span class="header-brand-mark" aria-hidden="true">T</span>
+        <span class="header-brand-text">Tiammomo</span>
+      </a>
+      <nav class="case-nav" aria-label="案例导航">
+        <a href="../index.html#work">返回项目</a>
+        <a href="https://github.com/tiammomo/ModelPort" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container case-hero-grid">
+          <div class="case-hero-copy">
+            <span class="section-tag">Case Study</span>
+            <h1>ModelPort</h1>
+            <p>
+              一个面向 Claude Code 和 VS Code Claude 的本地模型网关：保持编辑器工作流不变，同时把多模型接入、协议转换、路由策略、鉴权和用量观测收敛到一个自托管入口。
+            </p>
+            <div class="case-actions">
+              <a class="btn btn-primary" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">查看仓库</a>
+              <a class="btn btn-ghost" href="../index.html#work">更多项目</a>
+            </div>
+          </div>
+          <figure class="case-hero-media">
+            <img src="../assets/images/generated/anime-cover-modelport.png" alt="ModelPort 模型网关项目封面" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container case-content-grid">
+          <article class="case-panel">
+            <span class="case-panel-label">Problem</span>
+            <h2>多模型能力很多，但开发者入口应该稳定</h2>
+            <p>
+              不同模型提供商有不同协议、模型命名、鉴权方式和稳定性表现。ModelPort 的核心价值是让开发者继续使用熟悉的 Claude 客户端，同时在本地网关里处理 Provider Routing、协议适配、预算和观测。
+            </p>
+          </article>
+          <article class="case-panel">
+            <span class="case-panel-label">My Role</span>
+            <h2>从协议边界到可运行控制面板</h2>
+            <p>
+              这个项目体现的是工程基础设施能力：入口 API、上游转换、流式响应、配置校验、用量统计、Dashboard、Docker Compose、systemd 和项目文档一起构成可验证交付。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-detail-grid">
+            <article>
+              <h2>核心能力</h2>
+              <ul class="case-list">
+                <li>Anthropic-compatible `/v1/messages` 入口。</li>
+                <li>Provider Routing、模型别名、模型前缀和未知模型透传。</li>
+                <li>本地 Token 鉴权、API Keys、团队/项目、预算和 Allowlist。</li>
+                <li>请求日志、Token 用量、延迟、成本估算和 Prometheus 指标。</li>
+                <li>Docker Compose、配置校验、doctor、provider matrix 和验收文档。</li>
+              </ul>
+            </article>
+            <article>
+              <h2>展示价值</h2>
+              <p>
+                对外展示时，ModelPort 是最能说明“AI 产品工程”能力的项目：它不是单个 Prompt Demo，而是把模型接入、工程边界、安全策略、可观测性和开发者体验合在一起的工具系统。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

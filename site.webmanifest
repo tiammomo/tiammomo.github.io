@@ -1,0 +1,17 @@
+{
+  "name": "Tiammomo · AI Product Engineering",
+  "short_name": "Tiammomo",
+  "description": "Tiammomo 的 AI 产品工程作品集。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b18",
+  "theme_color": "#67e8f9",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 Tiammomo 的个人 GitHub Pages 首页，用来对外介绍 AI 产品工程方向的开源实践：LLM 应用、Agent 工作流、数据工具、工程基础设施和全栈产品原型。
 
+页面采用原创奇幻动漫视觉系统：月夜工作台、精灵系魔法工程师、魔法书与 AI 浮动面板，用来强化“AI 工作站”的个人记忆点，同时避免直接使用任何现成动漫 IP 角色。
+
 这是一个零构建依赖的静态站点，根目录的 `index.html` 会直接作为 `https://tiammomo.github.io/` 的首页发布。
 
 ## 本地预览
@@ -71,8 +73,17 @@ https://tiammomo.github.io/
 ## 内容维护
 
 - 项目卡片在 `index.html` 的 `#work` 区域维护。
+- 重点案例页放在 `projects/` 目录，目前包含 ModelPort、QuantPilot 和 Travel Agent。
 - 项目筛选通过卡片上的 `data-category` 和筛选按钮的 `data-filter` 对应。
 - 状态灯通过 `data-status` 控制：`active`、`wip`、`archived`。
+- 动漫风格图片资产放在 `assets/images/generated/`，当前页面引用 `anime-*` 文件。
 - 视觉和响应式样式集中在 `styles.css`。
 - 复制按钮和导航交互集中在 `script.js`。
 - `.nojekyll` 已放在根目录，GitHub Pages 会按普通静态文件发布。
+
+## 站点文件
+
+- `404.html`：自定义 GitHub Pages 404 页面。
+- `sitemap.xml`：搜索引擎站点地图。
+- `site.webmanifest`：基础 PWA/安装元数据。
+- `assets/favicon.svg`：站点图标。
