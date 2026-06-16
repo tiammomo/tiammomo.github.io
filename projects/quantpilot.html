@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="QuantPilot 重点案例：面向量化研究的数据分析 Agent 工作台，连接策略想法、数据处理、可视化和工作流沉淀。" />
+    <meta name="description" content="QuantPilot 重点案例：面向量化投研、金融数据分析和可视化看板生成的 AI 工作台，覆盖策略平台、Agent Eval、Skills、日志、运维、投研日报和真实行情数据。" />
     <link rel="canonical" href="https://tiammomo.github.io/projects/quantpilot.html" />
     <meta property="og:title" content="QuantPilot · Tiammomo Case Study" />
-    <meta property="og:description" content="量化投研 Agent、数据分析工作台、策略探索和可持续迭代的研究流程。" />
+    <meta property="og:description" content="自然语言量化任务、真实行情数据、策略平台、Agent Eval、Skills、日志与运维治理。" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://tiammomo.github.io/projects/quantpilot.html" />
-    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-cover-quantpilot.png" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/quantpilot/workbench.png" />
     <title>QuantPilot · Tiammomo Case Study</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="../assets/images/generated/anime-cover-quantpilot.webp" type="image/webp" />
+    <link rel="preload" as="image" href="../assets/images/quantpilot/workbench.png" type="image/png" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page">
@@ -36,7 +36,7 @@
               <span class="section-tag">Case Study</span>
               <h1>QuantPilot</h1>
               <p class="case-hero-lead">
-                面向量化研究的 AI 工作台，把策略想法、数据分析、可视化、结果追踪和 Agent 协作放进一个可复用的研究环境里。
+                面向量化投研、金融数据分析和可视化看板生成的 AI 工作台。它不只是聊天入口，而是把自然语言任务、真实行情数据、策略平台、Agent Eval、Skills、日志、运维和投研日报串成一条可追溯、可验证、可复盘的工作流。
               </p>
               <div class="case-hero-actions">
                 <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看仓库</a>
@@ -45,10 +45,7 @@
             </div>
             <div class="case-hero-visual">
               <div class="case-hero-glow" aria-hidden="true"></div>
-              <picture>
-                <source srcset="../assets/images/generated/anime-cover-quantpilot.webp" type="image/webp" />
-                <img src="../assets/images/generated/anime-cover-quantpilot.png" alt="QuantPilot 量化投研工作台项目封面" />
-              </picture>
+              <img src="../assets/images/quantpilot/workbench.png" alt="QuantPilot AI 量化分析工作台截图" />
             </div>
           </div>
         </div>
@@ -60,14 +57,187 @@
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◇</div>
               <span class="case-duo-kicker">Problem</span>
-              <h2>投研不是一次对话，而是一条可追踪的工作流</h2>
-              <p>量化研究涉及数据源、清洗、特征、策略假设、回测结果和复盘。QuantPilot 的方向是让 Agent 帮忙推进分析，但把中间过程留在结构化工作台里。</p>
+              <h2>投研 Agent 需要真实数据和验证链路</h2>
+              <p>量化研究不是一次回答就结束。它涉及标的解析、行情/K 线、财务与公告、策略假设、生成代码、可视化结果、运行日志和复盘记录。QuantPilot 的核心目标，是让 Agent 生成结果有数据来源、有质量报告、有评测约束，也能被运维平台追踪。</p>
             </article>
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◆</div>
               <span class="case-duo-kicker">My Role</span>
-              <h2>把数据工具和 AI 助手做成产品界面</h2>
-              <p>这个项目强调产品化能力：不是只做脚本，而是为研究流程设计可交互界面、模块边界和结果沉淀方式，让后续迭代有明确入口。</p>
+              <h2>把 AI 生成链路做成可运维的数据产品</h2>
+              <p>项目覆盖 Next.js 工作台、Python 市场数据后端、PostgreSQL / TimescaleDB / Redis 数据底座、Agent Runtime、Skills 治理、策略平台、Agent Eval、投研日报、日志中心和运维平台。重点是把复杂能力拆成可操作的产品模块，而不是停留在脚本或单页 demo。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Product Screens</span>
+            <h2>最新本地运行截图</h2>
+          </div>
+          <div class="case-screenshots">
+            <figure class="case-ss case-ss--hero">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/strategy-platform.png" alt="QuantPilot 策略平台 K 线详情" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>策略平台与 K 线详情</strong>
+                <span>A 股股票池已补充行情、强弱、趋势、流动性和估值；展开通富微电可看到日线、成交量、MA5 / MA10 / MA20 / MA30 / MA60 和事件标记。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/workbench.png" alt="QuantPilot AI 工作台" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>AI 工作台</strong>
+                <span>一句话创建量化任务，选择 Agent 执行器、模型和能力类型，进入项目聊天与生成预览。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/data-platform.png" alt="QuantPilot 数据平台" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>数据平台</strong>
+                <span>能力矩阵展示 8 个能力、19/23 数据 provider、降级状态和市场 API 在线情况。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/skills.png" alt="QuantPilot Skills 管理" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>Skills 管理</strong>
+                <span>11 个核心 Skills 覆盖运行规划、数据注册、标的解析、图片提取、行情数据、数据质量和可视化看板。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/eval-platform.png" alt="QuantPilot Agent Eval 测试用例" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>Agent Eval</strong>
+                <span>评测平台沉淀 13 个测试用例，覆盖基本面、技术分析、策略回测、标的对比、组合风控和意图澄清。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/ops-platform.png" alt="QuantPilot 运维平台日志" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>运维日志</strong>
+                <span>运维评分 72，日志中心读取 Loki，并保留 Next.js dev、启动脚本、市场数据后端和评测队列日志兜底。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/quantpilot/research-reports.png" alt="QuantPilot 投研日报" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>投研日报</strong>
+                <span>围绕观察池做证据采样、结构化报告、推送记录和数据源矩阵，预留新闻与舆情源接入。</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Modules</span>
+            <h2>值得展开介绍的模块</h2>
+          </div>
+          <div class="case-cap-grid">
+            <div class="case-cap-item">
+              <span class="case-cap-num">01</span>
+              <div>
+                <h3>AI 工作台</h3>
+                <p>承接用户的自然语言投研问题，完成能力识别、模型选择、附件接收、项目创建、聊天执行和结果预览。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">02</span>
+              <div>
+                <h3>策略平台</h3>
+                <p>股票池、ETF/指数池、策略目录、因子目录、板块资金、基础组件和金融知识组成投研操作台。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">03</span>
+              <div>
+                <h3>数据平台</h3>
+                <p>把能力域、数据源、Provider 健康、降级模式、市场 API 和数据契约做成可观察的控制面。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">04</span>
+              <div>
+                <h3>Skills 管理</h3>
+                <p>把运行规划、信源选择、标的解析、图片提取、行情数据、数据质量、视觉看板等规则沉淀为技能资产。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">05</span>
+              <div>
+                <h3>Agent Eval</h3>
+                <p>维护测试用例、评测集、评测器和运行历史，用例覆盖不同投研能力，避免 Agent 迭代后质量漂移。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">06</span>
+              <div>
+                <h3>日志与运维</h3>
+                <p>Loki 集中日志、本地日志兜底、Docker 容器、workspace 健康、trace 和巡检结果统一进入运维平台。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">07</span>
+              <div>
+                <h3>投研日报</h3>
+                <p>围绕自选观察池生成证据型日报，沉淀 Markdown / JSON 报告、推送记录和数据源矩阵。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">08</span>
+              <div>
+                <h3>生成工作空间</h3>
+                <p>每个任务沉淀 run plan、events、dashboard-data、evidence、validation、repair plan 和视觉检查报告。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Architecture</span>
+            <h2>从研究问题到可验证工作空间</h2>
+          </div>
+          <div class="case-flow">
+            <div class="case-flow-track" aria-hidden="true"></div>
+            <article class="case-flow-step">
+              <span class="case-flow-num">01</span>
+              <h3>Task Intake</h3>
+              <p>首页接收自然语言问题和截图附件，识别能力、标的、时间范围、模型和执行器。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">02</span>
+              <h3>Data Prefetch</h3>
+              <p>平台按 run plan 调用市场数据后端，从本地 TimescaleDB 和 provider 获取行情、K 线、因子和证据。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">03</span>
+              <h3>Agent Workspace</h3>
+              <p>Agent 基于 Skills 写入 Next.js 看板、数据文件、来源记录、事件日志、验证报告和修复计划。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">04</span>
+              <h3>Validation Loop</h3>
+              <p>平台执行 HTTP、数据、证据、截图、产物契约和 eval 回归检查，失败后进入自动修复链路。</p>
             </article>
           </div>
         </div>
@@ -76,22 +246,60 @@
       <section class="case-section">
         <div class="container">
           <div class="case-duo">
-            <article class="case-duo-card">
-              <div class="case-duo-icon" aria-hidden="true">◇</div>
-              <span class="case-duo-kicker">Capabilities</span>
-              <h2>核心能力</h2>
+            <article class="case-duo-card case-duo-card--good">
+              <div class="case-duo-icon" aria-hidden="true">✓</div>
+              <span class="case-duo-kicker">本地实操</span>
+              <h2>最新运行数据已验证</h2>
               <ul class="case-list">
-                <li>把策略想法转成可执行分析任务。</li>
-                <li>用数据视图承载行情、指标、回测和比较结果。</li>
-                <li>将 Agent 的推理过程和产出沉淀为工作区资产。</li>
-                <li>为投研流程保留可复盘的上下文和结果链路。</li>
+                <li><code>http://localhost:3000</code> 主工作台可访问，策略、日报、运维、数据、评测和 Skills 页面均可打开。</li>
+                <li><code>http://127.0.0.1:8000/health</code> 返回 <code>status: ok</code>。</li>
+                <li>能力中心返回 8 个能力、6 个 ready、19/23 provider 可用、11 个 Skills 全部正常。</li>
+                <li>策略平台返回 7 个策略模板、298 个跟踪标的、298 个已同步标的、356511 条 K 线。</li>
+                <li>基础设施健康检查显示 PostgreSQL 已连接、TimescaleDB 2.27.1 可用、量化 schema 表已存在。</li>
+                <li>运维平台日志页可读取 Loki 220 行集中日志，并有 Next.js、启动脚本和市场 API 本地日志兜底。</li>
               </ul>
             </article>
-            <article class="case-duo-card">
-              <div class="case-duo-icon" aria-hidden="true">◆</div>
-              <span class="case-duo-kicker">Value</span>
-              <h2>展示价值</h2>
-              <p>QuantPilot 适合作为"AI + 数据产品"的代表项目：它能展示你如何把 Agent 能力嵌进复杂业务流程，而不是停留在聊天框或一次性脚本里。</p>
+            <article class="case-duo-card case-duo-card--bad">
+              <div class="case-duo-icon" aria-hidden="true">!</div>
+              <span class="case-duo-kicker">产品边界</span>
+              <h2>研究辅助，不是交易指令</h2>
+              <ul class="case-list">
+                <li>生成内容只用于研究、复盘和辅助决策，不构成投资建议、收益承诺或即时交易指令。</li>
+                <li>外部行情和财务接口可能延迟、缺字段或降级，必须保留来源、时间和数据质量说明。</li>
+                <li>Agent 生成结果要经过自动验证、视觉检查、评测回归和人工复核后再进入正式研究材料。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Roadmap</span>
+            <h2>后续方向</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>把生成质量继续收紧</h3>
+                <p>强化自动修复、视觉质量检查、workspace 契约、stale report 识别和 Agent Eval 覆盖。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>补真正有投研价值的数据</h3>
+                <p>继续扩展公告、新闻、舆情、横截面因子、资金流和批量分析能力，而不是只堆页面。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>长任务 worker 化</h3>
+                <p>将评测、补数、日报、生成、推送和日志聚合从请求链路拆成更稳定的队列与 worker。</p>
+              </div>
             </article>
           </div>
         </div>

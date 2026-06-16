@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Mamoji 重点案例：面向初创公司和小团队的轻量经营管理系统，覆盖经营工作台、票据凭证、税务合规、人员薪酬、权限审计和生产部署。" />
+    <link rel="canonical" href="https://tiammomo.github.io/projects/mamoji.html" />
+    <meta property="og:title" content="Mamoji · Tiammomo Case Study" />
+    <meta property="og:description" content="Next.js + Spring Boot + PostgreSQL 的企业经营管理系统，从业务工作台到生产部署闭环。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tiammomo.github.io/projects/mamoji.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/mamoji/dashboard.png" />
+    <title>Mamoji · Tiammomo Case Study</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="../assets/images/mamoji/dashboard.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="case-header">
+      <a class="case-header-brand" href="../index.html" aria-label="Tiammomo 主页">
+        <span class="case-header-mark" aria-hidden="true">T</span>
+        <span>Tiammomo</span>
+      </a>
+      <nav class="case-nav" aria-label="案例导航">
+        <a href="../index.html#work">← 返回项目</a>
+        <a class="case-nav-gh" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container">
+          <div class="case-hero-grid">
+            <div class="case-hero-text">
+              <span class="section-tag">Case Study</span>
+              <h1>Mamoji</h1>
+              <p class="case-hero-lead">
+                面向初创公司和小团队的轻量经营管理系统。它把收入、成本、预算、现金流、票据凭证、税务事项、员工档案、人员薪酬、权限审计和生产运维放在同一个工作台里，让团队能从日常经营数据里看清成本、风险和增长空间。
+              </p>
+              <div class="case-hero-actions">
+                <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">查看仓库</a>
+                <a class="btn btn-ghost btn-lg" href="../index.html#work">更多项目</a>
+              </div>
+            </div>
+            <div class="case-hero-visual">
+              <div class="case-hero-glow" aria-hidden="true"></div>
+              <img src="../assets/images/mamoji/dashboard.png" alt="Mamoji 企业经营工作台截图" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◇</div>
+              <span class="case-duo-kicker">Problem</span>
+              <h2>小团队经营数据常常散在多个工具里</h2>
+              <p>收入、成本、报销、税务、薪酬和人员变化之间存在天然关联，但很多初创团队会把它们拆散在表格、记账工具、聊天记录和文件夹里。Mamoji 的目标是把这些经营对象统一成可查询、可预警、可审计的轻量系统。</p>
+            </article>
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◆</div>
+              <span class="case-duo-kicker">My Role</span>
+              <h2>从业务建模到全栈投产闭环</h2>
+              <p>前端使用 Next.js、React、TypeScript 和 Arco Design 构建后台工作台；后端使用 Java 21、Spring Boot、Spring JDBC 和 Actuator 提供业务 API；数据落 PostgreSQL，附件走 MinIO，并配套 Docker Compose、Caddy、Prometheus、备份恢复和冒烟脚本。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Product Screens</span>
+            <h2>本地运行系统真实截图</h2>
+          </div>
+          <div class="case-screenshots">
+            <figure class="case-ss case-ss--hero">
+              <div class="case-ss-frame">
+                <img src="../assets/images/mamoji/dashboard.png" alt="Mamoji 经营工作台" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>经营工作台</strong>
+                <span>收入、成本、利润、预算使用率、经营评分、今日优先动作和日清检查集中在首页。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/mamoji/compensation.png" alt="Mamoji 人员薪酬" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>人员薪酬</strong>
+                <span>按员工拆解应发工资、五险一金、个税预扣、个人到卡和公司总成本。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/mamoji/tax-compliance.png" alt="Mamoji 税务合规" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>税务合规</strong>
+                <span>围绕深圳初创公司轻税务模板，管理税费台账、申报截止日、票据缺口和缴纳闭环。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/mamoji/receipts.png" alt="Mamoji 票据凭证" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>票据凭证</strong>
+                <span>把发票、报销单、银行回单、合同付款和税务回执统一归档，并和流水、税务口径关联。</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Capabilities</span>
+            <h2>核心能力</h2>
+          </div>
+          <div class="case-cap-grid">
+            <div class="case-cap-item">
+              <span class="case-cap-num">01</span>
+              <div>
+                <h3>经营数据工作台</h3>
+                <p>收入、成本、利润、预算、现金流、风险提醒和经营优先级统一呈现。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">02</span>
+              <div>
+                <h3>财务与票据闭环</h3>
+                <p>资金账户、经营流水、预算执行、票据凭证、附件归档和报销流程互相关联。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">03</span>
+              <div>
+                <h3>税务与地区画像</h3>
+                <p>以深圳初创团队轻税务模板组织税种、税期、资料缺口和合规风险提醒。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">04</span>
+              <div>
+                <h3>组织与人员薪酬</h3>
+                <p>员工档案、部门岗位、入离职事件、薪酬月结、五险一金和个税预扣。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">05</span>
+              <div>
+                <h3>权限与审计</h3>
+                <p>角色、权限、公司主体范围、关键对象操作记录和敏感数据访问边界。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">06</span>
+              <div>
+                <h3>生产化基础设施</h3>
+                <p>Docker Compose、PostgreSQL、MinIO、Caddy、Prometheus、备份恢复和 smoke scripts。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Architecture</span>
+            <h2>从页面操作到经营数据沉淀</h2>
+          </div>
+          <div class="case-flow">
+            <div class="case-flow-track" aria-hidden="true"></div>
+            <article class="case-flow-step">
+              <span class="case-flow-num">01</span>
+              <h3>Next.js Workbench</h3>
+              <p>经营、财务、税务、HR 和系统管理模块组成统一后台，支持公司主体切换和角色化入口。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">02</span>
+              <h3>Spring Boot API</h3>
+              <p>后端承载认证、权限、经营流水、预算、税务、票据、员工、薪酬、审计和通知接口。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">03</span>
+              <h3>PostgreSQL & MinIO</h3>
+              <p>结构化经营数据写入 PostgreSQL，发票、合同、回单等附件进入 MinIO 私有 bucket。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">04</span>
+              <h3>Ops Layer</h3>
+              <p>Caddy 承接生产入口，Prometheus 观测后端健康，备份、恢复、发布和冒烟脚本保障投产。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card case-duo-card--good">
+              <div class="case-duo-icon" aria-hidden="true">✓</div>
+              <span class="case-duo-kicker">本地验证</span>
+              <h2>实际运行环境已验证</h2>
+              <ul class="case-list">
+                <li><code>http://localhost:33000</code> 前端可访问，并可使用演示管理员进入工作台。</li>
+                <li><code>http://localhost:38080/actuator/health</code> 返回 <code>status: UP</code>。</li>
+                <li>截图来自本地运行页面：Dashboard、人员薪酬、税务合规和票据凭证。</li>
+              </ul>
+            </article>
+            <article class="case-duo-card case-duo-card--bad">
+              <div class="case-duo-icon" aria-hidden="true">!</div>
+              <span class="case-duo-kicker">产品边界</span>
+              <h2>Mamoji 不替代正式财税系统</h2>
+              <ul class="case-list">
+                <li>税费和薪酬结果应由财务负责人、代理记账或当地政策口径复核。</li>
+                <li>不替代电子税务局、银行、正式财务软件或人事合同系统。</li>
+                <li>更适合作为初创公司经营中台原型、内部管理系统和投产能力展示。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Roadmap</span>
+            <h2>后续方向</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>多公司与政策画像</h3>
+                <p>完善多公司主体隔离、地区政策版本、公司级覆盖项和跨公司合并经营报表。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>审批协同与审计增强</h3>
+                <p>围绕报销、付款、预算调整、入职、离职建立更完整的审批流和审计追踪。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>Data Agent 方向接入</h3>
+                <p>把经营报表、税务缺口、预算风险和现金流预测沉淀为可查询、可解释的经营数据 Agent。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="case-footer">
+      <div class="container case-footer-inner">
+        <a href="../index.html#work">← 返回项目列表</a>
+        <a href="https://github.com/tiammomo/Mamoji" rel="noreferrer">GitHub →</a>
+      </div>
+    </footer>
+  </body>
+</html>
