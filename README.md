@@ -99,7 +99,7 @@ modelport.png
 quantpilot.png
 travel-agent.png
 mamoji.png
-reviewpilot.png
+sellerharbor.png
 stock-assistant.png
 portfolio-og.png
 ```

@@ -29,7 +29,7 @@ SLOTS = [
     ImageSlot("quantpilot", "anime-cover-quantpilot", 1200),
     ImageSlot("travel-agent", "anime-cover-travel-agent", 1200),
     ImageSlot("mamoji", "anime-cover-mamoji", 1200),
-    ImageSlot("reviewpilot", "anime-cover-reviewpilot", 1200),
+    ImageSlot("sellerharbor", "anime-cover-sellerharbor", 1200),
     ImageSlot("stock-assistant", "anime-cover-stock-assistant", 1200),
 ]
 

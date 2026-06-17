@@ -97,28 +97,27 @@
     "githubUrl": "https://github.com/tiammomo/Mamoji"
   },
   {
-    "id": "reviewpilot",
-    "name": "ReviewPilot",
-    "status": "wip",
-    "categories": ["ai", "product"],
+    "id": "sellerharbor",
+    "name": "SellerHarbor",
+    "status": "active",
+    "categories": ["ai", "product", "infra"],
     "image": {
-      "png": "assets/images/generated/anime-cover-reviewpilot.png",
-      "webp": "assets/images/generated/anime-cover-reviewpilot-thumb.webp",
+      "png": "assets/images/sellerharbor/dashboard.png",
       "alt": {
-        "zh": "ReviewPilot 电商内容工具项目封面",
-        "en": "ReviewPilot project cover"
+        "zh": "SellerHarbor 跨境卖家商品运营看板真实截图",
+        "en": "SellerHarbor cross-border seller operations dashboard screenshot"
       }
     },
     "summary": {
-      "zh": "跨境电商选品与好评内容工具，把商品信息、卖点梳理和评论生成流程产品化，服务商家内容运营效率。",
-      "en": "A cross-border ecommerce product selection and review-content tool that productizes merchant content operations."
+      "zh": "面向 Temu / TikTok Shop 跨境卖家的商品运营港，统一商品主档、平台 Listing、海外仓库存、真实反馈、内容生成和审核动作。",
+      "en": "A product operations harbor for Temu and TikTok Shop sellers, unifying product master data, platform listings, overseas inventory, real feedback, generation, and review workflows."
     },
-    "tags": ["TypeScript", "E-commerce", "Content Tool"],
+    "tags": ["Next.js", "FastAPI", "Commerce Ops"],
     "meta": {
-      "zh": ["Review generation", "Merchant workflow"],
-      "en": ["Review generation", "Merchant workflow"]
+      "zh": ["跨境运营港", "库存 / Listing"],
+      "en": ["Seller workspace", "Inventory / Listing"]
     },
-    "githubUrl": "https://github.com/tiammomo/ReviewPilot"
+    "githubUrl": "https://github.com/tiammomo/SellerHarbor"
   },
   {
     "id": "stock-assistant",
