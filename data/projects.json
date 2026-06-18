@@ -48,29 +48,28 @@
     "githubUrl": "https://github.com/tiammomo/QuantPilot"
   },
   {
-    "id": "travel-agent",
-    "name": "moyuan-travel-agent",
+    "id": "routepilot",
+    "name": "RoutePilot",
     "status": "active",
-    "categories": ["ai", "product"],
+    "categories": ["ai", "data", "product"],
     "image": {
-      "png": "assets/images/generated/anime-cover-travel-agent.png",
-      "webp": "assets/images/generated/anime-cover-travel-agent-thumb.webp",
+      "png": "assets/images/routepilot/city-explorer.png",
       "alt": {
-        "zh": "旅行规划 Agent 项目封面",
-        "en": "Travel agent project cover"
+        "zh": "RoutePilot 城市探索工作台真实截图",
+        "en": "RoutePilot city exploration workspace screenshot"
       }
     },
     "summary": {
-      "zh": "旅行规划 Agent，围绕用户偏好、预算约束、路线比较和行程生成做决策辅助，适合作为 AI 助手产品化的样板项目。",
-      "en": "A travel planning agent around preferences, budgets, route comparison, and itinerary generation as a productized AI assistant flow."
+      "zh": "AI 旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。",
+      "en": "An AI travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing."
     },
-    "tags": ["TypeScript", "Agent", "Travel Planning"],
+    "tags": ["Next.js", "LangGraph", "Travel Data"],
     "meta": {
-      "zh": ["Planner", "Preference matching"],
-      "en": ["Planner", "Preference matching"]
+      "zh": ["北京路线库", "城市探索"],
+      "en": ["Beijing routes", "City discovery"]
     },
-    "caseUrl": "projects/travel-agent.html",
-    "githubUrl": "https://github.com/tiammomo/moyuan-travel-agent"
+    "caseUrl": "projects/routepilot.html",
+    "githubUrl": "https://github.com/tiammomo/RoutePilot"
   },
   {
     "id": "mamoji",

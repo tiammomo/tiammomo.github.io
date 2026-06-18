@@ -75,7 +75,7 @@ https://tiammomo.github.io/
 - 项目区结构在 `index.html` / `en.html` 的 `#work` 区域维护。
 - 项目数据源在 `data/projects.json`，中文首页和英文首页会优先从这里渲染项目卡片；HTML 内仍保留静态卡片作为 fallback。
 - 英文首页在 `en.html`，与中文首页保持同一套视觉与项目入口。
-- 重点案例页放在 `projects/` 目录，目前包含 ModelPort、QuantPilot、Mamoji、SellerHarbor 和 Travel Agent。
+- 重点案例页放在 `projects/` 目录，目前包含 ModelPort、QuantPilot、RoutePilot、Mamoji 和 SellerHarbor。
 - 项目筛选通过卡片上的 `data-category` 和筛选按钮的 `data-filter` 对应。
 - 状态灯通过 `data-status` 控制：`active`、`wip`、`archived`。
 - 动漫风格图片资产放在 `assets/images/generated/`，页面优先加载 `webp`，并保留 `png` 作为社交分享和兼容 fallback。
@@ -97,7 +97,7 @@ assets/images/replacements/
 ```text
 modelport.png
 quantpilot.png
-travel-agent.png
+routepilot.png
 mamoji.png
 sellerharbor.png
 stock-assistant.png

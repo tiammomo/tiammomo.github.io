@@ -19,7 +19,7 @@ Use one image per slot. Supported extensions: `.png`, `.jpg`, `.jpeg`, `.webp`.
 ```text
 modelport.png
 quantpilot.png
-travel-agent.png
+routepilot.png
 mamoji.png
 sellerharbor.png
 stock-assistant.png

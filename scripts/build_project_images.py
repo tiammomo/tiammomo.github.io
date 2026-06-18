@@ -27,7 +27,7 @@ SLOTS = [
     ImageSlot("portfolio-og", "anime-portfolio-og", 1440),
     ImageSlot("modelport", "anime-cover-modelport", 1200),
     ImageSlot("quantpilot", "anime-cover-quantpilot", 1200),
-    ImageSlot("travel-agent", "anime-cover-travel-agent", 1200),
+    ImageSlot("routepilot", "anime-cover-routepilot", 1200),
     ImageSlot("mamoji", "anime-cover-mamoji", 1200),
     ImageSlot("sellerharbor", "anime-cover-sellerharbor", 1200),
     ImageSlot("stock-assistant", "anime-cover-stock-assistant", 1200),

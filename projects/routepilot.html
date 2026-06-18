@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="RoutePilot 重点案例：面向真实旅行决策场景的 AI 路线规划工作台，覆盖城市探索、北京 POI/UGC 数据、路线库、动态重规划、冲突检测和结果分享。" />
+    <link rel="canonical" href="https://tiammomo.github.io/projects/routepilot.html" />
+    <meta property="og:title" content="RoutePilot · Tiammomo Case Study" />
+    <meta property="og:description" content="AI 旅行路线规划工作台，把城市探索、路线库、预算约束、动态重规划和可执行行程结果收口成产品流程。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tiammomo.github.io/projects/routepilot.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/routepilot/city-explorer.png" />
+    <title>RoutePilot · Tiammomo Case Study</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="../assets/images/routepilot/city-explorer.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="case-header">
+      <a class="case-header-brand" href="../index.html" aria-label="Tiammomo 主页">
+        <span class="case-header-mark" aria-hidden="true">T</span>
+        <span>Tiammomo</span>
+      </a>
+      <nav class="case-nav" aria-label="案例导航">
+        <a href="../index.html#work">← 返回项目</a>
+        <a class="case-nav-gh" href="https://github.com/tiammomo/RoutePilot" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container">
+          <div class="case-hero-grid">
+            <div class="case-hero-text">
+              <span class="section-tag">Case Study</span>
+              <h1>RoutePilot</h1>
+              <p class="case-hero-lead">
+                面向真实旅行决策场景的 AI 路线规划工作台。它不只是回答“去哪玩”，而是把城市探索、预算与脚力约束、北京 POI/UGC 数据、预生成路线库、动态重规划、冲突检测和结果分享整理成一条可以继续操作的产品链路。
+              </p>
+              <div class="case-hero-actions">
+                <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/RoutePilot" rel="noreferrer">查看仓库</a>
+                <a class="btn btn-ghost btn-lg" href="../index.html#work">更多项目</a>
+              </div>
+            </div>
+            <div class="case-hero-visual">
+              <div class="case-hero-glow" aria-hidden="true"></div>
+              <img src="../assets/images/routepilot/city-explorer.png" alt="RoutePilot 城市探索工作台截图" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◇</div>
+              <span class="case-duo-kicker">Problem</span>
+              <h2>旅行决策不是一段长文本能解决的</h2>
+              <p>用户需要在目的地、预算、同行人、步行强度、天气、餐饮、路线顺序和景点开放时间之间反复权衡。RoutePilot 的目标，是把这些约束转成可比较、可调整、可验证的行程结果，让用户从模糊需求走到真正能出发的路线。</p>
+            </article>
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◆</div>
+              <span class="case-duo-kicker">My Role</span>
+              <h2>把旅行 Agent 做成数据驱动的产品工作台</h2>
+              <p>项目覆盖 Next.js / React / TypeScript 前端、FastAPI 与 Agent Runtime、LangChain / LangGraph、多会话与 SSE 流式执行、PostgreSQL / Prisma 旅行数据 Demo、北京 POI/UGC/通勤边/路线库，以及测试、文档和运维治理入口。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Product Screens</span>
+            <h2>本地运行系统真实截图</h2>
+          </div>
+          <div class="case-screenshots">
+            <figure class="case-ss case-ss--hero">
+              <div class="case-ss-frame">
+                <img src="../assets/images/routepilot/city-explorer.png" alt="RoutePilot 城市探索" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>城市探索</strong>
+                <span>从周末快闪、亲子省心、预算吃好等场景出发，筛选真实策展城市，形成候选池、对比池和目的地 shortlist。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/routepilot/chat.png" alt="RoutePilot 对话体验" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>对话体验</strong>
+                <span>提供 3 秒上手示例、ReAct / Plan / Direct 模式、行程约束输入和多会话历史，让用户先问问题再逐步补充约束。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/routepilot/itinerary-result.png" alt="RoutePilot 行程结果工具箱" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>行程结果工具箱</strong>
+                <span>把生成结果拆成每日行程卡、预算信息、工具调用、验证状态和风险提示，便于继续调整、导出和分享。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/routepilot/system-status.png" alt="RoutePilot 系统状态中心" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>系统状态中心</strong>
+                <span>展示 API、LLM、工具初始化、版本、请求、监控窗口和结构化 intent 聚合状态，方便定位运行时问题。</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Capabilities</span>
+            <h2>核心能力</h2>
+          </div>
+          <div class="case-cap-grid">
+            <div class="case-cap-item">
+              <span class="case-cap-num">01</span>
+              <div>
+                <h3>多模式 Agent 对话</h3>
+                <p>支持 direct、react、plan 三种对话模式，SSE 输出阶段、工具调用、推理片段、最终答案和执行元数据。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">02</span>
+              <div>
+                <h3>城市探索与候选池</h3>
+                <p>内置真实策展城市池，支持预算、亲子、雨天、少走路、美食等快速筛选和候选城市对比。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">03</span>
+              <div>
+                <h3>北京旅行数据 Demo</h3>
+                <p>围绕本地 POI、酒店、餐饮、文化地点、UGC 评论特征、Wiki 数据和高德通勤边做路线规划。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">04</span>
+              <div>
+                <h3>预生成路线库</h3>
+                <p>PostgreSQL 保存 travel_precomputed_routes，运行时优先命中路线库，再用本地 POI/UGC 数据兜底检索。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">05</span>
+              <div>
+                <h3>动态重规划</h3>
+                <p>支持追加、删除、替换、保留地点等局部调整，结合路线补丁解释变更原因。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">06</span>
+              <div>
+                <h3>冲突检测与修复</h3>
+                <p>识别时间冲突、路程过长、闭馆风险、预算压力和时效风险，并提供继续修复的操作入口。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">07</span>
+              <div>
+                <h3>结果导出与分享</h3>
+                <p>行程结果沉淀成结构化 artifact，支持图片长图、分享短链、执行清单和同行人决策。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">08</span>
+              <div>
+                <h3>工程治理</h3>
+                <p>保留 runtime doctor、support bundle、release harness、skills market、snapshot 和 benchmark 文档。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Architecture</span>
+            <h2>从自然语言到可执行路线</h2>
+          </div>
+          <div class="case-flow">
+            <div class="case-flow-track" aria-hidden="true"></div>
+            <article class="case-flow-step">
+              <span class="case-flow-num">01</span>
+              <h3>Intent Parsing</h3>
+              <p>用户输入被解析成区域、时长、预算、餐饮、脚力和偏好约束，大模型不直接拼 SQL。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">02</span>
+              <h3>Controlled Query</h3>
+              <p>后端把 intent 转成受控查询，优先命中预生成路线库，并从 POI、UGC、Wiki 和通勤边补充证据。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">03</span>
+              <h3>Agent Runtime</h3>
+              <p>Agent Runtime 串联 graph、skills、memory、checkpoint 和 runtime event emitters，向前端输出流式过程。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">04</span>
+              <h3>Artifact & Share</h3>
+              <p>路线、预算、冲突、可信度、风险和工具调用被整理成结构化 artifact，进入结果工具箱和分享链路。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card case-duo-card--good">
+              <div class="case-duo-icon" aria-hidden="true">✓</div>
+              <span class="case-duo-kicker">本地实操</span>
+              <h2>当前页面已本地访问验证</h2>
+              <ul class="case-list">
+                <li><code>http://localhost:33003/</code> 前端工作台可访问。</li>
+                <li>当前本地页面可切换对话体验、城市探索和系统状态三个主要视图。</li>
+                <li>截图来自本地运行页面和仓库 README 中已沉淀的行程结果图。</li>
+                <li>仓库提供 PostgreSQL 旅行数据表、路线库构建、导入和 doctor 脚本。</li>
+              </ul>
+            </article>
+            <article class="case-duo-card case-duo-card--bad">
+              <div class="case-duo-icon" aria-hidden="true">!</div>
+              <span class="case-duo-kicker">产品边界</span>
+              <h2>旅行建议需要显式风险提示</h2>
+              <ul class="case-list">
+                <li>营业时间、票价、天气、交通和预约信息具有强时效性，结果需要二次确认。</li>
+                <li>模型不直接生成 SQL 字符串，路线查询由后端模板和参数控制。</li>
+                <li>高风险或时效性强的结论需要展示 stale、fallback、risk 和可信度信息。</li>
+                <li>项目更适合作为旅行 Agent 产品化、数据链路和交互工作台的展示样板。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Roadmap</span>
+            <h2>后续方向</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>北京路线规划体验增强</h3>
+                <p>继续优化路线编辑、地点替换、餐饮插入、局部重排和地图可视化。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>数据源质量与排序</h3>
+                <p>扩展 POI、UGC、Wiki、通勤边和开放时间数据，提升推荐解释和排序稳定性。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>分享页与同行决策</h3>
+                <p>强化长图导出、短链分享、方案对比和同行人投票，让旅行决策更容易达成共识。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>Agent 可靠性治理</h3>
+                <p>继续沉淀回归样例、黄金流、性能检查、运行收据和故障诊断，降低 Agent 质量漂移。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="case-footer">
+      <div class="container case-footer-inner">
+        <a href="../index.html#work">← 返回项目列表</a>
+        <a href="https://github.com/tiammomo/RoutePilot" rel="noreferrer">GitHub →</a>
+      </div>
+    </footer>
+  </body>
+</html>
