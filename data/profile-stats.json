@@ -1,0 +1,16 @@
+{
+  "owner": "tiammomo",
+  "generatedAt": "2026-07-01T07:50:39Z",
+  "sources": {
+    "githubUser": "https://api.github.com/users/tiammomo",
+    "githubRepos": "https://api.github.com/users/tiammomo/repos",
+    "githubPullRequests": "https://api.github.com/search/issues?q=author:tiammomo+type:pr+is:public",
+    "projects": "data/projects.json"
+  },
+  "stats": {
+    "publicRepos": 31,
+    "selectedProjects": 6,
+    "totalStars": 42,
+    "authoredPublicPullRequests": 17
+  }
+}

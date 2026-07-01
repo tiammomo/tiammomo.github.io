@@ -52,8 +52,8 @@
       </button>
       <nav class="header-nav" id="main-nav" aria-label="Primary navigation">
         <a href="#work">Projects</a>
-        <a href="#now">Now</a>
-        <a href="#process">Method</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
         <a href="#contact">Contact</a>
         <a href="index.html" lang="zh-CN">中文</a>
       </nav>
@@ -62,17 +62,17 @@
     <main>
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="hero-label">LLM / Agent · Data Systems · Product Workbenches</p>
-          <h1 class="hero-title" id="hero-title">Agent Workflows Inside Real Product Systems</h1>
+          <p class="hero-label">DATA ENGINEERING · DATA AGENT · GITHUB PROJECTS</p>
+          <h1 class="hero-title" id="hero-title">AI Product Engineering Portfolio</h1>
           <p class="hero-desc">
-            I am Tiammomo, a full-stack AI product engineer focused on connecting LLMs and agents to real data, business workflows, and usable product interfaces. This portfolio shows model gateways, quantitative research, commerce operations, image workflows, route planning, and business systems from prototype to deployment and human review boundaries.
+            I am Tiammomo, an ACM regional silver medalist, invitational gold medalist, and hackathon enthusiast focused on data engineering and Data Agents. I have spent time on big-data platforms, data warehouses, offline and realtime pipelines, and now I am exploring how agents can connect to data, understand business problems, and produce reusable analysis workflows.
           </p>
           <div class="hero-highlights" aria-label="Personal highlights">
-            <span>LLM / Agent productization</span>
-            <span>Data-backed workbenches</span>
-            <span>Model gateways / infra</span>
-            <span>Real screenshots and case studies</span>
             <span>ACM Regional Silver · Invitational Gold</span>
+            <span>Hackathon enthusiast</span>
+            <span>Data Agent</span>
+            <span>Big data platform / warehouse</span>
+            <span>Offline / realtime pipelines</span>
           </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">View Projects</a>
@@ -83,11 +83,38 @@
         <div class="hero-visual" aria-hidden="true"></div>
       </section>
 
-      <section class="stats" aria-label="Overview">
-        <div class="stats-item"><span class="stats-value">31</span><span class="stats-label">GitHub public repos</span></div>
-        <div class="stats-item"><span class="stats-value">6</span><span class="stats-label">Selected GitHub projects</span></div>
-        <div class="stats-item"><span class="stats-value">37</span><span class="stats-label">Total stars</span></div>
-        <div class="stats-item"><span class="stats-value">18</span><span class="stats-label">Authored public PRs</span></div>
+      <section class="stats" aria-label="Overview" data-profile-stats data-stats-src="data/profile-stats.json" data-project-src="data/projects.json">
+        <div class="stats-item"><span class="stats-value" data-stat-value="publicRepos">31</span><span class="stats-label">GitHub public repos</span></div>
+        <div class="stats-item"><span class="stats-value" data-stat-value="selectedProjects">6</span><span class="stats-label">Selected GitHub projects</span></div>
+        <div class="stats-item"><span class="stats-value" data-stat-value="totalStars">42</span><span class="stats-label">Total stars</span></div>
+        <div class="stats-item"><span class="stats-value" data-stat-value="authoredPublicPullRequests">17</span><span class="stats-label">Authored public PRs</span></div>
+      </section>
+
+      <section class="home-paths" aria-labelledby="paths-title">
+        <div class="container">
+          <span class="section-tag">Start Here</span>
+          <h2 id="paths-title">Where to go next</h2>
+          <div class="entry-grid">
+            <a class="entry-card" href="projects/">
+              <span class="entry-card-kicker">Projects Center</span>
+              <h3>Project Collection</h3>
+              <p>Browse featured cases, archive entries, runtime status, and anonymized screenshots.</p>
+              <span class="entry-card-link">Explore projects →</span>
+            </a>
+            <a class="entry-card" href="writing.html">
+              <span class="entry-card-kicker">Writing / Notes</span>
+              <h3>Notes & Retrospectives</h3>
+              <p>Read practical notes on Agent productization, data workbenches, and engineering tradeoffs.</p>
+              <span class="entry-card-link">Read writing →</span>
+            </a>
+            <a class="entry-card" href="about.html">
+              <span class="entry-card-kicker">About / Capability</span>
+              <h3>Capability Matrix</h3>
+              <p>Understand my engineering strengths, contest background, and collaboration fit.</p>
+              <span class="entry-card-link">About Tiammomo →</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="work" id="work" aria-labelledby="work-title">
@@ -106,99 +133,7 @@
             </div>
           </div>
 
-          <div class="project-grid" data-project-grid data-locale="en">
-            <article class="project-card" data-category="ai infra product">
-              <div class="project-card-top"><span class="project-num">01</span><span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span></div>
-              <figure class="project-card-media"><img src="assets/images/modelport/dashboard-overview.png" alt="ModelPort local dashboard overview screenshot" loading="lazy" /></figure>
-              <h3 class="project-name">ModelPort</h3>
-              <p class="project-desc">A local Anthropic-compatible model gateway for Claude Code and VS Code Claude, with a dashboard control plane for provider routing, model inventory, API keys, usage cost, and health checks.</p>
-              <div class="project-tags"><span class="tag">Rust</span><span class="tag">React Dashboard</span><span class="tag">LLM Gateway</span></div>
-              <div class="project-meta"><span>Local gateway</span><span>Control plane</span></div>
-              <div class="project-actions"><a class="project-link" href="projects/modelport.html">Case Study →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">GitHub →</a></div>
-            </article>
-
-            <article class="project-card" data-category="ai data product">
-              <div class="project-card-top"><span class="project-num">02</span><span class="project-status" data-status="active"><span class="status-dot"></span> Local Demo</span></div>
-              <figure class="project-card-media"><img src="assets/images/quantpilot/workbench.png" alt="QuantPilot AI quantitative research workbench screenshot" loading="lazy" /></figure>
-              <h3 class="project-name">QuantPilot</h3>
-              <p class="project-desc">An AI workspace for quantitative research, covering natural-language tasks, market data, strategy modules, Agent Eval, skills, logs, and operations.</p>
-              <div class="project-tags"><span class="tag">Next.js</span><span class="tag">Quant Agent</span><span class="tag">TimescaleDB</span></div>
-              <div class="project-meta"><span>298 symbols</span><span>356K K-lines</span></div>
-              <div class="project-actions"><a class="project-link" href="projects/quantpilot.html">Case Study →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub →</a></div>
-            </article>
-
-            <article class="project-card" data-category="ai data product">
-              <div class="project-card-top"><span class="project-num">03</span><span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span></div>
-              <figure class="project-card-media"><img src="assets/images/routepilot/city-explorer.png" alt="RoutePilot city exploration workspace screenshot" loading="lazy" /></figure>
-              <h3 class="project-name">RoutePilot</h3>
-              <p class="project-desc">An AI travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing.</p>
-              <div class="project-tags"><span class="tag">Next.js</span><span class="tag">LangGraph</span><span class="tag">Travel Data</span></div>
-              <div class="project-meta"><span>Beijing routes</span><span>City discovery</span></div>
-              <div class="project-actions"><a class="project-link" href="projects/routepilot.html">Case Study →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/RoutePilot" rel="noreferrer">GitHub →</a></div>
-            </article>
-
-            <article class="project-card" data-category="product infra">
-              <div class="project-card-top"><span class="project-num">04</span><span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span></div>
-              <figure class="project-card-media"><img src="assets/images/mamoji/dashboard.png" alt="Mamoji business operations dashboard screenshot" loading="lazy" /></figure>
-              <h3 class="project-name">Mamoji</h3>
-              <p class="project-desc">A lightweight business operations system for startups and small teams, covering revenue, costs, budgets, receipts, tax, payroll, and production operations.</p>
-              <div class="project-tags"><span class="tag">Next.js</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span></div>
-              <div class="project-meta"><span>Operations OS</span><span>Production ops</span></div>
-              <div class="project-actions"><a class="project-link" href="projects/mamoji.html">Case Study →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">GitHub →</a></div>
-            </article>
-
-            <article class="project-card" data-category="ai product infra">
-              <div class="project-card-top"><span class="project-num">05</span><span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span></div>
-              <figure class="project-card-media"><img src="assets/images/sellerharbor/dashboard.png" alt="SellerHarbor cross-border seller operations dashboard screenshot" loading="lazy" /></figure>
-              <h3 class="project-name">SellerHarbor</h3>
-              <p class="project-desc">A product operations harbor for Temu and TikTok Shop sellers, unifying product master data, platform listings, overseas inventory, real feedback, generation, and review workflows.</p>
-              <div class="project-tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">Commerce Ops</span></div>
-              <div class="project-meta"><span>Seller workspace</span><span>Inventory / Listing</span></div>
-              <div class="project-actions"><a class="project-link" href="projects/sellerharbor.html">Case Study →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/SellerHarbor" rel="noreferrer">GitHub →</a></div>
-            </article>
-
-            <article class="project-card" data-category="ai data product">
-              <div class="project-card-top"><span class="project-num">06</span><span class="project-status" data-status="active"><span class="status-dot"></span> LAN Demo</span></div>
-              <figure class="project-card-media"><img src="assets/images/temu-price-studio/sku-details.png" alt="Temu Price Studio anonymized SKU workbench screenshot" loading="lazy" /></figure>
-              <h3 class="project-name">Temu Price Studio</h3>
-              <p class="project-desc">A local-first Temu price-check and image-generation workspace that connects SKU data, evidence assets, online references, prompt versions, candidate draws, human review, and traceable final packages.</p>
-              <div class="project-tags"><span class="tag">React + Vite</span><span class="tag">Express</span><span class="tag">Codex Workflow</span></div>
-              <div class="project-meta"><span>SKU workflow</span><span>Prompt lab</span></div>
-              <div class="project-actions"><a class="project-link" href="projects/temu-price-studio.html">Case Study →</a><a class="project-link" href="http://192.168.31.114:33010/" rel="noreferrer">LAN Demo →</a></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="now" id="now" aria-labelledby="now-title">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="section-tag">Now / Lab</span>
-              <h2 id="now-title">What I am actively refining</h2>
-            </div>
-            <p class="section-note">These directions keep turning into open-source repos, product prototypes, and project documentation.</p>
-          </div>
-          <div class="now-grid">
-            <article class="now-card"><span class="now-card-kicker">Model Runtime</span><h3>Local model gateways and developer workflows</h3><p>Improving protocol adapters, routing policies, usage observability, and small-team control planes for AI coding workflows.</p></article>
-            <article class="now-card"><span class="now-card-kicker">Agent Workspace</span><h3>Research and data analysis workspaces</h3><p>Turning strategy ideas, data processing, visualizations, evaluation, and result tracking into reusable agent workflows.</p></article>
-            <article class="now-card"><span class="now-card-kicker">Product Systems</span><h3>AI capabilities inside real product surfaces</h3><p>Embedding generation, planning, operations, and research flows into interfaces people can use repeatedly.</p></article>
-            <article class="now-card"><span class="now-card-kicker">Project Docs</span><h3>Reusable project documentation</h3><p>Documenting architecture boundaries, deployment paths, acceptance criteria, and roadmaps alongside code.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="process" id="process" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">Method</span>
-            <h2 id="process-title">How I approach projects</h2>
-          </div>
-          <div class="process-grid">
-            <article class="process-card"><span class="process-step">01</span><h3>Start from the problem</h3><p>Clarify the user goal, business constraints, and success criteria before choosing models, data flows, and interface patterns.</p></article>
-            <article class="process-card"><span class="process-step">02</span><h3>Make prototypes verifiable</h3><p>Turn fuzzy ideas into slices that can be clicked, tested, observed, and improved with concrete feedback.</p></article>
-            <article class="process-card"><span class="process-step">03</span><h3>Leave structure for iteration</h3><p>Keep module boundaries, replaceable service entry points, deployment scripts, and feedback loops visible.</p></article>
-          </div>
+          <div class="project-grid" data-project-grid data-locale="en" data-project-src="data/projects.json"></div>
         </div>
       </section>
 

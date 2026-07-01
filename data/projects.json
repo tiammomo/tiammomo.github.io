@@ -24,6 +24,16 @@
       "zh": ["模型网关", "Provider 路由"],
       "en": ["Model gateway", "Provider routing"]
     },
+    "index": {
+      "direction": {
+        "zh": "模型网关 / Infra",
+        "en": "Model gateway / Infra"
+      },
+      "proof": {
+        "zh": "Dashboard 截图、Rust 网关、控制面",
+        "en": "Dashboard screenshots, Rust gateway, control plane"
+      }
+    },
     "caseUrl": "projects/modelport.html",
     "githubUrl": "https://github.com/tiammomo/ModelPort"
   },
@@ -51,6 +61,16 @@
     "meta": {
       "zh": ["SKU 工作流", "Prompt 实验室"],
       "en": ["SKU workflow", "Prompt lab"]
+    },
+    "index": {
+      "direction": {
+        "zh": "核价生图 / Workflow",
+        "en": "Pricing image workflow"
+      },
+      "proof": {
+        "zh": "真实运行截图，SKU 已脱敏",
+        "en": "Real screenshots with anonymized SKU data"
+      }
     },
     "caseUrl": "projects/temu-price-studio.html",
     "liveUrl": "http://192.168.31.114:33010/",
@@ -84,6 +104,16 @@
       "zh": ["298 symbols", "356K K-lines"],
       "en": ["298 symbols", "356K K-lines"]
     },
+    "index": {
+      "direction": {
+        "zh": "投研 Agent / Data",
+        "en": "Research Agent / Data"
+      },
+      "proof": {
+        "zh": "298 symbols、356K K-lines",
+        "en": "298 symbols, 356K K-lines"
+      }
+    },
     "caseUrl": "projects/quantpilot.html",
     "githubUrl": "https://github.com/tiammomo/QuantPilot"
   },
@@ -111,6 +141,16 @@
     "meta": {
       "zh": ["商品运营港", "审核导出"],
       "en": ["Seller workspace", "Review export"]
+    },
+    "index": {
+      "direction": {
+        "zh": "跨境运营 / Commerce",
+        "en": "Commerce ops / Product"
+      },
+      "proof": {
+        "zh": "商品主档、反馈、审核导出截图",
+        "en": "Product master data, feedback, review export screenshots"
+      }
     },
     "caseUrl": "projects/sellerharbor.html",
     "githubUrl": "https://github.com/tiammomo/SellerHarbor"
@@ -140,6 +180,16 @@
       "zh": ["经营中台", "生产部署"],
       "en": ["Operations OS", "Production ops"]
     },
+    "index": {
+      "direction": {
+        "zh": "经营管理 / Full-stack",
+        "en": "Operations system / Full-stack"
+      },
+      "proof": {
+        "zh": "经营、税务、票据、薪酬截图",
+        "en": "Operations, tax, receipt, payroll screenshots"
+      }
+    },
     "caseUrl": "projects/mamoji.html",
     "githubUrl": "https://github.com/tiammomo/Mamoji"
   },
@@ -167,6 +217,16 @@
     "meta": {
       "zh": ["北京路线库", "动态重规划"],
       "en": ["Beijing routes", "Dynamic replanning"]
+    },
+    "index": {
+      "direction": {
+        "zh": "旅行规划 / Agent",
+        "en": "Route planning / Agent"
+      },
+      "proof": {
+        "zh": "城市探索、路线结果、系统状态截图",
+        "en": "City exploration, route result, system status screenshots"
+      }
     },
     "caseUrl": "projects/routepilot.html",
     "githubUrl": "https://github.com/tiammomo/RoutePilot"

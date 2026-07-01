@@ -53,28 +53,27 @@
       </button>
       <nav class="header-nav" id="main-nav" aria-label="主导航">
         <a href="#work">项目</a>
-        <a href="#now">动向</a>
-        <a href="#process">方法</a>
+        <a href="writing.html">文章</a>
+        <a href="about.html">关于</a>
         <a href="#contact">联系</a>
         <a href="en.html" lang="en">EN</a>
       </nav>
     </header>
 
     <main>
-      <!-- ── Hero ── -->
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-content">
-          <p class="hero-label">LLM / Agent · Data Systems · Product Workbenches</p>
-          <h1 class="hero-title" id="hero-title">把 Agent 接入真实业务工作台</h1>
+          <p class="hero-label">DATA ENGINEERING · DATA AGENT · GITHUB PROJECTS</p>
+          <h1 class="hero-title" id="hero-title">AI 产品工程作品集</h1>
           <p class="hero-desc">
-            我是 Tiammomo，一名全栈 AI 产品工程师，擅长把 LLM / Agent 接入真实数据、业务流程和可运行的产品界面。这里展示模型网关、量化投研、跨境运营、核价生图、旅行规划和经营管理等项目，从原型、数据链路到部署与人审边界。
+            我是 Tiammomo，ACM 区域赛银牌、邀请赛金牌获得者，也是黑客松爱好者，主攻数据工程与 Data Agent。过去持续关注大数据平台、数仓开发、离线与实时数据链路的工程化实践；现在更关心如何让 Agent 接入数据、理解业务问题，并产出可复用的分析流程。这个页面记录我在 GitHub 上沉淀的项目、实验和产品化思考。
           </p>
           <div class="hero-highlights" aria-label="个人亮点">
-            <span>LLM / Agent 产品化</span>
-            <span>数据与业务工作台</span>
-            <span>模型网关 / 工程基础设施</span>
-            <span>真实截图与案例复盘</span>
             <span>ACM 区域赛银牌 · 邀请赛金牌</span>
+            <span>黑客松爱好者</span>
+            <span>Data Agent</span>
+            <span>大数据平台 / 数仓</span>
+            <span>离线 / 实时数据链路</span>
           </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#work">查看作品</a>
@@ -85,27 +84,46 @@
         <div class="hero-visual" aria-hidden="true"></div>
       </section>
 
-      <!-- ── Stats ── -->
-      <section class="stats" aria-label="概览">
+      <section class="stats" aria-label="概览" data-profile-stats data-stats-src="data/profile-stats.json" data-project-src="data/projects.json">
         <div class="stats-item">
-          <span class="stats-value">31</span>
+          <span class="stats-value" data-stat-value="publicRepos">31</span>
           <span class="stats-label">GitHub 公开仓库</span>
         </div>
         <div class="stats-item">
-          <span class="stats-value">6</span>
+          <span class="stats-value" data-stat-value="selectedProjects">6</span>
           <span class="stats-label">精选 GitHub 项目</span>
         </div>
         <div class="stats-item">
-          <span class="stats-value">37</span>
+          <span class="stats-value" data-stat-value="totalStars">42</span>
           <span class="stats-label">累计 Stars</span>
         </div>
         <div class="stats-item">
-          <span class="stats-value">18</span>
+          <span class="stats-value" data-stat-value="authoredPublicPullRequests">17</span>
           <span class="stats-label">公开 Pull Requests</span>
         </div>
       </section>
 
-      <!-- ── Work ── -->
+      <section class="home-paths" aria-labelledby="paths-title">
+        <div class="container">
+          <span class="section-tag">Start Here</span>
+          <h2 id="paths-title">从这里进入</h2>
+          <div class="entry-grid">
+            <a class="entry-card" href="projects/">
+              <span class="entry-card-kicker">Projects Center</span>
+              <h3>项目中心</h3>
+              <p>查看精选案例、项目归档、可运行状态和脱敏截图说明。</p>
+              <span class="entry-card-link">进入项目集锦 →</span>
+            </a>
+            <a class="entry-card" href="writing.html">
+              <span class="entry-card-kicker">Writing / Notes</span>
+              <h3>文章与复盘</h3>
+              <p>把 Agent 产品化、数据工作台和工程取舍写成可复用笔记。</p>
+              <span class="entry-card-link">查看写作主线 →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="work" id="work" aria-labelledby="work-title">
         <div class="container">
           <div class="section-header">
@@ -122,221 +140,7 @@
             </div>
           </div>
 
-          <div class="project-grid" data-project-grid data-locale="zh">
-            <article class="project-card" data-category="ai infra product">
-              <div class="project-card-top">
-                <span class="project-num">01</span>
-                <span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span>
-              </div>
-              <figure class="project-card-media">
-                <img src="assets/images/modelport/dashboard-overview.png" alt="ModelPort 本地 Dashboard 仪表盘截图" loading="lazy" />
-              </figure>
-              <h3 class="project-name">ModelPort</h3>
-              <p class="project-desc">面向 Claude Code / VS Code Claude 的本地 Anthropic-compatible 模型网关，带 Dashboard 控制面，覆盖 Provider 路由、模型库存、API Key、用量成本和健康观测。</p>
-              <div class="project-tags">
-                <span class="tag">Rust</span>
-                <span class="tag">React Dashboard</span>
-                <span class="tag">LLM Gateway</span>
-              </div>
-              <div class="project-meta">
-                <span>Local gateway</span>
-                <span>Control plane</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link" href="projects/modelport.html">案例详情 →</a>
-                <a class="project-link project-link-muted" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">GitHub →</a>
-              </div>
-            </article>
-
-            <article class="project-card" data-category="ai data product">
-              <div class="project-card-top">
-                <span class="project-num">02</span>
-                <span class="project-status" data-status="active"><span class="status-dot"></span> Local Demo</span>
-              </div>
-              <figure class="project-card-media">
-                <img src="assets/images/quantpilot/workbench.png" alt="QuantPilot AI 量化分析工作台真实截图" loading="lazy" />
-              </figure>
-              <h3 class="project-name">QuantPilot</h3>
-              <p class="project-desc">面向量化投研的 AI 工作台，覆盖自然语言任务、真实行情数据、策略平台、Agent Eval、Skills、日志和运维治理。</p>
-              <div class="project-tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">Quant Agent</span>
-                <span class="tag">TimescaleDB</span>
-              </div>
-              <div class="project-meta">
-                <span>298 symbols</span>
-                <span>356K K-lines</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link" href="projects/quantpilot.html">案例详情 →</a>
-                <a class="project-link project-link-muted" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub →</a>
-              </div>
-            </article>
-
-            <article class="project-card" data-category="ai data product">
-              <div class="project-card-top">
-                <span class="project-num">03</span>
-                <span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span>
-              </div>
-              <figure class="project-card-media">
-                <img src="assets/images/routepilot/city-explorer.png" alt="RoutePilot 城市探索工作台真实截图" loading="lazy" />
-              </figure>
-              <h3 class="project-name">RoutePilot</h3>
-              <p class="project-desc">AI 旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。</p>
-              <div class="project-tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">LangGraph</span>
-                <span class="tag">Travel Data</span>
-              </div>
-              <div class="project-meta">
-                <span>北京路线库</span>
-                <span>城市探索</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link" href="projects/routepilot.html">案例详情 →</a>
-                <a class="project-link project-link-muted" href="https://github.com/tiammomo/RoutePilot" rel="noreferrer">GitHub →</a>
-              </div>
-            </article>
-
-            <article class="project-card" data-category="product infra">
-              <div class="project-card-top">
-                <span class="project-num">04</span>
-                <span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span>
-              </div>
-              <figure class="project-card-media">
-                <img src="assets/images/mamoji/dashboard.png" alt="Mamoji 企业经营工作台真实截图" loading="lazy" />
-              </figure>
-              <h3 class="project-name">Mamoji</h3>
-              <p class="project-desc">面向初创公司和小团队的轻量经营管理系统，统一收入、成本、预算、票据、税务、人员薪酬和生产运维。</p>
-              <div class="project-tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">Spring Boot</span>
-                <span class="tag">PostgreSQL</span>
-              </div>
-              <div class="project-meta">
-                <span>经营中台</span>
-                <span>生产部署</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link" href="projects/mamoji.html">案例详情 →</a>
-                <a class="project-link project-link-muted" href="https://github.com/tiammomo/Mamoji" rel="noreferrer">GitHub →</a>
-              </div>
-            </article>
-
-            <article class="project-card" data-category="ai product infra">
-              <div class="project-card-top">
-                <span class="project-num">05</span>
-                <span class="project-status" data-status="active"><span class="status-dot"></span> Open Source</span>
-              </div>
-              <figure class="project-card-media">
-                <img src="assets/images/sellerharbor/dashboard.png" alt="SellerHarbor 跨境卖家商品运营看板真实截图" loading="lazy" />
-              </figure>
-              <h3 class="project-name">SellerHarbor</h3>
-              <p class="project-desc">面向 Temu / TikTok Shop 跨境卖家的商品运营港，统一商品主档、平台 Listing、海外仓库存、真实反馈、内容生成和审核动作。</p>
-              <div class="project-tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Commerce Ops</span>
-              </div>
-              <div class="project-meta">
-                <span>跨境运营港</span>
-                <span>库存 / Listing</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link" href="projects/sellerharbor.html">案例详情 →</a>
-                <a class="project-link project-link-muted" href="https://github.com/tiammomo/SellerHarbor" rel="noreferrer">GitHub →</a>
-              </div>
-            </article>
-
-            <article class="project-card" data-category="ai data product">
-              <div class="project-card-top">
-                <span class="project-num">06</span>
-                <span class="project-status" data-status="active"><span class="status-dot"></span> LAN Demo</span>
-              </div>
-              <figure class="project-card-media">
-                <img src="assets/images/temu-price-studio/sku-details.png" alt="Temu Price Studio SKU 工作台脱敏截图" loading="lazy" />
-              </figure>
-              <h3 class="project-name">Temu Price Studio</h3>
-              <p class="project-desc">本地优先的 Temu 核价生图工作台，串联 SKU 数据、素材证据、线上参考、Prompt 版本、抽卡候选、人工审核和最终包追溯。</p>
-              <div class="project-tags">
-                <span class="tag">React + Vite</span>
-                <span class="tag">Express</span>
-                <span class="tag">Codex Workflow</span>
-              </div>
-              <div class="project-meta">
-                <span>SKU 工作流</span>
-                <span>Prompt 实验室</span>
-              </div>
-              <div class="project-actions">
-                <a class="project-link" href="projects/temu-price-studio.html">案例详情 →</a>
-                <a class="project-link" href="http://192.168.31.114:33010/" rel="noreferrer">局域网演示 →</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── Now / Lab ── -->
-      <section class="now" id="now" aria-labelledby="now-title">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <span class="section-tag">Now / Lab</span>
-              <h2 id="now-title">正在持续打磨的方向</h2>
-            </div>
-            <p class="section-note">
-              这些方向会不断沉淀到开源仓库、产品原型和项目文档里。
-            </p>
-          </div>
-          <div class="now-grid">
-            <article class="now-card">
-              <span class="now-card-kicker">Model Runtime</span>
-              <h3>本地模型网关与开发者工作流</h3>
-              <p>围绕 Claude Code、VS Code Claude 和多模型提供商，继续完善协议适配、路由策略、用量观测和小团队控制面板。</p>
-            </article>
-            <article class="now-card">
-              <span class="now-card-kicker">Agent Workspace</span>
-              <h3>投研与数据分析工作台</h3>
-              <p>把策略想法、数据处理、可视化、评测和结果追踪串成可复用工作流，让 Agent 不停留在一次性对话里。</p>
-            </article>
-            <article class="now-card">
-              <span class="now-card-kicker">Product Systems</span>
-              <h3>AI 能力进入真实业务界面</h3>
-              <p>用前后端产品系统承接业务流程，把内容生成、经营管理、旅行规划等能力做成能被日常使用的界面。</p>
-            </article>
-            <article class="now-card">
-              <span class="now-card-kicker">Project Docs</span>
-              <h3>把项目经验写成可复用文档</h3>
-              <p>持续补充架构边界、部署说明、验收标准和路线图，让仓库不只是代码，也能解释为什么这样设计。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── Process ── -->
-      <section class="process" id="process" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">Method</span>
-            <h2 id="process-title">我怎样做项目</h2>
-          </div>
-          <div class="process-grid">
-            <article class="process-card">
-              <span class="process-step">01</span>
-              <h3>从问题开始</h3>
-              <p>先把用户目标、业务约束和成功标准说清楚，再决定模型、数据、界面和工程边界应该怎样配合。</p>
-            </article>
-            <article class="process-card">
-              <span class="process-step">02</span>
-              <h3>让原型可验证</h3>
-              <p>把模糊想法变成可以点、可以试、可以观察结果的产品切片，让项目尽早接受真实反馈。</p>
-            </article>
-            <article class="process-card">
-              <span class="process-step">03</span>
-              <h3>为迭代留结构</h3>
-              <p>保留清楚的模块边界、可替换的服务入口、部署脚本和能追踪结果的反馈回路。</p>
-            </article>
-          </div>
+          <div class="project-grid" data-project-grid data-locale="zh" data-project-src="data/projects.json"></div>
         </div>
       </section>
 

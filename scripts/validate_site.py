@@ -99,6 +99,7 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         errors.append(f"sitemap.xml: {exc}")
 
+    projects = None
     try:
         projects = json.loads((ROOT / "data" / "projects.json").read_text(encoding="utf-8"))
         if not isinstance(projects, list):
@@ -112,6 +113,14 @@ def main() -> int:
                 for field in ("id", "name", "status", "categories", "image", "summary", "tags"):
                     if field not in project:
                         errors.append(f"data/projects.json:{label}: missing {field}")
+                index_meta = project.get("index")
+                if not isinstance(index_meta, dict):
+                    errors.append(f"data/projects.json:{label}: missing index")
+                else:
+                    for field in ("direction", "proof"):
+                        value = index_meta.get(field)
+                        if not isinstance(value, dict) or not value.get("zh") or not value.get("en"):
+                            errors.append(f"data/projects.json:{label}: index.{field} needs zh/en")
                 image = project.get("image", {})
                 if isinstance(image, dict):
                     ref = image.get("png")
@@ -128,6 +137,23 @@ def main() -> int:
                         check_local_ref(ROOT / "index.html", ref, errors)
     except Exception as exc:  # noqa: BLE001
         errors.append(f"data/projects.json: {exc}")
+
+    try:
+        profile_stats = json.loads((ROOT / "data" / "profile-stats.json").read_text(encoding="utf-8"))
+        if not isinstance(profile_stats, dict):
+            errors.append("data/profile-stats.json: expected an object")
+        else:
+            stats = profile_stats.get("stats")
+            if not isinstance(stats, dict):
+                errors.append("data/profile-stats.json: missing stats object")
+            else:
+                for field in ("publicRepos", "selectedProjects", "totalStars", "authoredPublicPullRequests"):
+                    if not isinstance(stats.get(field), int):
+                        errors.append(f"data/profile-stats.json: stats.{field} must be an integer")
+                if isinstance(projects, list) and stats.get("selectedProjects") != len(projects):
+                    errors.append("data/profile-stats.json: stats.selectedProjects does not match data/projects.json")
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"data/profile-stats.json: {exc}")
 
     css = (ROOT / "styles.css").read_text(encoding="utf-8")
     for match in re.finditer(r"url\(['\"]?([^'\")]+)['\"]?\)", css):

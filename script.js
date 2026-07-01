@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyBtn = document.querySelector('[data-copy]');
   const yearEl = document.querySelector('[data-year]');
   const projectGrid = document.querySelector('[data-project-grid]');
+  const projectIndex = document.querySelector('[data-project-index]');
+  const statsSection = document.querySelector('[data-profile-stats]');
+  const jsonCache = new Map();
 
   const escapeHtml = (value) =>
     String(value ?? '')
@@ -22,17 +25,45 @@ document.addEventListener('DOMContentLoaded', () => {
     return value[locale] ?? value.zh ?? value.en ?? '';
   };
 
+  const loadJson = (source) => {
+    if (!source) return Promise.reject(new Error('Missing JSON source'));
+    if (!jsonCache.has(source)) {
+      const request = fetch(source, { cache: 'no-store' })
+        .then((response) => {
+          if (!response.ok) throw new Error(`${source} failed: ${response.status}`);
+          return response.json();
+        })
+        .catch((error) => {
+          jsonCache.delete(source);
+          throw error;
+        });
+      jsonCache.set(source, request);
+    }
+    return jsonCache.get(source);
+  };
+
+  const formatStatNumber = (value) => {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) return '';
+    return new Intl.NumberFormat(document.documentElement.lang || 'zh-CN').format(numeric);
+  };
+
   const currentFilter = () =>
     document.querySelector('[data-filter].is-active')?.dataset.filter ?? 'all';
 
   const applyProjectFilter = (selected = currentFilter()) => {
-    document.querySelectorAll('.project-card').forEach((card) => {
-      const categories = card.dataset.category.split(' ');
-      card.classList.toggle(
+    document.querySelectorAll('.project-card, [data-project-index-row]').forEach((item) => {
+      const categories = (item.dataset.category || '').split(' ');
+      item.classList.toggle(
         'is-hidden',
         selected !== 'all' && !categories.includes(selected),
       );
     });
+  };
+
+  const withBase = (ref, base = '') => {
+    if (!ref || /^(https?:|mailto:|tel:|#|\/)/.test(ref)) return ref;
+    return `${base}${ref}`;
   };
 
   const renderProjectCard = (project, index, locale) => {
@@ -45,11 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const alt = escapeHtml(localized(project.image.alt, locale));
     const summary = escapeHtml(localized(project.summary, locale));
     const meta = localized(project.meta, locale);
+    const urlBase = projectGrid?.dataset.urlBase || '';
     const imageSource = project.image.webp
-      ? `<source srcset="${escapeHtml(project.image.webp)}" type="image/webp" />`
+      ? `<source srcset="${escapeHtml(withBase(project.image.webp, urlBase))}" type="image/webp" />`
       : '';
     const caseLink = project.caseUrl
-      ? `<a class="project-link" href="${escapeHtml(project.caseUrl)}">${caseLabel} →</a>`
+      ? `<a class="project-link" href="${escapeHtml(withBase(project.caseUrl, urlBase))}">${caseLabel} →</a>`
       : '';
     const liveLink = project.liveUrl
       ? `<a class="project-link" href="${escapeHtml(project.liveUrl)}" rel="noreferrer">${liveLabel} →</a>`
@@ -67,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <figure class="project-card-media">
           <picture>
             ${imageSource}
-            <img src="${escapeHtml(project.image.png)}" alt="${alt}" loading="lazy" />
+            <img src="${escapeHtml(withBase(project.image.png, urlBase))}" alt="${alt}" loading="lazy" />
           </picture>
         </figure>
         <h3 class="project-name">${escapeHtml(project.name)}</h3>
@@ -87,13 +119,55 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
+  const renderProjectIndexRow = (project, locale) => {
+    const urlBase = projectIndex?.dataset.urlBase || '';
+    const categories = project.categories.join(' ');
+    const status = localized(project.availability, locale) || (project.status === 'wip' ? 'WIP' : 'Active');
+    const direction = localized(project.index?.direction, locale) || localized(project.meta, locale).join(' / ');
+    const proof = localized(project.index?.proof, locale) || localized(project.summary, locale);
+    const caseUrl = project.caseUrl ? withBase(project.caseUrl, urlBase) : '';
+    const caseLabel = locale === 'en' ? 'Case' : '案例';
+
+    return `
+      <div class="archive-row" role="row" data-project-index-row data-category="${escapeHtml(categories)}">
+        <strong>${escapeHtml(project.name)}</strong>
+        <span>${escapeHtml(direction)}</span>
+        <span>${escapeHtml(status)}</span>
+        <span>${escapeHtml(proof)}</span>
+        ${caseUrl ? `<a href="${escapeHtml(caseUrl)}">${caseLabel} →</a>` : '<span>--</span>'}
+      </div>
+    `;
+  };
+
+  const renderProjectIndex = async () => {
+    if (!projectIndex) return;
+
+    try {
+      const source = projectIndex.dataset.projectSrc || projectGrid?.dataset.projectSrc || 'data/projects.json';
+      const projects = await loadJson(source);
+      const locale = projectIndex.dataset.locale || 'zh';
+      const headers = locale === 'en'
+        ? ['Project', 'Direction', 'Status', 'Proof', 'Entry']
+        : ['项目', '方向', '状态', '可信度', '入口'];
+
+      projectIndex.innerHTML = `
+        <div class="archive-row archive-row--head" role="row">
+          ${headers.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}
+        </div>
+        ${projects.map((project) => renderProjectIndexRow(project, locale)).join('')}
+      `;
+      applyProjectFilter();
+    } catch (error) {
+      console.warn('Project index failed.', error);
+    }
+  };
+
   const renderProjects = async () => {
     if (!projectGrid) return;
 
     try {
-      const response = await fetch('data/projects.json', { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Project data failed: ${response.status}`);
-      const projects = await response.json();
+      const source = projectGrid.dataset.projectSrc || 'data/projects.json';
+      const projects = await loadJson(source);
       const locale = projectGrid.dataset.locale || 'zh';
       projectGrid.innerHTML = projects
         .map((project, index) => renderProjectCard(project, index, locale))
@@ -101,6 +175,35 @@ document.addEventListener('DOMContentLoaded', () => {
       applyProjectFilter();
     } catch (error) {
       console.warn('Using static project cards fallback.', error);
+    }
+  };
+
+  const renderStats = async () => {
+    if (!statsSection) return;
+
+    const statsSource = statsSection.dataset.statsSrc || 'data/profile-stats.json';
+    const projectSource = statsSection.dataset.projectSrc || projectGrid?.dataset.projectSrc || 'data/projects.json';
+
+    try {
+      const [profileStats, projects] = await Promise.all([
+        loadJson(statsSource),
+        loadJson(projectSource).catch(() => null),
+      ]);
+      const snapshot = profileStats.stats || {};
+      const values = {
+        publicRepos: snapshot.publicRepos,
+        selectedProjects: Array.isArray(projects) ? projects.length : snapshot.selectedProjects,
+        totalStars: snapshot.totalStars,
+        authoredPublicPullRequests: snapshot.authoredPublicPullRequests,
+      };
+
+      statsSection.querySelectorAll('[data-stat-value]').forEach((item) => {
+        const key = item.dataset.statValue;
+        const formatted = formatStatNumber(values[key]);
+        if (formatted) item.textContent = formatted;
+      });
+    } catch (error) {
+      console.warn('Using static stats fallback.', error);
     }
   };
 
@@ -170,5 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section) => observer.observe(section));
   }
 
+  renderStats();
   renderProjects();
+  renderProjectIndex();
 });
