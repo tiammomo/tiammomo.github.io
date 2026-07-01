@@ -37,6 +37,7 @@
   --dur: 280ms;
 
   --max-w: 1240px;
+  --work-w: 1520px;
   --gutter: 24px;
 
   color-scheme: dark;
@@ -468,6 +469,10 @@ h3 {
    ═══════════════════════════════════════ */
 .work {
   padding: 36px 0 120px;
+}
+
+.work .container {
+  max-width: var(--work-w);
 }
 
 .work .section-header {
