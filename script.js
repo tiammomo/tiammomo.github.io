@@ -37,9 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const renderProjectCard = (project, index, locale) => {
     const caseLabel = locale === 'en' ? 'Case Study' : '案例详情';
+    const liveLabel = localized(project.liveLabel, locale) || (locale === 'en' ? 'Live Demo' : '在线体验');
     const githubLabel = 'GitHub';
     const categories = project.categories.join(' ');
-    const status = project.status === 'wip' ? 'WIP' : 'Active';
+    const status = localized(project.availability, locale) || (project.status === 'wip' ? 'WIP' : 'Active');
     const statusAttr = escapeHtml(project.status);
     const alt = escapeHtml(localized(project.image.alt, locale));
     const summary = escapeHtml(localized(project.summary, locale));
@@ -49,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
       : '';
     const caseLink = project.caseUrl
       ? `<a class="project-link" href="${escapeHtml(project.caseUrl)}">${caseLabel} →</a>`
+      : '';
+    const liveLink = project.liveUrl
+      ? `<a class="project-link" href="${escapeHtml(project.liveUrl)}" rel="noreferrer">${liveLabel} →</a>`
       : '';
     const githubLink = project.githubUrl
       ? `<a class="project-link project-link-muted" href="${escapeHtml(project.githubUrl)}" rel="noreferrer">${githubLabel} →</a>`
@@ -76,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="project-actions">
           ${caseLink}
+          ${liveLink}
           ${githubLink}
         </div>
       </article>

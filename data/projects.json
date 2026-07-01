@@ -3,6 +3,10 @@
     "id": "modelport",
     "name": "ModelPort",
     "status": "active",
+    "availability": {
+      "zh": "Open Source",
+      "en": "Open Source"
+    },
     "categories": ["ai", "infra", "product"],
     "image": {
       "png": "assets/images/modelport/dashboard-overview.png",
@@ -17,16 +21,52 @@
     },
     "tags": ["Rust", "React Dashboard", "LLM Gateway"],
     "meta": {
-      "zh": ["Local gateway", "Control plane"],
-      "en": ["Local gateway", "Control plane"]
+      "zh": ["模型网关", "Provider 路由"],
+      "en": ["Model gateway", "Provider routing"]
     },
     "caseUrl": "projects/modelport.html",
     "githubUrl": "https://github.com/tiammomo/ModelPort"
   },
   {
+    "id": "temu-price-studio",
+    "name": "Temu Price Studio",
+    "status": "active",
+    "availability": {
+      "zh": "LAN Demo",
+      "en": "LAN Demo"
+    },
+    "categories": ["ai", "data", "product"],
+    "image": {
+      "png": "assets/images/temu-price-studio/sku-details.png",
+      "alt": {
+        "zh": "Temu Price Studio SKU 工作台脱敏截图",
+        "en": "Temu Price Studio anonymized SKU workbench screenshot"
+      }
+    },
+    "summary": {
+      "zh": "本地优先的 Temu 核价生图工作台，串联 SKU 数据、素材证据、Prompt 版本、抽卡候选、人工审核、QA 和最终包追溯。",
+      "en": "A local-first Temu price-check and image-generation workspace that connects SKU data, evidence assets, prompt versions, candidate draws, human review, QA, and traceable final packages."
+    },
+    "tags": ["React + Vite", "Express", "Codex Workflow"],
+    "meta": {
+      "zh": ["SKU 工作流", "Prompt 实验室"],
+      "en": ["SKU workflow", "Prompt lab"]
+    },
+    "caseUrl": "projects/temu-price-studio.html",
+    "liveUrl": "http://192.168.31.114:33010/",
+    "liveLabel": {
+      "zh": "局域网演示",
+      "en": "LAN Demo"
+    }
+  },
+  {
     "id": "quantpilot",
     "name": "QuantPilot",
     "status": "active",
+    "availability": {
+      "zh": "Local Demo",
+      "en": "Local Demo"
+    },
     "categories": ["ai", "data", "product"],
     "image": {
       "png": "assets/images/quantpilot/workbench.png",
@@ -48,33 +88,41 @@
     "githubUrl": "https://github.com/tiammomo/QuantPilot"
   },
   {
-    "id": "routepilot",
-    "name": "RoutePilot",
+    "id": "sellerharbor",
+    "name": "SellerHarbor",
     "status": "active",
-    "categories": ["ai", "data", "product"],
+    "availability": {
+      "zh": "Open Source",
+      "en": "Open Source"
+    },
+    "categories": ["ai", "product", "infra"],
     "image": {
-      "png": "assets/images/routepilot/city-explorer.png",
+      "png": "assets/images/sellerharbor/dashboard.png",
       "alt": {
-        "zh": "RoutePilot 城市探索工作台真实截图",
-        "en": "RoutePilot city exploration workspace screenshot"
+        "zh": "SellerHarbor 跨境卖家商品运营看板真实截图",
+        "en": "SellerHarbor cross-border seller operations dashboard screenshot"
       }
     },
     "summary": {
-      "zh": "AI 旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。",
-      "en": "An AI travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing."
+      "zh": "面向 Temu / TikTok Shop 跨境卖家的商品运营港，统一商品主档、平台 Listing、海外仓库存、真实反馈、内容生成和审核动作。",
+      "en": "A product operations harbor for Temu and TikTok Shop sellers, unifying product master data, platform listings, overseas inventory, real feedback, generation, and review workflows."
     },
-    "tags": ["Next.js", "LangGraph", "Travel Data"],
+    "tags": ["Next.js", "FastAPI", "Commerce Ops"],
     "meta": {
-      "zh": ["北京路线库", "城市探索"],
-      "en": ["Beijing routes", "City discovery"]
+      "zh": ["商品运营港", "审核导出"],
+      "en": ["Seller workspace", "Review export"]
     },
-    "caseUrl": "projects/routepilot.html",
-    "githubUrl": "https://github.com/tiammomo/RoutePilot"
+    "caseUrl": "projects/sellerharbor.html",
+    "githubUrl": "https://github.com/tiammomo/SellerHarbor"
   },
   {
     "id": "mamoji",
     "name": "Mamoji",
     "status": "active",
+    "availability": {
+      "zh": "Open Source",
+      "en": "Open Source"
+    },
     "categories": ["product", "infra"],
     "image": {
       "png": "assets/images/mamoji/dashboard.png",
@@ -96,51 +144,31 @@
     "githubUrl": "https://github.com/tiammomo/Mamoji"
   },
   {
-    "id": "sellerharbor",
-    "name": "SellerHarbor",
+    "id": "routepilot",
+    "name": "RoutePilot",
     "status": "active",
-    "categories": ["ai", "product", "infra"],
+    "availability": {
+      "zh": "Open Source",
+      "en": "Open Source"
+    },
+    "categories": ["ai", "data", "product"],
     "image": {
-      "png": "assets/images/sellerharbor/dashboard.png",
+      "png": "assets/images/routepilot/city-explorer.png",
       "alt": {
-        "zh": "SellerHarbor 跨境卖家商品运营看板真实截图",
-        "en": "SellerHarbor cross-border seller operations dashboard screenshot"
+        "zh": "RoutePilot 城市探索工作台真实截图",
+        "en": "RoutePilot city exploration workspace screenshot"
       }
     },
     "summary": {
-      "zh": "面向 Temu / TikTok Shop 跨境卖家的商品运营港，统一商品主档、平台 Listing、海外仓库存、真实反馈、内容生成和审核动作。",
-      "en": "A product operations harbor for Temu and TikTok Shop sellers, unifying product master data, platform listings, overseas inventory, real feedback, generation, and review workflows."
+      "zh": "AI 旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。",
+      "en": "An AI travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing."
     },
-    "tags": ["Next.js", "FastAPI", "Commerce Ops"],
+    "tags": ["Next.js", "LangGraph", "Travel Data"],
     "meta": {
-      "zh": ["跨境运营港", "库存 / Listing"],
-      "en": ["Seller workspace", "Inventory / Listing"]
+      "zh": ["北京路线库", "动态重规划"],
+      "en": ["Beijing routes", "Dynamic replanning"]
     },
-    "caseUrl": "projects/sellerharbor.html",
-    "githubUrl": "https://github.com/tiammomo/SellerHarbor"
-  },
-  {
-    "id": "stock-assistant",
-    "name": "moyuan-stock-trading-assistant",
-    "status": "wip",
-    "categories": ["ai", "data"],
-    "image": {
-      "png": "assets/images/generated/anime-cover-stock-assistant.png",
-      "webp": "assets/images/generated/anime-cover-stock-assistant-thumb.webp",
-      "alt": {
-        "zh": "股票投研数据助手项目封面",
-        "en": "Stock research assistant project cover"
-      }
-    },
-    "summary": {
-      "zh": "围绕股票研究和问财数据的投研辅助项目，用 Python 串联数据获取、分析逻辑和策略探索流程。",
-      "en": "A Python-based stock research assistant that connects data collection, analysis logic, and strategy exploration around market research workflows."
-    },
-    "tags": ["Python", "Stock Research", "Data Assistant"],
-    "meta": {
-      "zh": ["Quant research", "Data tool"],
-      "en": ["Quant research", "Data tool"]
-    },
-    "githubUrl": "https://github.com/tiammomo/moyuan-stock-trading-assistant"
+    "caseUrl": "projects/routepilot.html",
+    "githubUrl": "https://github.com/tiammomo/RoutePilot"
   }
 ]

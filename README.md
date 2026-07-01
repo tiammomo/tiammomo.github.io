@@ -100,7 +100,7 @@ quantpilot.png
 routepilot.png
 mamoji.png
 sellerharbor.png
-stock-assistant.png
+temu-price-studio.png
 portfolio-og.png
 ```
 
