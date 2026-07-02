@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Tiammomo 图解笔记专题：大模型算法，覆盖 Tokenizer、强化学习、数据治理、预训练、SFT/PEFT、Alignment 和蒸馏。" />
+    <link rel="canonical" href="https://tiammomo.github.io/writing/algorithm.html" />
+    <meta property="og:title" content="大模型算法 · 图解笔记 · Tiammomo" />
+    <meta property="og:description" content="Tiammomo 图解笔记专题：大模型算法，覆盖 Tokenizer、强化学习、数据治理、预训练、SFT/PEFT、Alignment 和蒸馏。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tiammomo.github.io/writing/algorithm.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
+    <title>大模型算法 · 图解笔记 · Tiammomo</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="directory-page writing-page writing-line-page" id="top">
+    <header class="header is-scrolled" data-header>
+      <a class="header-brand" href="../index.html" aria-label="Tiammomo">
+        <span class="header-brand-mark" aria-hidden="true">T</span>
+        <span class="header-brand-text">Tiammomo</span>
+      </a>
+      <button class="header-nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">打开导航</span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="header-nav" id="main-nav" aria-label="主导航">
+        <a href="../projects/">项目</a>
+        <a class="is-active" href="../writing.html" aria-current="page">文章</a>
+        <a href="../about.html">关于</a>
+        <a href="../index.html#contact">联系</a>
+        <a href="../en.html" lang="en">EN</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="writing-masthead" aria-labelledby="writing-line-title">
+        <div class="wide-container writing-masthead-inner">
+          <div>
+            <span class="section-tag">Visual Notes / Line 04</span>
+            <h1 id="writing-line-title">大模型算法</h1>
+            <p>围绕 Tokenizer、学习范式、数据治理、预训练、监督微调、偏好对齐和蒸馏，解释模型能力如何被训练出来。</p>
+          </div>
+          <div class="writing-signal-strip" aria-label="专题标签">
+            <span>7 个主题</span>
+            <span>Tokenizer</span>
+            <span>数据训练</span>
+            <span>微调对齐</span>
+            <span>能力压缩</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="writing-board" aria-label="大模型算法 图解笔记">
+        <div class="wide-container">
+          <nav class="writing-topic-rail" aria-label="文章主题">
+            <a href="../writing.html#visual-notes">专题总览 <span>4</span></a>
+            <a class="is-active" href="#visual-line-algorithm" aria-current="page">算法 <span>7</span></a>
+            <a href="../writing.html#all-notes">文章索引 <span>7</span></a>
+          </nav>
+
+          <section class="visual-notes" id="visual-notes" aria-labelledby="visual-notes-title">
+            <div class="visual-notes-head">
+              <div>
+                <span class="section-tag">Topic Line</span>
+                <h2 id="visual-notes-title">专题导航</h2>
+                <p>四条线拆分成独立页面，当前页面只展示“大模型算法”专题内的完整图解。</p>
+              </div>
+              <a class="project-link" href="../writing.html#visual-notes">返回写作中心 →</a>
+            </div>
+            <div class="visual-topic-grid visual-topic-grid--compact" aria-label="图解专题导航">
+              <a class="visual-topic-card" href="../writing/app-development.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 01</span>
+                  <h3>大模型应用开发</h3>
+                  <p>从 RAG、Prompt、结构化输出到 Agent 运行、人审和产品体验，聚焦把模型能力做成可用产品。</p>
+                  <div class="visual-topic-card-tags"><span>RAG / Prompt</span><span>Agent 工作流</span><span>工具与人审</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/rag-knowledge-map-fantasy.png" alt="RAG 检索增强生成高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/advanced-rag-knowledge-map-fantasy.png" alt="Advanced RAG 检索增强进阶高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/prompt-engineering-knowledge-map-fantasy.png" alt="Prompt Engineering 指令工程高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>16 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card" href="../writing/infra.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 02</span>
+                  <h3>大模型 Infra</h3>
+                  <p>把模型网关、协议、安全、向量库、可观测、训练基础设施、模型服务和 LLMOps 作为生产底座来整理。</p>
+                  <div class="visual-topic-card-tags"><span>网关与协议</span><span>安全与检索</span><span>训练服务</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/model-gateway-knowledge-map-fantasy.png" alt="Model Gateway 模型网关高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/mcp-knowledge-map-fantasy.png" alt="MCP Model Context Protocol 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/llm-security-knowledge-map-fantasy.png" alt="LLM Security 大模型安全高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>10 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card" href="../writing/inference.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 03</span>
+                  <h3>大模型推理</h3>
+                  <p>从模型骨架、推理优化、KV Cache、调度、投机解码、量化到长上下文，关注延迟、吞吐、成本和质量取舍。</p>
+                  <div class="visual-topic-card-tags"><span>模型骨架</span><span>显存与调度</span><span>加速解码</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" alt="大模型架构 Model Architecture 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/kv-cache-paged-attention-knowledge-map-fantasy.png" alt="KV Cache PagedAttention 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/inference-batching-scheduling-knowledge-map-fantasy.png" alt="Batching Scheduling 推理调度高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>7 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card is-active" href="#" aria-current="page">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 04</span>
+                  <h3>大模型算法</h3>
+                  <p>围绕 Tokenizer、学习范式、数据治理、预训练、监督微调、偏好对齐和蒸馏，解释模型能力如何被训练出来。</p>
+                  <div class="visual-topic-card-tags"><span>Tokenizer</span><span>数据训练</span><span>微调对齐</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/tokenizer-knowledge-map-fantasy.png" alt="Tokenizer 分词器高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" alt="强化学习 Reinforcement Learning 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/llm-distillation-knowledge-map-fantasy.png" alt="LLM Distillation 模型蒸馏高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>7 个主题 · 当前专题</em>
+              </a>
+            </div>
+
+            <section class="visual-note-chapter" id="visual-line-algorithm" aria-labelledby="visual-line-algorithm-title">
+              <div class="visual-note-chapter-head">
+                <div>
+                  <span class="writing-row-kicker">Line 04</span>
+                  <h3 id="visual-line-algorithm-title">大模型算法</h3>
+                  <p>围绕 Tokenizer、学习范式、数据治理、预训练、监督微调、偏好对齐和蒸馏，解释模型能力如何被训练出来。</p>
+                </div>
+                <div class="visual-note-chapter-meta">
+                  <strong>7 个主题</strong>
+                    <span>Tokenizer</span>
+                    <span>数据训练</span>
+                    <span>微调对齐</span>
+                    <span>能力压缩</span>
+                </div>
+              </div>
+              <div class="visual-note-grid visual-note-grid--chapter">
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/tokenizer-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Tokenizer：分词器 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/tokenizer-knowledge-map-fantasy.png" alt="Tokenizer 分词器高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Tokenizer</span>
+                      <h3>Tokenizer：分词器</h3>
+                      <p>理解 BPE、SentencePiece、词表、特殊 token、多语言、代码数字、上下文成本和 tokenizer 版本兼容。</p>
+                      <a class="project-link" href="../content/notes/tokenizer.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 强化学习：奖励驱动的学习 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" alt="强化学习 Reinforcement Learning 高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Reinforcement Learning</span>
+                      <h3>强化学习：奖励驱动的学习</h3>
+                      <p>把 Agent、环境、状态、动作、奖励、价值函数、策略梯度、Actor-Critic 和 RLHF 统一起来看。</p>
+                      <a class="project-link" href="../content/notes/reinforcement-learning.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-data-curation-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Data Curation：训练数据治理 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-data-curation-knowledge-map-fantasy.png" alt="LLM Data Curation 训练数据治理高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Data</span>
+                      <h3>Data Curation：训练数据治理</h3>
+                      <p>从数据采集、清洗去重、质量过滤、配比、版权安全、版本审计和数据回流理解大模型数据工程。</p>
+                      <a class="project-link" href="../content/notes/llm-data-curation.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-pretraining-pipeline-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 LLM Pretraining：预训练流水线 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-pretraining-pipeline-knowledge-map-fantasy.png" alt="LLM Pretraining 预训练流水线高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Pretraining</span>
+                      <h3>LLM Pretraining：预训练流水线</h3>
+                      <p>从数据清洗、Tokenizer、训练目标、分布式并行、损失监控、checkpoint 和评测理解基础模型如何炼成。</p>
+                      <a class="project-link" href="../content/notes/llm-pretraining-pipeline.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-sft-peft-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 SFT / PEFT：监督微调与 LoRA 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-sft-peft-knowledge-map-fantasy.png" alt="SFT PEFT LoRA 监督微调高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Fine-tuning</span>
+                      <h3>SFT / PEFT：监督微调与 LoRA</h3>
+                      <p>理解指令数据、SFT、LoRA、QLoRA、训练超参、过拟合风险、评测和 adapter 发布流程。</p>
+                      <a class="project-link" href="../content/notes/llm-sft-peft.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-alignment-preference-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Alignment：偏好对齐与安全训练 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-alignment-preference-knowledge-map-fantasy.png" alt="Alignment RLHF DPO 偏好对齐高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Alignment</span>
+                      <h3>Alignment：偏好对齐与安全训练</h3>
+                      <p>梳理偏好数据、奖励模型、RLHF、DPO、RLAIF、安全对齐、过度拒答和对齐评测。</p>
+                      <a class="project-link" href="../content/notes/llm-alignment-preference.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-distillation-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Distillation：模型蒸馏 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-distillation-knowledge-map-fantasy.png" alt="LLM Distillation 模型蒸馏高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型算法 · Distillation</span>
+                      <h3>Distillation：模型蒸馏</h3>
+                      <p>从 teacher/student、数据构造、软标签、步骤蒸馏、偏好蒸馏、质量评估和部署取舍理解能力迁移。</p>
+                      <a class="project-link" href="../content/notes/llm-distillation.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-copy">© <span data-year></span> Tiammomo</span>
+        <a class="footer-top" href="#top">回到顶部 ↑</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

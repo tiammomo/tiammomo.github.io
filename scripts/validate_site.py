@@ -75,7 +75,11 @@ def check_local_ref(page: Path, ref: str, errors: list[str]) -> None:
 def main() -> int:
     errors: list[str] = []
 
-    html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "projects").glob("*.html"))
+    html_files = (
+        sorted(ROOT.glob("*.html"))
+        + sorted((ROOT / "projects").glob("*.html"))
+        + sorted((ROOT / "writing").glob("*.html"))
+    )
     for path in html_files:
         parser = RefParser()
         parser.feed(path.read_text(encoding="utf-8"))

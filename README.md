@@ -75,7 +75,7 @@ https://tiammomo.github.io/
 - 首页在 `index.html` / `en.html`，保持精炼定位、精选项目和分流入口。
 - 首页统计区由 `data/profile-stats.json` 和 `data/projects.json` 渲染，HTML 内的数字只作为无 JavaScript 兜底。
 - 项目中心在 `projects/index.html`，项目数据源在 `data/projects.json`，精选项目卡片和项目索引都从这里渲染。
-- 写作中心在 `writing.html`，用于承载项目复盘、Agent 产品化、AI 基础图解和工程札记入口。
+- 写作中心在 `writing.html`，用于承载项目复盘、图解专题和工程札记入口；完整图解按专题放在 `writing/*.html`。
 - AI 知识图谱的数据源放在 `content/notes/ai-knowledge-topics.json`。
 - 高密度知识海报和 Markdown 笔记通过 `python3 scripts/build_knowledge_posters.py` 生成。
 - 写作正文源文件放在 `content/notes/`，写作系统规范在 `docs/writing-system.md`。

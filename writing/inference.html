@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Tiammomo 图解笔记专题：大模型推理，覆盖模型架构、推理优化、KV Cache、推理调度、投机解码、量化和长上下文。" />
+    <link rel="canonical" href="https://tiammomo.github.io/writing/inference.html" />
+    <meta property="og:title" content="大模型推理 · 图解笔记 · Tiammomo" />
+    <meta property="og:description" content="Tiammomo 图解笔记专题：大模型推理，覆盖模型架构、推理优化、KV Cache、推理调度、投机解码、量化和长上下文。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tiammomo.github.io/writing/inference.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
+    <title>大模型推理 · 图解笔记 · Tiammomo</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="directory-page writing-page writing-line-page" id="top">
+    <header class="header is-scrolled" data-header>
+      <a class="header-brand" href="../index.html" aria-label="Tiammomo">
+        <span class="header-brand-mark" aria-hidden="true">T</span>
+        <span class="header-brand-text">Tiammomo</span>
+      </a>
+      <button class="header-nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">打开导航</span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="header-nav" id="main-nav" aria-label="主导航">
+        <a href="../projects/">项目</a>
+        <a class="is-active" href="../writing.html" aria-current="page">文章</a>
+        <a href="../about.html">关于</a>
+        <a href="../index.html#contact">联系</a>
+        <a href="../en.html" lang="en">EN</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="writing-masthead" aria-labelledby="writing-line-title">
+        <div class="wide-container writing-masthead-inner">
+          <div>
+            <span class="section-tag">Visual Notes / Line 03</span>
+            <h1 id="writing-line-title">大模型推理</h1>
+            <p>从模型骨架、推理优化、KV Cache、调度、投机解码、量化到长上下文，关注延迟、吞吐、成本和质量取舍。</p>
+          </div>
+          <div class="writing-signal-strip" aria-label="专题标签">
+            <span>7 个主题</span>
+            <span>模型骨架</span>
+            <span>显存与调度</span>
+            <span>加速解码</span>
+            <span>成本压缩</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="writing-board" aria-label="大模型推理 图解笔记">
+        <div class="wide-container">
+          <nav class="writing-topic-rail" aria-label="文章主题">
+            <a href="../writing.html#visual-notes">专题总览 <span>4</span></a>
+            <a class="is-active" href="#visual-line-inference" aria-current="page">推理 <span>7</span></a>
+            <a href="../writing.html#all-notes">文章索引 <span>7</span></a>
+          </nav>
+
+          <section class="visual-notes" id="visual-notes" aria-labelledby="visual-notes-title">
+            <div class="visual-notes-head">
+              <div>
+                <span class="section-tag">Topic Line</span>
+                <h2 id="visual-notes-title">专题导航</h2>
+                <p>四条线拆分成独立页面，当前页面只展示“大模型推理”专题内的完整图解。</p>
+              </div>
+              <a class="project-link" href="../writing.html#visual-notes">返回写作中心 →</a>
+            </div>
+            <div class="visual-topic-grid visual-topic-grid--compact" aria-label="图解专题导航">
+              <a class="visual-topic-card" href="../writing/app-development.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 01</span>
+                  <h3>大模型应用开发</h3>
+                  <p>从 RAG、Prompt、结构化输出到 Agent 运行、人审和产品体验，聚焦把模型能力做成可用产品。</p>
+                  <div class="visual-topic-card-tags"><span>RAG / Prompt</span><span>Agent 工作流</span><span>工具与人审</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/rag-knowledge-map-fantasy.png" alt="RAG 检索增强生成高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/advanced-rag-knowledge-map-fantasy.png" alt="Advanced RAG 检索增强进阶高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/prompt-engineering-knowledge-map-fantasy.png" alt="Prompt Engineering 指令工程高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>16 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card" href="../writing/infra.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 02</span>
+                  <h3>大模型 Infra</h3>
+                  <p>把模型网关、协议、安全、向量库、可观测、训练基础设施、模型服务和 LLMOps 作为生产底座来整理。</p>
+                  <div class="visual-topic-card-tags"><span>网关与协议</span><span>安全与检索</span><span>训练服务</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/model-gateway-knowledge-map-fantasy.png" alt="Model Gateway 模型网关高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/mcp-knowledge-map-fantasy.png" alt="MCP Model Context Protocol 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/llm-security-knowledge-map-fantasy.png" alt="LLM Security 大模型安全高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>10 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card is-active" href="#" aria-current="page">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 03</span>
+                  <h3>大模型推理</h3>
+                  <p>从模型骨架、推理优化、KV Cache、调度、投机解码、量化到长上下文，关注延迟、吞吐、成本和质量取舍。</p>
+                  <div class="visual-topic-card-tags"><span>模型骨架</span><span>显存与调度</span><span>加速解码</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" alt="大模型架构 Model Architecture 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/kv-cache-paged-attention-knowledge-map-fantasy.png" alt="KV Cache PagedAttention 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/inference-batching-scheduling-knowledge-map-fantasy.png" alt="Batching Scheduling 推理调度高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>7 个主题 · 当前专题</em>
+              </a>
+              <a class="visual-topic-card" href="../writing/algorithm.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 04</span>
+                  <h3>大模型算法</h3>
+                  <p>围绕 Tokenizer、学习范式、数据治理、预训练、监督微调、偏好对齐和蒸馏，解释模型能力如何被训练出来。</p>
+                  <div class="visual-topic-card-tags"><span>Tokenizer</span><span>数据训练</span><span>微调对齐</span></div>
+                </div>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="../assets/images/writing/generated/tokenizer-knowledge-map-fantasy.png" alt="Tokenizer 分词器高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" alt="强化学习 Reinforcement Learning 高密度幻想风知识地图" loading="lazy" />
+                  <img src="../assets/images/writing/generated/llm-distillation-knowledge-map-fantasy.png" alt="LLM Distillation 模型蒸馏高密度幻想风知识地图" loading="lazy" />
+                </div>
+                <em>7 个主题 · 进入专题 →</em>
+              </a>
+            </div>
+
+            <section class="visual-note-chapter" id="visual-line-inference" aria-labelledby="visual-line-inference-title">
+              <div class="visual-note-chapter-head">
+                <div>
+                  <span class="writing-row-kicker">Line 03</span>
+                  <h3 id="visual-line-inference-title">大模型推理</h3>
+                  <p>从模型骨架、推理优化、KV Cache、调度、投机解码、量化到长上下文，关注延迟、吞吐、成本和质量取舍。</p>
+                </div>
+                <div class="visual-note-chapter-meta">
+                  <strong>7 个主题</strong>
+                    <span>模型骨架</span>
+                    <span>显存与调度</span>
+                    <span>加速解码</span>
+                    <span>成本压缩</span>
+                </div>
+              </div>
+              <div class="visual-note-grid visual-note-grid--chapter">
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Model Architecture：模型骨架 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" alt="大模型架构 Model Architecture 高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · Architecture</span>
+                      <h3>Model Architecture：模型骨架</h3>
+                      <p>把 Transformer、注意力、上下文长度、MoE、多模态和推理成本放进一张架构视图里。</p>
+                      <a class="project-link" href="../content/notes/model-architecture.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-inference-optimization-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 LLM Inference：推理优化 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-inference-optimization-knowledge-map-fantasy.png" alt="LLM Inference 推理优化高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · Inference</span>
+                      <h3>LLM Inference：推理优化</h3>
+                      <p>从首 token 延迟、吞吐、KV Cache、批处理、量化、投机解码、并行和缓存看模型推理性能。</p>
+                      <a class="project-link" href="../content/notes/llm-inference-optimization.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/kv-cache-paged-attention-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 KV Cache：PagedAttention 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/kv-cache-paged-attention-knowledge-map-fantasy.png" alt="KV Cache PagedAttention 高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · KV Cache</span>
+                      <h3>KV Cache：PagedAttention</h3>
+                      <p>理解 Prefill、Decode、Key/Value 缓存、显存占用、分页管理、连续批处理和长上下文推理性能。</p>
+                      <a class="project-link" href="../content/notes/kv-cache-paged-attention.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/inference-batching-scheduling-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Batching &amp; Scheduling：推理调度 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/inference-batching-scheduling-knowledge-map-fantasy.png" alt="Batching Scheduling 推理调度高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · Scheduling</span>
+                      <h3>Batching &amp; Scheduling：推理调度</h3>
+                      <p>梳理动态批处理、continuous batching、队列优先级、prefill/decode 分离、SLA、尾延迟和容量规划。</p>
+                      <a class="project-link" href="../content/notes/inference-batching-scheduling.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/speculative-decoding-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Speculative Decoding：投机解码 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/speculative-decoding-knowledge-map-fantasy.png" alt="Speculative Decoding 投机解码高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · Decoding</span>
+                      <h3>Speculative Decoding：投机解码</h3>
+                      <p>理解 draft model、target model、候选 token、并行验证、接受率、加速比、质量风险和适用场景。</p>
+                      <a class="project-link" href="../content/notes/speculative-decoding.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-quantization-compression-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Quantization：模型量化与压缩 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-quantization-compression-knowledge-map-fantasy.png" alt="Quantization 模型量化与压缩高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · Compression</span>
+                      <h3>Quantization：模型量化与压缩</h3>
+                      <p>从权重量化、激活量化、GPTQ、AWQ、SmoothQuant、KV Cache 量化、蒸馏和质量评估理解压缩取舍。</p>
+                      <a class="project-link" href="../content/notes/llm-quantization-compression.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+                  <article class="visual-note-card">
+                    <figure>
+                      <a class="visual-note-poster" href="../assets/images/writing/generated/llm-long-context-attention-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Long Context：长上下文与注意力优化 高密度知识地图大图">
+                        <img src="../assets/images/writing/generated/llm-long-context-attention-knowledge-map-fantasy.png" alt="Long Context 长上下文与注意力优化高密度幻想风知识地图" loading="lazy" />
+                      </a>
+                    </figure>
+                    <div class="visual-note-body">
+                      <span class="writing-row-kicker">大模型推理 · Long Context</span>
+                      <h3>Long Context：长上下文与注意力优化</h3>
+                      <p>理解上下文窗口、RoPE、位置插值、FlashAttention、滑动窗口、KV 压缩、RAG 互补和长文评测。</p>
+                      <a class="project-link" href="../content/notes/llm-long-context-attention.md">查看笔记源文件 →</a>
+                    </div>
+                  </article>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-copy">© <span data-year></span> Tiammomo</span>
+        <a class="footer-top" href="#top">回到顶部 ↑</a>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

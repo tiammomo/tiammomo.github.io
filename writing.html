@@ -57,67 +57,9 @@
 
       <section class="writing-board" aria-label="文章与笔记">
         <div class="wide-container">
-          <div class="writing-feature-layout">
-            <article class="writing-feature" id="agent">
-              <div class="writing-feature-copy">
-                <span class="section-tag">Featured Essay</span>
-                <h2>为什么 Agent 工作台需要人审边界</h2>
-                <p>从 Temu Price Studio 的 SKU、Prompt、抽卡候选、QA、trace 和最终包出发，讨论哪些判断应该交给系统整理，哪些必须留给人。</p>
-                <div class="writing-feature-meta">
-                  <span>Agent 产品化</span>
-                  <span>Human Review</span>
-                  <span>Traceability</span>
-                  <span>Temu Price Studio</span>
-                </div>
-                <a class="project-link" href="projects/temu-price-studio.html">先看相关案例 →</a>
-              </div>
-              <div class="agent-flow" aria-hidden="true">
-                <div class="agent-flow-node agent-flow-node--top">Agent 执行</div>
-                <div class="agent-flow-diamond">风险评估</div>
-                <div class="agent-flow-split">
-                  <span>低风险<br />自动通过</span>
-                  <span>中/高风险<br />进入人审</span>
-                </div>
-                <div class="agent-flow-node">人工审核</div>
-                <div class="agent-flow-node">写入系统</div>
-              </div>
-            </article>
-
-            <aside class="writing-paths" aria-label="阅读路径">
-              <div class="writing-paths-head">
-                <span class="section-tag">Reading Paths</span>
-                <a class="project-link" href="projects/">查看项目中心 →</a>
-              </div>
-              <ol class="writing-path-list">
-                <li>
-                  <span>01</span>
-                  <div>
-                    <strong>Agent 产品化路线</strong>
-                    <p>从人审边界开始，再看 Temu Price Studio 和 SellerHarbor。</p>
-                  </div>
-                </li>
-                <li>
-                  <span>02</span>
-                  <div>
-                    <strong>工程实践路线</strong>
-                    <p>先看 ModelPort，再看 Local-first 数据归属和部署边界。</p>
-                  </div>
-                </li>
-                <li>
-                  <span>03</span>
-                  <div>
-                    <strong>数据与系统路线</strong>
-                    <p>从 QuantPilot 的可验证投研工作台进入数据系统主题。</p>
-                  </div>
-                </li>
-              </ol>
-            </aside>
-          </div>
-
           <nav class="writing-topic-rail" aria-label="文章主题">
-            <a class="is-active" href="#all-notes">全部内容 <span>23</span></a>
-            <a href="#visual-notes">图解笔记 <span>16</span></a>
-            <a href="#agent">Agent 产品化 <span>2</span></a>
+            <a class="is-active" href="#all-notes">全部内容 <span>47</span></a>
+            <a href="#visual-notes">图解笔记 <span>40</span></a>
             <a href="#retrospective">项目复盘 <span>2</span></a>
             <a href="#engineering">工程札记 <span>2</span></a>
             <a href="#data">数据系统 <span>1</span></a>
@@ -128,227 +70,69 @@
             <div class="visual-notes-head">
               <div>
                 <span class="section-tag">Visual Notes</span>
-                <h2 id="visual-notes-title">图解笔记</h2>
-                <p>用原创幻想风视觉承载主题氛围，用结构化数据生成高密度中文海报和可维护 Markdown 正文。</p>
+                <h2 id="visual-notes-title">图解专题</h2>
+                <p>40 张高密度知识海报已拆成四个专题页。这里保留入口，完整卡片进入对应专题阅读。</p>
               </div>
               <a class="project-link" href="docs/writing-system.md">查看写作系统规范 →</a>
             </div>
-            <div class="visual-note-grid" data-visual-note-grid data-page-size="6">
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/rag-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 RAG 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/rag-knowledge-map-fantasy.png" alt="RAG 检索增强生成高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">AI 基础 · RAG</span>
-                  <h3>RAG：检索增强生成</h3>
-                  <p>把知识库、分块、向量化、检索、重排、上下文注入和引用验证串成一条可运营链路。</p>
-                  <a class="project-link" href="content/notes/rag.md">查看笔记源文件 →</a>
+            <div class="visual-topic-grid" aria-label="图解专题入口">
+              <a class="visual-topic-card" href="writing/app-development.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 01</span>
+                  <h3>大模型应用开发</h3>
+                  <p>从 RAG、Prompt、结构化输出到 Agent 运行、人审和产品体验，聚焦把模型能力做成可用产品。</p>
+                  <div class="visual-topic-card-tags"><span>RAG / Prompt</span><span>Agent 工作流</span><span>工具与人审</span></div>
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开强化学习高密度知识地图大图">
-                    <img src="assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" alt="强化学习 Reinforcement Learning 高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">AI 基础 · Reinforcement Learning</span>
-                  <h3>强化学习：奖励驱动的学习</h3>
-                  <p>把 Agent、环境、状态、动作、奖励、价值函数、策略梯度、Actor-Critic 和 RLHF 统一起来看。</p>
-                  <a class="project-link" href="content/notes/reinforcement-learning.md">查看笔记源文件 →</a>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="assets/images/writing/generated/rag-knowledge-map-fantasy.png" alt="RAG 检索增强生成高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/advanced-rag-knowledge-map-fantasy.png" alt="Advanced RAG 检索增强进阶高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/prompt-engineering-knowledge-map-fantasy.png" alt="Prompt Engineering 指令工程高密度幻想风知识地图" loading="lazy" />
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/planning-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 AI Planning 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/planning-knowledge-map-fantasy.png" alt="AI Planning 规划能力高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 能力 · Planning</span>
-                  <h3>Planning：让 Agent 先规划</h3>
-                  <p>从目标澄清、任务拆解、依赖排序、工具选择、执行监控到反思迭代，形成稳定行动闭环。</p>
-                  <a class="project-link" href="content/notes/planning.md">查看笔记源文件 →</a>
+                <em>16 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card" href="writing/infra.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 02</span>
+                  <h3>大模型 Infra</h3>
+                  <p>把模型网关、协议、安全、向量库、可观测、训练基础设施、模型服务和 LLMOps 作为生产底座来整理。</p>
+                  <div class="visual-topic-card-tags"><span>网关与协议</span><span>安全与检索</span><span>训练服务</span></div>
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开大模型架构高密度知识地图大图">
-                    <img src="assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" alt="大模型架构 Model Architecture 高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">模型基础 · Architecture</span>
-                  <h3>Model Architecture：模型骨架</h3>
-                  <p>把 Transformer、注意力、上下文长度、MoE、多模态和推理成本放进一张架构视图里。</p>
-                  <a class="project-link" href="content/notes/model-architecture.md">查看笔记源文件 →</a>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="assets/images/writing/generated/model-gateway-knowledge-map-fantasy.png" alt="Model Gateway 模型网关高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/mcp-knowledge-map-fantasy.png" alt="MCP Model Context Protocol 高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/llm-security-knowledge-map-fantasy.png" alt="LLM Security 大模型安全高密度幻想风知识地图" loading="lazy" />
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/workflow-vs-agent-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Workflow 与 Agent 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/workflow-vs-agent-knowledge-map-fantasy.png" alt="Workflow 与 Agent 对比高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 架构 · Workflow</span>
-                  <h3>Workflow vs Agent：什么时候用谁</h3>
-                  <p>从驱动方式、执行路径、可靠性、可观测、人审边界和混合架构判断系统应该怎么设计。</p>
-                  <a class="project-link" href="content/notes/workflow-vs-agent.md">查看笔记源文件 →</a>
+                <em>10 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card" href="writing/inference.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 03</span>
+                  <h3>大模型推理</h3>
+                  <p>从模型骨架、推理优化、KV Cache、调度、投机解码、量化到长上下文，关注延迟、吞吐、成本和质量取舍。</p>
+                  <div class="visual-topic-card-tags"><span>模型骨架</span><span>显存与调度</span><span>加速解码</span></div>
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/context-engineering-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Context Engineering 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/context-engineering-knowledge-map-fantasy.png" alt="Context Engineering 上下文工程高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 能力 · Context</span>
-                  <h3>Context Engineering：上下文工程</h3>
-                  <p>围绕任务意图、信息源、记忆、RAG、工具输出、格式约束和反馈优化设计模型工作台。</p>
-                  <a class="project-link" href="content/notes/context-engineering.md">查看笔记源文件 →</a>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="assets/images/writing/generated/model-architecture-knowledge-map-fantasy.png" alt="大模型架构 Model Architecture 高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/kv-cache-paged-attention-knowledge-map-fantasy.png" alt="KV Cache PagedAttention 高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/inference-batching-scheduling-knowledge-map-fantasy.png" alt="Batching Scheduling 推理调度高密度幻想风知识地图" loading="lazy" />
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/multi-agent-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Multi-Agent 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/multi-agent-knowledge-map-fantasy.png" alt="Multi-Agent 多智能体高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 架构 · Multi-Agent</span>
-                  <h3>Multi-Agent：多智能体协作</h3>
-                  <p>把角色、通信、共享记忆、任务交接、冲突处理、结果整合和人类介入设计成可控协作系统。</p>
-                  <a class="project-link" href="content/notes/multi-agent.md">查看笔记源文件 →</a>
+                <em>7 个主题 · 进入专题 →</em>
+              </a>
+              <a class="visual-topic-card" href="writing/algorithm.html">
+                <div class="visual-topic-card-copy">
+                  <span class="writing-row-kicker">Line 04</span>
+                  <h3>大模型算法</h3>
+                  <p>围绕 Tokenizer、学习范式、数据治理、预训练、监督微调、偏好对齐和蒸馏，解释模型能力如何被训练出来。</p>
+                  <div class="visual-topic-card-tags"><span>Tokenizer</span><span>数据训练</span><span>微调对齐</span></div>
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/memory-systems-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 AI Memory 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/memory-systems-knowledge-map-fantasy.png" alt="AI Memory 记忆系统高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 能力 · Memory</span>
-                  <h3>Memory：Agent 的记忆系统</h3>
-                  <p>从记忆类型、检索策略、生命周期、隐私安全和可解释性设计长期可用的 Agent 记忆。</p>
-                  <a class="project-link" href="content/notes/memory-systems.md">查看笔记源文件 →</a>
+                <div class="visual-topic-preview" aria-hidden="true">
+                  <img src="assets/images/writing/generated/tokenizer-knowledge-map-fantasy.png" alt="Tokenizer 分词器高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/reinforcement-learning-knowledge-map-fantasy.png" alt="强化学习 Reinforcement Learning 高密度幻想风知识地图" loading="lazy" />
+                  <img src="assets/images/writing/generated/llm-distillation-knowledge-map-fantasy.png" alt="LLM Distillation 模型蒸馏高密度幻想风知识地图" loading="lazy" />
                 </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/tool-calling-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Tool Calling 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/tool-calling-knowledge-map-fantasy.png" alt="Function Calling Tool Calling 工具调用高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 能力 · Tool Calling</span>
-                  <h3>Tool Calling：工具调用</h3>
-                  <p>把用户意图、函数描述、参数 Schema、工具执行、结果回填、错误恢复和安全权限串起来。</p>
-                  <a class="project-link" href="content/notes/tool-calling.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/mcp-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 MCP 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/mcp-knowledge-map-fantasy.png" alt="MCP Model Context Protocol 高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 协议 · MCP</span>
-                  <h3>MCP：模型上下文协议</h3>
-                  <p>从 Client、Server、Resources、Tools、Prompts、Transport、权限、日志和生命周期看 MCP 的价值。</p>
-                  <a class="project-link" href="content/notes/mcp.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-harness-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Harness 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/agent-harness-knowledge-map-fantasy.png" alt="Agent Harness 智能体运行框架高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 工程 · Harness</span>
-                  <h3>Agent Harness：智能体运行框架</h3>
-                  <p>把模型、Prompt、工具、记忆、状态、权限、日志、评测和人审边界包成可运行容器。</p>
-                  <a class="project-link" href="content/notes/agent-harness.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-loop-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Loop 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/agent-loop-knowledge-map-fantasy.png" alt="Agent Loop 智能体循环高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 工程 · Loop</span>
-                  <h3>Agent Loop：智能体循环</h3>
-                  <p>把观察、规划、行动、检查、反思、状态更新和停止条件做成可控执行闭环。</p>
-                  <a class="project-link" href="content/notes/agent-loop.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/tool-use-patterns-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Tool Use Patterns 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/tool-use-patterns-knowledge-map-fantasy.png" alt="Tool Use Patterns 工具使用模式高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 工程 · Tool Use</span>
-                  <h3>Tool Use Patterns：工具使用模式</h3>
-                  <p>从单工具、多工具、并行调用、工具链、结果校验、重试、幂等和权限看工具使用策略。</p>
-                  <a class="project-link" href="content/notes/tool-use-patterns.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-eval-harness-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Eval Harness 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/agent-eval-harness-knowledge-map-fantasy.png" alt="Agent Eval Harness 智能体评测与回归高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 工程 · Eval</span>
-                  <h3>Agent Eval Harness：评测与回归</h3>
-                  <p>用测试集、工具 mock、golden trace、评分器和人工复核评估 Agent 是否稳定完成任务。</p>
-                  <a class="project-link" href="content/notes/agent-eval-harness.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-observability-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Observability 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/agent-observability-knowledge-map-fantasy.png" alt="Agent Observability 可观测高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 工程 · Trace</span>
-                  <h3>Observability：Agent 可观测</h3>
-                  <p>记录输入、计划、工具调用、模型响应、成本、延迟、错误和结果，让执行过程可回放。</p>
-                  <a class="project-link" href="content/notes/agent-observability.md">查看笔记源文件 →</a>
-                </div>
-              </article>
-              <article class="visual-note-card">
-                <figure>
-                  <a class="visual-note-poster" href="assets/images/writing/generated/guardrails-hitl-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Guardrails 与 HITL 高密度知识地图大图">
-                    <img src="assets/images/writing/generated/guardrails-hitl-knowledge-map-fantasy.png" alt="Guardrails HITL 安全边界与人审高密度幻想风知识地图" loading="lazy" />
-                  </a>
-                </figure>
-                <div class="visual-note-body">
-                  <span class="writing-row-kicker">Agent 产品化 · Guardrails</span>
-                  <h3>Guardrails：安全边界与人审</h3>
-                  <p>把权限、脱敏、危险动作拦截、风险分级、人审节点和审计日志做进产品流程。</p>
-                  <a class="project-link" href="content/notes/guardrails-hitl.md">查看笔记源文件 →</a>
-                </div>
-              </article>
+                <em>7 个主题 · 进入专题 →</em>
+              </a>
             </div>
-            <nav class="visual-note-pagination" data-visual-note-pagination aria-label="图解笔记分页" hidden>
-              <button class="visual-note-page-arrow" type="button" data-visual-page="prev">上一页</button>
-              <div class="visual-note-pages" data-visual-note-pages aria-label="页码"></div>
-              <span class="visual-note-page-status" data-visual-note-status></span>
-              <button class="visual-note-page-arrow" type="button" data-visual-page="next">下一页</button>
-            </nav>
           </section>
 
           <section class="writing-index" id="all-notes" aria-labelledby="writing-index-title">
