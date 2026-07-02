@@ -10,10 +10,11 @@
     <meta property="og:description" content="按应用编排、Agent 运行、数据与检索、模型服务、观测评测和协议集成理解大模型常用组件。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tiammomo.github.io/components.html" />
-    <meta property="og:image" content="https://tiammomo.github.io/assets/images/components/ai-component-map-fantasy-workbench.png" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
     <title>大模型常用组件 · Tiammomo</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" as="image" href="assets/images/generated/anime-portfolio-og.webp" type="image/webp" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="directory-page components-page" id="top">
@@ -37,34 +38,29 @@
     </header>
 
     <main>
-      <section class="page-hero components-hero" aria-labelledby="components-title">
+      <section class="portfolio-page-hero portfolio-page-hero--components" aria-labelledby="components-title">
         <div class="wide-container">
-          <div class="components-hero-card">
-            <img
-              src="assets/images/components/ai-component-map-fantasy-workbench.png"
-              alt="大模型组件地图幻想风背景：银发精灵法师在魔法工作台前查看数据湖、向量检索、模型服务和协议节点"
-              width="1774"
-              height="887"
-              loading="eager"
-            />
-            <div class="components-hero-content">
-              <span class="section-tag">组件地图</span>
-              <h1 id="components-title">大模型常用组件</h1>
-              <p>把 LLM 应用拆成可理解的工程层：应用编排、Agent 状态机、数据与检索、模型服务、观测评测和协议集成。这里不是固定技术栈清单，而是做项目时快速判断“该用什么、为什么用、边界在哪里”的地图。</p>
-              <div class="page-hero-proof components-hero-proof" aria-label="组件页覆盖范围">
-                <span>LangChain / LangGraph</span>
-                <span>LanceDB / Lance</span>
-                <span>RAG / Vector DB</span>
-                <span>vLLM / LiteLLM</span>
-                <span>LangSmith / Langfuse</span>
-                <span>MCP</span>
-              </div>
+          <div class="portfolio-page-hero-inner">
+            <p class="hero-label">COMPONENT MAP · LLM ENGINEERING · TOOLING STACK</p>
+            <h1 id="components-title">大模型常用组件</h1>
+            <p>把 LLM 应用拆成可理解的工程层：应用编排、Agent 状态机、数据与检索、模型服务、观测评测和协议集成。用于快速判断该用什么、为什么用、边界在哪里。</p>
+            <div class="portfolio-page-hero-tags" aria-label="组件页覆盖范围">
+              <span>LangChain / LangGraph</span>
+              <span>LanceDB / Lance</span>
+              <span>RAG / Vector DB</span>
+              <span>vLLM / LiteLLM</span>
+              <span>LangSmith / Langfuse</span>
+              <span>MCP</span>
+            </div>
+            <div class="portfolio-page-hero-actions">
+              <a class="btn btn-primary" href="#component-map">浏览组件地图</a>
+              <a class="btn btn-ghost" href="#decision">选型路径</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="components-board" aria-label="组件地图">
+      <section class="components-board" id="component-map" aria-label="组件地图">
         <div class="wide-container">
           <nav class="component-taxonomy" aria-label="组件分层总览">
             <span class="component-taxonomy-title">组件分类</span>

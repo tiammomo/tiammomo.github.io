@@ -10,10 +10,11 @@
     <meta property="og:description" content="把项目经验整理成可复用的产品工程笔记：Agent 工作台、人审边界、模型网关、数据工作台和本地优先系统。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tiammomo.github.io/writing.html" />
-    <meta property="og:image" content="https://tiammomo.github.io/assets/images/writing/generated/writing-center-hero-fantasy.png" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
     <title>Writing / Notes · Tiammomo</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
+    <link rel="preload" as="image" href="assets/images/generated/anime-portfolio-og.webp" type="image/webp" />
     <link rel="stylesheet" href="styles.css?v=20260702-topic-pages" />
   </head>
   <body class="directory-page writing-page" id="top">
@@ -37,18 +38,22 @@
     </header>
 
     <main>
-      <section class="writing-masthead" aria-labelledby="writing-title">
-        <div class="wide-container writing-masthead-inner">
-          <div>
-            <span class="section-tag">Writing / Notes</span>
+      <section class="portfolio-page-hero portfolio-page-hero--writing" aria-labelledby="writing-title">
+        <div class="wide-container">
+          <div class="portfolio-page-hero-inner">
+            <p class="hero-label">WRITING CENTER · VISUAL NOTES · ENGINEERING REVIEW</p>
             <h1 id="writing-title">写作中心</h1>
             <p>把项目经验写成可复用笔记。记录我在 AI Agent 产品化、真实业务系统落地、工程实践与数据建模过程中的思考、取舍与复盘。</p>
-          </div>
-          <div class="writing-signal-strip" aria-label="写作方向">
-            <span>图解专题</span>
-            <span>深度笔记</span>
-            <span>工程实践</span>
-            <span>知识沉淀</span>
+            <div class="portfolio-page-hero-tags" aria-label="写作方向">
+              <span>图解专题</span>
+              <span>深度笔记</span>
+              <span>工程实践</span>
+              <span>知识沉淀</span>
+            </div>
+            <div class="portfolio-page-hero-actions">
+              <a class="btn btn-primary" href="#visual-notes">图解专题</a>
+              <a class="btn btn-ghost" href="#all-notes">文章索引</a>
+            </div>
           </div>
         </div>
       </section>
@@ -65,13 +70,7 @@
           </nav>
 
           <section class="visual-notes" id="visual-notes" aria-labelledby="visual-notes-title">
-            <div class="visual-notes-head">
-              <div>
-                <span class="section-tag">Visual Notes</span>
-                <h2 id="visual-notes-title">图解专题</h2>
-                <p>40 张高密度知识海报已拆成四个专题页。这里保留入口，完整卡片进入对应专题阅读。</p>
-              </div>
-            </div>
+            <h2 class="sr-only" id="visual-notes-title">图解专题</h2>
             <div class="visual-topic-grid" aria-label="图解专题入口">
               <a class="visual-topic-card" href="writing/app-development.html#visual-line-app">
                 <div class="visual-topic-card-copy">

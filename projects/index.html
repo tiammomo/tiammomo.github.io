@@ -14,6 +14,7 @@
     <title>Projects Center · Tiammomo</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preload" as="image" href="../assets/images/generated/anime-portfolio-og.webp" type="image/webp" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="directory-page projects-page" id="top">
@@ -37,6 +38,28 @@
     </header>
 
     <main>
+      <section class="portfolio-page-hero portfolio-page-hero--projects" aria-labelledby="projects-title">
+        <div class="wide-container">
+          <div class="portfolio-page-hero-inner">
+            <p class="hero-label">PROJECTS CENTER · REAL WORKBENCHES · GITHUB PROJECTS</p>
+            <h1 id="projects-title">项目中心</h1>
+            <p>
+              集中查看我沉淀的 AI 产品工程项目：模型网关、核价生图、量化投研、跨境运营、旅行规划和经营管理。优先展示真实截图、可运行状态、案例入口和脱敏说明。
+            </p>
+            <div class="portfolio-page-hero-tags" aria-label="项目页重点">
+              <span>精选案例</span>
+              <span>运行状态</span>
+              <span>脱敏截图</span>
+              <span>GitHub Projects</span>
+            </div>
+            <div class="portfolio-page-hero-actions">
+              <a class="btn btn-primary" href="#project-gallery">浏览项目</a>
+              <a class="btn btn-ghost" href="#project-index">项目索引</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="project-center" aria-labelledby="featured-projects-title">
         <div class="wide-container project-center-layout">
           <aside class="center-sidebar project-rail" aria-label="项目筛选">
@@ -64,7 +87,7 @@
 
           <div class="center-main">
             <h2 class="sr-only" id="featured-projects-title">精选项目</h2>
-            <section class="archive-section project-index-section project-index-section--inline" aria-labelledby="archive-title">
+            <section class="archive-section project-index-section project-index-section--inline" id="project-index" aria-labelledby="archive-title">
               <div class="project-board-head project-board-head--index">
                 <div>
                   <span class="section-tag">Project Index</span>
@@ -125,7 +148,7 @@
               </div>
             </section>
 
-            <div class="project-grid project-grid--center" data-project-grid data-locale="zh" data-project-src="../data/projects.json" data-url-base="../">
+            <div class="project-grid project-grid--center" id="project-gallery" data-project-grid data-locale="zh" data-project-src="../data/projects.json" data-url-base="../">
               <article class="project-card" data-category="ai infra product">
                 <div class="project-card-top">
                   <span class="project-num">01</span>
