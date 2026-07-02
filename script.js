@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectGrid = document.querySelector('[data-project-grid]');
   const projectIndex = document.querySelector('[data-project-index]');
   const statsSection = document.querySelector('[data-profile-stats]');
+  const visualNoteGrid = document.querySelector('[data-visual-note-grid]');
+  const visualNotePagination = document.querySelector('[data-visual-note-pagination]');
   const jsonCache = new Map();
 
   const escapeHtml = (value) =>
@@ -207,6 +209,78 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const setupVisualNotePagination = () => {
+    if (!visualNoteGrid || !visualNotePagination) return;
+
+    const cards = Array.from(visualNoteGrid.querySelectorAll('.visual-note-card'));
+    const pageSize = Math.max(1, Number(visualNoteGrid.dataset.pageSize) || 6);
+    const totalPages = Math.ceil(cards.length / pageSize);
+
+    if (totalPages <= 1) return;
+
+    const pagesEl = visualNotePagination.querySelector('[data-visual-note-pages]');
+    const statusEl = visualNotePagination.querySelector('[data-visual-note-status]');
+    const prevBtn = visualNotePagination.querySelector('[data-visual-page="prev"]');
+    const nextBtn = visualNotePagination.querySelector('[data-visual-page="next"]');
+    let currentPage = 0;
+
+    if (pagesEl) {
+      pagesEl.innerHTML = Array.from({ length: totalPages }, (_, index) => `
+        <button class="visual-note-page-btn" type="button" data-visual-page-index="${index}" aria-label="第 ${index + 1} 页">${index + 1}</button>
+      `).join('');
+    }
+
+    const updatePage = (nextPage, shouldScroll = false) => {
+      currentPage = Math.min(Math.max(nextPage, 0), totalPages - 1);
+      const start = currentPage * pageSize;
+      const end = start + pageSize;
+
+      cards.forEach((card, index) => {
+        const visible = index >= start && index < end;
+        card.hidden = !visible;
+        card.classList.toggle('is-hidden', !visible);
+      });
+
+      visualNotePagination.querySelectorAll('[data-visual-page-index]').forEach((button) => {
+        const active = Number(button.dataset.visualPageIndex) === currentPage;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-current', active ? 'page' : 'false');
+      });
+
+      if (prevBtn) prevBtn.disabled = currentPage === 0;
+      if (nextBtn) nextBtn.disabled = currentPage === totalPages - 1;
+      if (statusEl) {
+        statusEl.textContent = `${start + 1}-${Math.min(end, cards.length)} / ${cards.length}`;
+      }
+
+      if (shouldScroll) {
+        visualNoteGrid.closest('.visual-notes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    visualNotePagination.addEventListener('click', (event) => {
+      const button = event.target.closest('button');
+      if (!button) return;
+
+      if (button.dataset.visualPage === 'prev') {
+        updatePage(currentPage - 1, true);
+        return;
+      }
+
+      if (button.dataset.visualPage === 'next') {
+        updatePage(currentPage + 1, true);
+        return;
+      }
+
+      if (button.dataset.visualPageIndex) {
+        updatePage(Number(button.dataset.visualPageIndex), true);
+      }
+    });
+
+    visualNotePagination.hidden = false;
+    updatePage(0);
+  };
+
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   if (header) {
@@ -276,4 +350,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStats();
   renderProjects();
   renderProjectIndex();
+  setupVisualNotePagination();
 });

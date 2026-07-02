@@ -115,8 +115,8 @@
           </div>
 
           <nav class="writing-topic-rail" aria-label="文章主题">
-            <a class="is-active" href="#all-notes">全部内容 <span>17</span></a>
-            <a href="#visual-notes">图解笔记 <span>10</span></a>
+            <a class="is-active" href="#all-notes">全部内容 <span>23</span></a>
+            <a href="#visual-notes">图解笔记 <span>16</span></a>
             <a href="#agent">Agent 产品化 <span>2</span></a>
             <a href="#retrospective">项目复盘 <span>2</span></a>
             <a href="#engineering">工程札记 <span>2</span></a>
@@ -133,7 +133,7 @@
               </div>
               <a class="project-link" href="docs/writing-system.md">查看写作系统规范 →</a>
             </div>
-            <div class="visual-note-grid">
+            <div class="visual-note-grid" data-visual-note-grid data-page-size="6">
               <article class="visual-note-card">
                 <figure>
                   <a class="visual-note-poster" href="assets/images/writing/generated/rag-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 RAG 高密度知识地图大图">
@@ -264,7 +264,91 @@
                   <a class="project-link" href="content/notes/mcp.md">查看笔记源文件 →</a>
                 </div>
               </article>
+              <article class="visual-note-card">
+                <figure>
+                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-harness-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Harness 高密度知识地图大图">
+                    <img src="assets/images/writing/generated/agent-harness-knowledge-map-fantasy.png" alt="Agent Harness 智能体运行框架高密度幻想风知识地图" loading="lazy" />
+                  </a>
+                </figure>
+                <div class="visual-note-body">
+                  <span class="writing-row-kicker">Agent 工程 · Harness</span>
+                  <h3>Agent Harness：智能体运行框架</h3>
+                  <p>把模型、Prompt、工具、记忆、状态、权限、日志、评测和人审边界包成可运行容器。</p>
+                  <a class="project-link" href="content/notes/agent-harness.md">查看笔记源文件 →</a>
+                </div>
+              </article>
+              <article class="visual-note-card">
+                <figure>
+                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-loop-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Loop 高密度知识地图大图">
+                    <img src="assets/images/writing/generated/agent-loop-knowledge-map-fantasy.png" alt="Agent Loop 智能体循环高密度幻想风知识地图" loading="lazy" />
+                  </a>
+                </figure>
+                <div class="visual-note-body">
+                  <span class="writing-row-kicker">Agent 工程 · Loop</span>
+                  <h3>Agent Loop：智能体循环</h3>
+                  <p>把观察、规划、行动、检查、反思、状态更新和停止条件做成可控执行闭环。</p>
+                  <a class="project-link" href="content/notes/agent-loop.md">查看笔记源文件 →</a>
+                </div>
+              </article>
+              <article class="visual-note-card">
+                <figure>
+                  <a class="visual-note-poster" href="assets/images/writing/generated/tool-use-patterns-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Tool Use Patterns 高密度知识地图大图">
+                    <img src="assets/images/writing/generated/tool-use-patterns-knowledge-map-fantasy.png" alt="Tool Use Patterns 工具使用模式高密度幻想风知识地图" loading="lazy" />
+                  </a>
+                </figure>
+                <div class="visual-note-body">
+                  <span class="writing-row-kicker">Agent 工程 · Tool Use</span>
+                  <h3>Tool Use Patterns：工具使用模式</h3>
+                  <p>从单工具、多工具、并行调用、工具链、结果校验、重试、幂等和权限看工具使用策略。</p>
+                  <a class="project-link" href="content/notes/tool-use-patterns.md">查看笔记源文件 →</a>
+                </div>
+              </article>
+              <article class="visual-note-card">
+                <figure>
+                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-eval-harness-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Eval Harness 高密度知识地图大图">
+                    <img src="assets/images/writing/generated/agent-eval-harness-knowledge-map-fantasy.png" alt="Agent Eval Harness 智能体评测与回归高密度幻想风知识地图" loading="lazy" />
+                  </a>
+                </figure>
+                <div class="visual-note-body">
+                  <span class="writing-row-kicker">Agent 工程 · Eval</span>
+                  <h3>Agent Eval Harness：评测与回归</h3>
+                  <p>用测试集、工具 mock、golden trace、评分器和人工复核评估 Agent 是否稳定完成任务。</p>
+                  <a class="project-link" href="content/notes/agent-eval-harness.md">查看笔记源文件 →</a>
+                </div>
+              </article>
+              <article class="visual-note-card">
+                <figure>
+                  <a class="visual-note-poster" href="assets/images/writing/generated/agent-observability-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Agent Observability 高密度知识地图大图">
+                    <img src="assets/images/writing/generated/agent-observability-knowledge-map-fantasy.png" alt="Agent Observability 可观测高密度幻想风知识地图" loading="lazy" />
+                  </a>
+                </figure>
+                <div class="visual-note-body">
+                  <span class="writing-row-kicker">Agent 工程 · Trace</span>
+                  <h3>Observability：Agent 可观测</h3>
+                  <p>记录输入、计划、工具调用、模型响应、成本、延迟、错误和结果，让执行过程可回放。</p>
+                  <a class="project-link" href="content/notes/agent-observability.md">查看笔记源文件 →</a>
+                </div>
+              </article>
+              <article class="visual-note-card">
+                <figure>
+                  <a class="visual-note-poster" href="assets/images/writing/generated/guardrails-hitl-knowledge-map-fantasy.png" target="_blank" rel="noopener" aria-label="打开 Guardrails 与 HITL 高密度知识地图大图">
+                    <img src="assets/images/writing/generated/guardrails-hitl-knowledge-map-fantasy.png" alt="Guardrails HITL 安全边界与人审高密度幻想风知识地图" loading="lazy" />
+                  </a>
+                </figure>
+                <div class="visual-note-body">
+                  <span class="writing-row-kicker">Agent 产品化 · Guardrails</span>
+                  <h3>Guardrails：安全边界与人审</h3>
+                  <p>把权限、脱敏、危险动作拦截、风险分级、人审节点和审计日志做进产品流程。</p>
+                  <a class="project-link" href="content/notes/guardrails-hitl.md">查看笔记源文件 →</a>
+                </div>
+              </article>
             </div>
+            <nav class="visual-note-pagination" data-visual-note-pagination aria-label="图解笔记分页" hidden>
+              <button class="visual-note-page-arrow" type="button" data-visual-page="prev">上一页</button>
+              <div class="visual-note-pages" data-visual-note-pages aria-label="页码"></div>
+              <span class="visual-note-page-status" data-visual-note-status></span>
+              <button class="visual-note-page-arrow" type="button" data-visual-page="next">下一页</button>
+            </nav>
           </section>
 
           <section class="writing-index" id="all-notes" aria-labelledby="writing-index-title">

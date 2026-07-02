@@ -1475,6 +1475,78 @@ h3 {
   line-height: 1.75;
 }
 
+.visual-note-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(16, 24, 42, 0.58);
+}
+
+.visual-note-pagination[hidden] {
+  display: none;
+}
+
+.visual-note-pages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.visual-note-page-btn,
+.visual-note-page-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(183, 213, 255, 0.1);
+  border-radius: var(--radius-sm);
+  background: rgba(7, 11, 24, 0.36);
+  color: var(--text-2);
+  font-size: 0.82rem;
+  font-weight: 800;
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.visual-note-page-btn:hover,
+.visual-note-page-arrow:hover {
+  border-color: rgba(103, 232, 249, 0.22);
+  background: rgba(103, 232, 249, 0.08);
+  color: var(--accent);
+}
+
+.visual-note-page-btn.is-active {
+  border-color: transparent;
+  background: var(--accent);
+  color: #06111f;
+}
+
+.visual-note-page-arrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.visual-note-page-arrow:disabled:hover {
+  border-color: rgba(183, 213, 255, 0.1);
+  background: rgba(7, 11, 24, 0.36);
+  color: var(--text-2);
+}
+
+.visual-note-page-status {
+  min-width: 72px;
+  color: var(--text-3);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: center;
+}
+
 .writing-index {
   margin-top: 18px;
   overflow: hidden;
@@ -3105,6 +3177,23 @@ body:not(.directory-page):not(.case-page):not(.error-page) .footer .container {
 
   .visual-note-body {
     padding: 20px;
+  }
+
+  .visual-note-pagination {
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .visual-note-pages {
+    order: -1;
+    width: 100%;
+  }
+
+  .visual-note-page-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .writing-topic-rail {

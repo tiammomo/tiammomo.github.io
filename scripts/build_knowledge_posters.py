@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import json
 import textwrap
 from pathlib import Path
@@ -21,9 +22,9 @@ FONT_BOLD = Path("/home/tiammomo/.local/share/fonts/NotoSansCJK-Bold.ttc")
 FONT_SERIF_BOLD = Path("/home/tiammomo/.local/share/fonts/NotoSerifCJK-Bold.ttc")
 
 CANVAS_W = 1800
-CANVAS_H = 1200
-MARGIN = 26
-GAP = 10
+CANVAS_H = 1030
+MARGIN = 22
+GAP = 8
 
 INK = (10, 31, 70)
 BLUE = (18, 76, 150)
@@ -176,7 +177,7 @@ def short_title(topic: dict[str, Any]) -> str:
 
 
 def draw_header(canvas: Image.Image, draw: ImageDraw.ImageDraw, topic: dict[str, Any]) -> None:
-    x1, y1, x2, y2 = MARGIN, 24, CANVAS_W - MARGIN, 178
+    x1, y1, x2, y2 = MARGIN, 20, CANVAS_W - MARGIN, 154
     rounded(draw, (x1, y1, x2, y2), 16, (255, 251, 241), (212, 192, 151), 2)
 
     banner = header_banner((x2 - x1 - 20, y2 - y1 - 20))
@@ -184,26 +185,26 @@ def draw_header(canvas: Image.Image, draw: ImageDraw.ImageDraw, topic: dict[str,
         alpha_paste(canvas, banner, (x1 + 10, y1 + 10), 178)
         veil = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
         veil_draw = ImageDraw.Draw(veil)
-        veil_draw.rounded_rectangle((x1 + 360, y1 + 20, x2 - 360, y2 - 18), radius=12, fill=(255, 252, 244, 188))
+        veil_draw.rounded_rectangle((x1 + 380, y1 + 14, x2 - 380, y2 - 14), radius=12, fill=(255, 252, 244, 198))
         canvas.alpha_composite(veil)
 
     title = short_title(topic)
-    title_face = font(54, bold=True, serif=True)
-    sub_face = font(23)
+    title_face = font(48, bold=True, serif=True)
+    sub_face = font(22)
     title_w = text_width(draw, title, title_face)
-    draw.text(((CANVAS_W - title_w) // 2, y1 + 23), title, font=title_face, fill=INK)
+    draw.text(((CANVAS_W - title_w) // 2, y1 + 18), title, font=title_face, fill=INK)
     english = topic["cardTitle"].split("：", 1)[-1] if "：" in topic["cardTitle"] else topic["category"]
     english_face = font(25, bold=True, serif=True)
     english_w = text_width(draw, english, english_face)
-    draw.text(((CANVAS_W - english_w) // 2, y1 + 88), english, font=english_face, fill=BLUE)
+    draw.text(((CANVAS_W - english_w) // 2, y1 + 74), english, font=english_face, fill=BLUE)
     subtitle = topic["subtitle"]
-    sub_lines = wrap_by_width(draw, subtitle, sub_face, 980)
+    sub_lines = wrap_by_width(draw, subtitle, sub_face, 1280)
     sub_w = max(text_width(draw, line, sub_face) for line in sub_lines[:1])
-    draw_lines(draw, sub_lines[:1], (CANVAS_W - sub_w) // 2, y1 + 124, sub_face, INK, max_lines=1)
+    draw_lines(draw, sub_lines[:1], (CANVAS_W - sub_w) // 2, y1 + 108, sub_face, INK, max_lines=1)
 
     for dx in (-440, 440):
         cx = CANVAS_W // 2 + dx
-        cy = y1 + 76
+        cy = y1 + 66
         draw.line((cx - 42, cy, cx + 42, cy), fill=(173, 193, 218), width=1)
         draw.polygon([(cx - 2, cy - 5), (cx + 5, cy), (cx - 2, cy + 5), (cx - 9, cy)], fill=CYAN)
         draw.text((cx - 72, cy - 22), "✧", font=font(22), fill=CYAN)
@@ -223,25 +224,31 @@ def draw_panel(
 ) -> None:
     x1, y1, x2, y2 = box
     rounded(draw, box, 12, CARD, BORDER, 1)
-    draw.rectangle((x1 + 1, y1 + 1, x2 - 1, y1 + 34), fill=(248, 251, 255))
-    draw.ellipse((x1 + 16, y1 + 12, x1 + 46, y1 + 42), fill=accent)
-    draw.text((x1 + 31 - text_width(draw, str(index), font(18, bold=True)) // 2, y1 + 14), str(index), font=font(18, bold=True), fill=(255, 255, 255))
-    title_face = font(22 if len(title) < 14 else 20, bold=True)
-    draw.text((x1 + 58, y1 + 13), title, font=title_face, fill=BLUE)
+    draw.rectangle((x1 + 1, y1 + 1, x2 - 1, y1 + 31), fill=(247, 251, 255))
+    number_face = font(17, bold=True)
+    draw.ellipse((x1 + 14, y1 + 10, x1 + 42, y1 + 38), fill=accent)
+    draw.text((x1 + 28 - text_width(draw, str(index), number_face) // 2, y1 + 10), str(index), font=number_face, fill=(255, 255, 255))
+    title_face = font(20 if len(title) < 13 else 18, bold=True)
+    draw.text((x1 + 52, y1 + 10), title, font=title_face, fill=BLUE)
 
     if icon:
-        draw_small_icon(draw, x2 - 72, y1 + 54, index, accent)
+        draw_small_icon(draw, x2 - 62, y1 + 48, index, accent)
 
-    body_face = font(17 if dense else 18)
-    yy = y1 + 62
-    text_max = x2 - x1 - (118 if icon else 50)
+    body_face = font(15 if dense else 16)
+    yy = y1 + 54
+    text_max = x2 - x1 - (108 if icon else 42)
     for bullet in bullets[:max_bullets]:
         if yy > y2 - 28:
             break
-        draw.ellipse((x1 + 24, yy + 9, x1 + 32, yy + 17), fill=accent)
+        draw.ellipse((x1 + 22, yy + 8, x1 + 29, yy + 15), fill=accent)
         wrapped = wrap_by_width(draw, bullet, body_face, text_max)
-        yy = draw_lines(draw, wrapped, x1 + 42, yy, body_face, INK if dense else MUTED, line_gap=4, max_lines=2)
-        yy += 5
+        yy = draw_lines(draw, wrapped, x1 + 38, yy, body_face, INK if dense else MUTED, line_gap=3, max_lines=2)
+        yy += 3
+    if bullets and y2 - yy > 44:
+        note = f"重点：{bullets[-1]}"
+        note_face = font(13, bold=True)
+        rounded(draw, (x1 + 22, y2 - 42, x2 - 22, y2 - 12), 7, (255, 249, 236), (230, 201, 150), 1)
+        draw_lines(draw, wrap_by_width(draw, note, note_face, x2 - x1 - 70), x1 + 34, y2 - 34, note_face, INK, line_gap=1, max_lines=1)
 
 
 def flow_bullets(topic: dict[str, Any]) -> list[str]:
@@ -259,43 +266,49 @@ def merged_bullets(*sections: dict[str, Any], limit: int = 5) -> list[str]:
 def draw_flow_panel(draw: ImageDraw.ImageDraw, index: int, topic: dict[str, Any], box: tuple[int, int, int, int], accent: tuple[int, int, int]) -> None:
     x1, y1, x2, y2 = box
     rounded(draw, box, 12, CARD, BORDER, 1)
-    draw.rectangle((x1 + 1, y1 + 1, x2 - 1, y1 + 34), fill=(248, 251, 255))
-    draw.ellipse((x1 + 16, y1 + 12, x1 + 46, y1 + 42), fill=accent)
-    draw.text((x1 + 31 - text_width(draw, str(index), font(18, bold=True)) // 2, y1 + 14), str(index), font=font(18, bold=True), fill=(255, 255, 255))
-    draw.text((x1 + 58, y1 + 13), "典型工作流", font=font(22, bold=True), fill=BLUE)
+    draw.rectangle((x1 + 1, y1 + 1, x2 - 1, y1 + 32), fill=(247, 251, 255))
+    number_face = font(17, bold=True)
+    draw.ellipse((x1 + 14, y1 + 10, x1 + 42, y1 + 38), fill=accent)
+    draw.text((x1 + 28 - text_width(draw, str(index), number_face) // 2, y1 + 10), str(index), font=number_face, fill=(255, 255, 255))
+    draw.text((x1 + 52, y1 + 10), "典型工作流 / 运行闭环", font=font(20, bold=True), fill=BLUE)
 
     steps = topic["flow"][:8]
-    col_w = (x2 - x1 - 58) // 4
     sx = x1 + 24
-    sy = y1 + 64
+    sy = y1 + 56
+    usable_w = x2 - x1 - 48
+    step_gap = 8
+    step_w = (usable_w - step_gap * (len(steps) - 1)) // len(steps)
+    step_h = 70
     for idx, step in enumerate(steps):
-        col = idx % 4
-        row = idx // 4
-        bx = sx + col * col_w
-        by = sy + row * 88
-        rounded(draw, (bx, by, bx + col_w - 12, by + 58), 8, (255, 252, 243) if idx % 2 else (242, 252, 252), (230, 201, 150) if idx % 2 else (167, 219, 217), 1)
-        draw.text((bx + 10, by + 8), str(idx + 1), font=font(17, bold=True), fill=ORANGE if idx % 2 else TEAL)
-        lines = wrap_by_width(draw, step, font(18, bold=True), col_w - 52)
-        draw_lines(draw, lines, bx + 34, by + 8, font(18, bold=True), INK, line_gap=3, max_lines=2)
+        bx = sx + idx * (step_w + step_gap)
+        fill = (255, 252, 243) if idx % 2 else (242, 252, 252)
+        outline = (230, 201, 150) if idx % 2 else (167, 219, 217)
+        rounded(draw, (bx, sy, bx + step_w, sy + step_h), 8, fill, outline, 1)
+        draw.text((bx + 10, sy + 9), str(idx + 1), font=font(17, bold=True), fill=ORANGE if idx % 2 else TEAL)
+        lines = wrap_by_width(draw, step, font(16, bold=True), step_w - 44)
+        yy = draw_lines(draw, lines, bx + 34, sy + 9, font(16, bold=True), INK, line_gap=2, max_lines=2)
+        section = topic["sections"][idx % len(topic["sections"])]
+        detail = section["bullets"][0]
+        detail_lines = wrap_by_width(draw, detail, font(12), step_w - 24)
+        draw_lines(draw, detail_lines, bx + 12, max(yy + 5, sy + 38), font(12), MUTED, line_gap=1, max_lines=2)
         if idx < len(steps) - 1:
-            ax = bx + col_w - 11
-            ay = by + 30
-            if col != 3:
-                draw.line((ax - 16, ay, ax - 4, ay), fill=(143, 164, 193), width=2)
-                draw.polygon([(ax - 4, ay), (ax - 10, ay - 5), (ax - 10, ay + 5)], fill=(143, 164, 193))
+            ax = bx + step_w + 2
+            ay = sy + step_h // 2
+            draw.line((ax, ay, ax + 6, ay), fill=(143, 164, 193), width=2)
+            draw.polygon([(ax + 6, ay), (ax + 1, ay - 4), (ax + 1, ay + 4)], fill=(143, 164, 193))
 
     quote = topic["quote"]
-    lines = wrap_by_width(draw, quote, font(17, bold=True), x2 - x1 - 58)
-    rounded(draw, (x1 + 24, y2 - 74, x2 - 24, y2 - 20), 8, (255, 249, 236), (230, 201, 150), 1)
-    draw_lines(draw, lines, x1 + 42, y2 - 62, font(17, bold=True), INK, line_gap=3, max_lines=2)
+    lines = wrap_by_width(draw, quote, font(16, bold=True), x2 - x1 - 60)
+    rounded(draw, (x1 + 24, y2 - 58, x2 - 24, y2 - 18), 8, (255, 249, 236), (230, 201, 150), 1)
+    draw_lines(draw, lines, x1 + 42, y2 - 49, font(16, bold=True), INK, line_gap=2, max_lines=2)
 
 
 def draw_footer(draw: ImageDraw.ImageDraw, topic: dict[str, Any]) -> None:
-    y = CANVAS_H - 66
-    rounded(draw, (MARGIN, y, CANVAS_W - MARGIN, CANVAS_H - 24), 10, (255, 255, 252), (222, 203, 166), 1)
+    y = CANVAS_H - 48
+    rounded(draw, (MARGIN, y, CANVAS_W - MARGIN, CANVAS_H - 18), 10, (255, 255, 252), (222, 203, 166), 1)
     line = f"{topic['cardTitle']} = 结构化知识 + 可执行流程 + 工程边界"
-    face = font(24, bold=True)
-    draw.text(((CANVAS_W - text_width(draw, line, face)) // 2, y + 12), line, font=face, fill=BLUE)
+    face = font(21, bold=True)
+    draw.text(((CANVAS_W - text_width(draw, line, face)) // 2, y + 5), line, font=face, fill=BLUE)
 
 
 def panel_specs(topic: dict[str, Any]) -> list[dict[str, Any]]:
@@ -329,27 +342,38 @@ def render_poster(topic: dict[str, Any]) -> Path:
     accents = [BLUE, TEAL, VIOLET, GREEN, GOLD, ORANGE, CYAN, (78, 119, 218), RED, (43, 146, 106)]
     specs = panel_specs(topic)
 
-    row1_y = 188
-    row1_h = 280
+    row1_y = 164
+    row1_h = 224
     row1_w = (CANVAS_W - MARGIN * 2 - GAP * 3) // 4
     for i in range(4):
         x = MARGIN + i * (row1_w + GAP)
-        draw_panel(draw, i + 1, specs[i]["title"], specs[i]["bullets"], (x, row1_y, x + row1_w, row1_y + row1_h), accent=accents[i], max_bullets=4)
+        draw_panel(draw, i + 1, specs[i]["title"], specs[i]["bullets"], (x, row1_y, x + row1_w, row1_y + row1_h), accent=accents[i], max_bullets=5, dense=True)
 
     row2_y = row1_y + row1_h + GAP
-    row2_h = 318
-    row2_w = (CANVAS_W - MARGIN * 2 - GAP * 2) // 3
-    draw_flow_panel(draw, 5, topic, (MARGIN, row2_y, MARGIN + row2_w, row2_y + row2_h), accents[4])
-    for offset, spec_idx in enumerate((5, 6), start=1):
-        x = MARGIN + offset * (row2_w + GAP)
-        draw_panel(draw, spec_idx + 1, specs[spec_idx]["title"], specs[spec_idx]["bullets"], (x, row2_y, x + row2_w, row2_y + row2_h), accent=accents[spec_idx], max_bullets=5, dense=True)
+    row2_h = 204
+    draw_flow_panel(draw, 5, topic, (MARGIN, row2_y, CANVAS_W - MARGIN, row2_y + row2_h), accents[4])
 
     row3_y = row2_y + row2_h + GAP
-    row3_h = 318
-    row3_w = row2_w
-    for offset, spec_idx in enumerate((7, 8, 9)):
+    row3_h = 176
+    row3_w = (CANVAS_W - MARGIN * 2 - GAP * 2) // 3
+    for offset, spec_idx in enumerate((5, 6, 7)):
         x = MARGIN + offset * (row3_w + GAP)
         draw_panel(draw, spec_idx + 1, specs[spec_idx]["title"], specs[spec_idx]["bullets"], (x, row3_y, x + row3_w, row3_y + row3_h), accent=accents[spec_idx], max_bullets=5, dense=True)
+
+    row4_y = row3_y + row3_h + GAP
+    row4_h = 156
+    row4_w = row3_w
+    draw_panel(draw, 9, specs[8]["title"], specs[8]["bullets"], (MARGIN, row4_y, MARGIN + row4_w, row4_y + row4_h), accent=accents[8], max_bullets=5, dense=True)
+    x_mid = MARGIN + row4_w + GAP
+    draw_panel(draw, 10, specs[9]["title"], specs[9]["bullets"], (x_mid, row4_y, x_mid + row4_w, row4_y + row4_h), accent=accents[9], max_bullets=5, dense=True)
+    x_right = MARGIN + 2 * (row4_w + GAP)
+    final_bullets = [
+        f"先落地：{topic['flow'][0]} → {topic['flow'][1]}",
+        f"再增强：{topic['flow'][2]} → {topic['flow'][3]}",
+        f"最后治理：{topic['flow'][-2]} → {topic['flow'][-1]}",
+        "所有改动沉淀到数据源、Trace 和回归样本",
+    ]
+    draw_panel(draw, 11, "落地顺序", final_bullets, (x_right, row4_y, x_right + row4_w, row4_y + row4_h), accent=VIOLET, max_bullets=4, dense=True)
 
     draw_footer(draw, topic)
 
@@ -357,6 +381,10 @@ def render_poster(topic: dict[str, Any]) -> Path:
     out.parent.mkdir(parents=True, exist_ok=True)
     canvas.convert("RGB").save(out, "PNG", optimize=True)
     return out
+
+
+def poster_path(topic: dict[str, Any]) -> Path:
+    return POSTER_DIR / topic["poster"]
 
 
 def render_note(topic: dict[str, Any]) -> Path:
@@ -394,6 +422,8 @@ def render_note(topic: dict[str, Any]) -> Path:
             """\
             本文由 `content/notes/ai-knowledge-topics.json` 的结构化内容生成。
             如果需要调整正文或海报文字，请先修改数据源，再运行 `python3 scripts/build_knowledge_posters.py`。
+            如果只想更新单个主题，可以在命令后追加 slug，例如 `python3 scripts/build_knowledge_posters.py agent-harness`。
+            脚本默认不会覆盖已存在的海报；如需生成程序化草稿图，请显式追加 `--overwrite-posters`。
             """
         ).strip(),
         "",
@@ -404,15 +434,37 @@ def render_note(topic: dict[str, Any]) -> Path:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Build AI knowledge posters and Markdown notes.")
+    parser.add_argument("slugs", nargs="*", help="Optional topic slugs to generate. Omit to generate all topics.")
+    parser.add_argument("--overwrite-posters", action="store_true", help="Overwrite existing poster images with deterministic draft posters.")
+    args = parser.parse_args()
+
+    selected = set(args.slugs)
+    topics = load_topics()
+    if selected:
+        topics = [topic for topic in topics if topic["slug"] in selected]
+        missing = selected - {topic["slug"] for topic in topics}
+        if missing:
+            raise SystemExit(f"Unknown topic slug(s): {', '.join(sorted(missing))}")
+
     posters: list[Path] = []
+    skipped_posters: list[Path] = []
     notes: list[Path] = []
-    for topic in load_topics():
-        posters.append(render_poster(topic))
+    for topic in topics:
+        current_poster = poster_path(topic)
+        if args.overwrite_posters or not current_poster.exists():
+            posters.append(render_poster(topic))
+        else:
+            skipped_posters.append(current_poster)
         notes.append(render_note(topic))
 
     print("Generated posters:")
     for path in posters:
         print(f"- {path.relative_to(ROOT)}")
+    if skipped_posters:
+        print("Skipped existing posters:")
+        for path in skipped_posters:
+            print(f"- {path.relative_to(ROOT)}")
     print("Generated notes:")
     for path in notes:
         print(f"- {path.relative_to(ROOT)}")

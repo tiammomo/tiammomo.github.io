@@ -18,6 +18,12 @@ content/notes/
   memory-systems.md
   tool-calling.md
   mcp.md
+  agent-harness.md
+  agent-loop.md
+  tool-use-patterns.md
+  agent-eval-harness.md
+  agent-observability.md
+  guardrails-hitl.md
 
 assets/images/writing/generated/
   *-knowledge-map-fantasy.png
@@ -60,10 +66,24 @@ python3 scripts/build_knowledge_posters.py
 
 这个脚本会同时更新：
 
-- `assets/images/writing/generated/*-knowledge-map-fantasy.png`
 - `content/notes/*.md`
 
+如果目标海报不存在，脚本会生成一张程序化草稿海报到 `assets/images/writing/generated/*-knowledge-map-fantasy.png`。
+如果目标海报已经存在，脚本默认跳过图片，避免覆盖已经人工确认或由 gpt-image2 生成的正式图。
+
 `writing.html` 只维护卡片摘要和入口链接，不作为长正文事实源。
+
+只新增或重生成部分主题时，可以传入 slug，避免覆盖已经人工确认过的海报：
+
+```bash
+python3 scripts/build_knowledge_posters.py agent-harness agent-loop
+```
+
+如果确实要用程序化模板覆盖已有海报，再显式追加：
+
+```bash
+python3 scripts/build_knowledge_posters.py agent-harness --overwrite-posters
+```
 
 ## 笔记规则
 
@@ -90,3 +110,9 @@ python3 scripts/build_knowledge_posters.py
 - Memory：记忆系统
 - Tool Calling：工具调用
 - MCP：模型上下文协议
+- Agent Harness：智能体运行框架
+- Agent Loop：智能体循环
+- Tool Use Patterns：工具使用模式
+- Agent Eval Harness：评测与回归
+- Agent Observability：可观测与 Trace
+- Guardrails / HITL：安全边界与人审
