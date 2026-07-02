@@ -5,3 +5,5 @@ dist/
 .claude/
 assets/images/replacements/*
 !assets/images/replacements/README.md
+content/notes/*.md
+!content/notes/README.md

@@ -1,6 +1,19 @@
 /* Tiammomo Portfolio — Interactions */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const legacyVisualLineRedirects = {
+    '#visual-line-app': 'writing/app-development.html#visual-line-app',
+    '#visual-line-infra': 'writing/infra.html#visual-line-infra',
+    '#visual-line-inference': 'writing/inference.html#visual-line-inference',
+    '#visual-line-algorithm': 'writing/algorithm.html#visual-line-algorithm',
+  };
+
+  const legacyTarget = legacyVisualLineRedirects[window.location.hash];
+  if (legacyTarget && /(?:^|\/)writing\.html$/.test(window.location.pathname)) {
+    window.location.replace(new URL(legacyTarget, window.location.href).href);
+    return;
+  }
+
   const header = document.querySelector('[data-header]');
   const navToggle = document.querySelector('.header-nav-toggle');
   const navLinks = document.querySelectorAll('.header-nav a');

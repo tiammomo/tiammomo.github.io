@@ -77,8 +77,8 @@ https://tiammomo.github.io/
 - 项目中心在 `projects/index.html`，项目数据源在 `data/projects.json`，精选项目卡片和项目索引都从这里渲染。
 - 写作中心在 `writing.html`，用于承载项目复盘、图解专题和工程札记入口；完整图解按专题放在 `writing/*.html`。
 - AI 知识图谱的数据源放在 `content/notes/ai-knowledge-topics.json`。
-- 高密度知识海报和 Markdown 笔记通过 `python3 scripts/build_knowledge_posters.py` 生成。
-- 写作正文源文件放在 `content/notes/`，写作系统规范在 `docs/writing-system.md`。
+- 高密度知识海报通过 `python3 scripts/build_knowledge_posters.py` 生成；公开页面不链接或发布 Markdown 笔记源文件。
+- 后续每张图解海报对应的长文应补到正式文章页，而不是暴露 `content/notes/*.md` 源文件。
 - 写作页原创生成图放在 `assets/images/writing/generated/`，不要直接使用外部原图或聊天参考图；已发布海报使用 `*-knowledge-map-fantasy.png` 命名。
 - 关于页在 `about.html`，用于展示能力矩阵、竞赛背景和合作方向。
 - 重点案例页放在 `projects/` 目录，目前包含 ModelPort、Temu Price Studio、QuantPilot、RoutePilot、Mamoji 和 SellerHarbor。

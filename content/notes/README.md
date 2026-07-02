@@ -1,14 +1,15 @@
-# Notes Content
+# Knowledge Topic Data
 
-这里存放写作页的笔记正文源文件。
+这里存放写作页图解专题的结构化数据，不存放对外可访问的 Markdown 笔记源文件。
 
 约定：
 
 - `ai-knowledge-topics.json` 是 AI 知识图谱的数据源。
-- 每篇笔记一个 Markdown 文件，文件名使用短横线命名。
-- AI 知识图谱类笔记由 `python3 scripts/build_knowledge_posters.py` 生成。
+- AI 知识图谱海报由 `python3 scripts/build_knowledge_posters.py` 基于数据源生成。
+- 公开站点不链接 `content/notes/*.md`，也不把 Markdown 笔记源文件作为发布资产提交。
+- 后续每张图解海报对应的长文应补到正式文章页。
 - 图片只保存相对路径引用，不把图片二进制放到 `content/notes/`。
-- 对外页面可以从这里摘取摘要、要点和参考图，但这里是内容事实源。
+- 对外页面可以从这里摘取摘要、要点和参考图，但不能直接暴露数据源或源文件入口。
 - 原创生成图放在 `assets/images/writing/generated/`。
 - 高密度知识海报使用 `*-knowledge-map-fantasy.png` 命名。
 - 已确认发布的高密度海报不要随意覆盖；生成脚本默认跳过已有图片，只有显式 `--overwrite-posters` 才会重写。

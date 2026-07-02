@@ -51,10 +51,10 @@ docs/
 ## 职责边界
 
 - `content/notes/ai-knowledge-topics.json`：AI 知识图谱的数据源，包含标题、摘要、流程、章节、检查清单和图片引用。
-- `content/notes/*.md`：由数据源生成的笔记正文，便于直接阅读和外部引用。
+- 公开站点不提交、不链接 `content/notes/*.md` 笔记源文件；后续长文应做成正式文章页。
 - `assets/images/writing/generated/`：已经确认要在站点展示的原创生成图和高密度知识海报。
 - `assets/images/writing/generated/fantasy-scenes/`：原创幻想风主题视觉素材，用作知识海报的氛围层。
-- `scripts/build_knowledge_posters.py`：从 JSON 数据源生成高密度海报和 Markdown 笔记。
+- `scripts/build_knowledge_posters.py`：从 JSON 数据源生成高密度海报。
 - `docs/writing-system.md`：写作系统、内容目录和维护规则。
 - `writing.html`：公开入口页，只放适合外部读者快速浏览的摘要、专题入口和文章索引。
 - `writing/*.html`：图解笔记专题页，按大模型应用开发、Infra、推理、算法四条线承载完整海报卡片。
@@ -77,14 +77,10 @@ docs/
 python3 scripts/build_knowledge_posters.py
 ```
 
-这个脚本会同时更新：
-
-- `content/notes/*.md`
-
 如果目标海报不存在，脚本会生成一张程序化草稿海报到 `assets/images/writing/generated/*-knowledge-map-fantasy.png`。
 如果目标海报已经存在，脚本默认跳过图片，避免覆盖已经人工确认或由 gpt-image2 生成的正式图。
 
-`writing.html` 和 `writing/*.html` 只维护卡片摘要和入口链接，不作为长正文事实源。
+`writing.html` 和 `writing/*.html` 只维护卡片摘要和专题入口。图解卡片在正式文章补齐前只显示“文章待补充”，不能链接 Markdown 源文件。
 
 只新增或重生成部分主题时，可以传入 slug，避免覆盖已经人工确认过的海报：
 
@@ -98,9 +94,9 @@ python3 scripts/build_knowledge_posters.py agent-harness agent-loop
 python3 scripts/build_knowledge_posters.py agent-harness --overwrite-posters
 ```
 
-## 笔记规则
+## 文章规则
 
-每篇笔记建议包含：
+每张图解海报后续对应一篇正式文章页，建议包含：
 
 - 标题
 - 一段核心解释
@@ -113,7 +109,7 @@ python3 scripts/build_knowledge_posters.py agent-harness --overwrite-posters
 
 ## 页面组织
 
-图解笔记区按四条主线组织，后续新增主题先归入主线，再补卡片、Markdown 和数据源：
+图解笔记区按四条主线组织，后续新增主题先归入主线，再补卡片、正式文章页和数据源：
 
 - 大模型应用开发：RAG、Advanced RAG、Prompt Engineering、Structured Output、Planning、Workflow vs Agent、Context Engineering、AI UX、Multi-Agent、Memory、Tool Calling、Agent Harness、Agent Loop、Tool Use Patterns、Agent Eval Harness、Guardrails。
 - 大模型 Infra：Model Gateway、MCP、LLM Security、Vector Database、Agent Observability、Distributed Training、LLM Serving、GPU Deployment、LLM Evaluation、LLMOps。

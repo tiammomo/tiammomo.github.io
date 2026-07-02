@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import textwrap
 from pathlib import Path
 from typing import Any
 
@@ -15,7 +14,6 @@ DATA_PATH = ROOT / "content" / "notes" / "ai-knowledge-topics.json"
 POSTER_DIR = ROOT / "assets" / "images" / "writing" / "generated"
 SCENE_DIR = POSTER_DIR / "fantasy-scenes"
 HEADER_IMAGE = SCENE_DIR / "knowledge-map-header-fantasy.png"
-NOTES_DIR = ROOT / "content" / "notes"
 
 FONT_REGULAR = Path("/home/tiammomo/.local/share/fonts/NotoSansCJK-Regular.ttc")
 FONT_BOLD = Path("/home/tiammomo/.local/share/fonts/NotoSansCJK-Bold.ttc")
@@ -387,54 +385,8 @@ def poster_path(topic: dict[str, Any]) -> Path:
     return POSTER_DIR / topic["poster"]
 
 
-def render_note(topic: dict[str, Any]) -> Path:
-    lines: list[str] = [
-        f"# {topic['title']}",
-        "",
-        f"> {topic['subtitle']}",
-        "",
-        f"![{topic['imageAlt']}](../../assets/images/writing/generated/{topic['poster']})",
-        "",
-        "## 一句话",
-        "",
-        topic["quote"],
-        "",
-        "## 标准流程",
-        "",
-    ]
-    for index, step in enumerate(topic["flow"], start=1):
-        lines.append(f"{index}. {step}")
-    lines.extend(["", "## 知识拆解", ""])
-    for section in topic["sections"]:
-        lines.append(f"### {section['title']}")
-        lines.append("")
-        for bullet in section["bullets"]:
-            lines.append(f"- {bullet}")
-        lines.append("")
-    lines.extend(["## 实践检查清单", ""])
-    for item in topic["checklist"]:
-        lines.append(f"- {item}")
-    lines.extend([
-        "",
-        "## 维护说明",
-        "",
-        textwrap.dedent(
-            """\
-            本文由 `content/notes/ai-knowledge-topics.json` 的结构化内容生成。
-            如果需要调整正文或海报文字，请先修改数据源，再运行 `python3 scripts/build_knowledge_posters.py`。
-            如果只想更新单个主题，可以在命令后追加 slug，例如 `python3 scripts/build_knowledge_posters.py agent-harness`。
-            脚本默认不会覆盖已存在的海报；如需生成程序化草稿图，请显式追加 `--overwrite-posters`。
-            """
-        ).strip(),
-        "",
-    ])
-    out = NOTES_DIR / f"{topic['slug']}.md"
-    out.write_text("\n".join(lines), encoding="utf-8")
-    return out
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build AI knowledge posters and Markdown notes.")
+    parser = argparse.ArgumentParser(description="Build AI knowledge posters from structured topic data.")
     parser.add_argument("slugs", nargs="*", help="Optional topic slugs to generate. Omit to generate all topics.")
     parser.add_argument("--overwrite-posters", action="store_true", help="Overwrite existing poster images with deterministic draft posters.")
     args = parser.parse_args()
@@ -449,14 +401,12 @@ def main() -> int:
 
     posters: list[Path] = []
     skipped_posters: list[Path] = []
-    notes: list[Path] = []
     for topic in topics:
         current_poster = poster_path(topic)
         if args.overwrite_posters or not current_poster.exists():
             posters.append(render_poster(topic))
         else:
             skipped_posters.append(current_poster)
-        notes.append(render_note(topic))
 
     print("Generated posters:")
     for path in posters:
@@ -465,9 +415,6 @@ def main() -> int:
         print("Skipped existing posters:")
         for path in skipped_posters:
             print(f"- {path.relative_to(ROOT)}")
-    print("Generated notes:")
-    for path in notes:
-        print(f"- {path.relative_to(ROOT)}")
     return 0
 
 
