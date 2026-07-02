@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Tiammomo 的大模型常用组件地图：LangChain、LangGraph、LanceDB / Lance、LlamaIndex、MCP、vLLM、LiteLLM、LangSmith、Langfuse 等组件的分层科普。" />
+    <link rel="canonical" href="https://tiammomo.github.io/components.html" />
+    <meta property="og:title" content="大模型常用组件 · Tiammomo" />
+    <meta property="og:description" content="按应用编排、Agent 运行、数据与检索、模型服务、观测评测和协议集成理解大模型常用组件。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tiammomo.github.io/components.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/components/ai-component-map-fantasy-workbench.png" />
+    <title>大模型常用组件 · Tiammomo</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="directory-page components-page" id="top">
+    <header class="header is-scrolled" data-header>
+      <a class="header-brand" href="index.html" aria-label="Tiammomo">
+        <span class="header-brand-mark" aria-hidden="true">T</span>
+        <span class="header-brand-text">Tiammomo</span>
+      </a>
+      <button class="header-nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="sr-only">打开导航</span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+        <span class="header-nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="header-nav" id="main-nav" aria-label="主导航">
+        <a href="projects/">项目</a>
+        <a href="writing.html">文章</a>
+        <a class="is-active" href="components.html" aria-current="page">组件</a>
+        <a href="about.html">关于</a>
+        <a href="index.html#contact">联系</a>
+        <a href="en.html" lang="en">EN</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero components-hero" aria-labelledby="components-title">
+        <div class="wide-container">
+          <div class="components-hero-card">
+            <img
+              src="assets/images/components/ai-component-map-fantasy-workbench.png"
+              alt="大模型组件地图幻想风背景：银发精灵法师在魔法工作台前查看数据湖、向量检索、模型服务和协议节点"
+              width="1774"
+              height="887"
+              loading="eager"
+            />
+            <div class="components-hero-content">
+              <span class="section-tag">组件地图</span>
+              <h1 id="components-title">大模型常用组件</h1>
+              <p>把 LLM 应用拆成可理解的工程层：应用编排、Agent 状态机、数据与检索、模型服务、观测评测和协议集成。这里不是固定技术栈清单，而是做项目时快速判断“该用什么、为什么用、边界在哪里”的地图。</p>
+              <div class="page-hero-proof components-hero-proof" aria-label="组件页覆盖范围">
+                <span>LangChain / LangGraph</span>
+                <span>LanceDB / Lance</span>
+                <span>RAG / Vector DB</span>
+                <span>vLLM / LiteLLM</span>
+                <span>LangSmith / Langfuse</span>
+                <span>MCP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="components-board" aria-label="组件地图">
+        <div class="wide-container">
+          <nav class="component-taxonomy" aria-label="组件分层总览">
+            <span class="component-taxonomy-title">组件分类</span>
+            <a href="#app">
+              <span class="component-taxonomy-icon">AF</span>
+              <small>01</small>
+              <strong>应用框架</strong>
+            </a>
+            <a href="#agent">
+              <span class="component-taxonomy-icon">AR</span>
+              <small>02</small>
+              <strong>Agent 运行</strong>
+            </a>
+            <a href="#data">
+              <span class="component-taxonomy-icon">DR</span>
+              <small>03</small>
+              <strong>数据与检索</strong>
+            </a>
+            <a href="#serving">
+              <span class="component-taxonomy-icon">MS</span>
+              <small>04</small>
+              <strong>模型服务</strong>
+            </a>
+            <a href="#observe">
+              <span class="component-taxonomy-icon">OB</span>
+              <small>05</small>
+              <strong>观测评测</strong>
+            </a>
+            <a href="#protocol">
+              <span class="component-taxonomy-icon">PR</span>
+              <small>06</small>
+              <strong>协议集成</strong>
+            </a>
+          </nav>
+
+          <div class="component-map-layout">
+            <aside class="component-sidebar" aria-label="组件页导航">
+              <div>
+                <h2>按层浏览</h2>
+                <nav class="component-sidebar-nav" aria-label="按层浏览">
+                  <a href="#app"><span>01</span>应用框架</a>
+                  <a href="#agent"><span>02</span>Agent 运行</a>
+                  <a href="#data"><span>03</span>数据与检索</a>
+                  <a href="#serving"><span>04</span>模型服务</a>
+                  <a href="#observe"><span>05</span>观测评测</a>
+                  <a href="#protocol"><span>06</span>协议集成</a>
+                </nav>
+              </div>
+              <div class="component-sidebar-links">
+                <h2>快速跳转</h2>
+                <a href="#decision">什么时候用什么？</a>
+                <a href="#data">RAG / 向量库选型</a>
+                <a href="#serving">模型服务与网关</a>
+                <a href="#protocol">工具协议与集成</a>
+              </div>
+            </aside>
+
+            <div class="component-main">
+              <section class="component-layer" id="app" aria-labelledby="component-app-title">
+                <div class="component-layer-head component-layer-head--row">
+                  <div>
+                    <span>01</span>
+                    <h2 id="component-app-title">应用框架</h2>
+                  </div>
+                  <p>把模型、Prompt、检索、工具和输出结构组织成可维护的应用骨架。</p>
+                </div>
+                <div class="component-grid component-grid--dense">
+                  <a class="component-mini-card" href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--green">LC</span>
+                    <div>
+                      <h3>LangChain</h3>
+                      <p>把模型、Prompt、工具、检索器和记忆串成应用流程，适合快速搭 RAG 与工具调用原型。</p>
+                      <span class="component-mini-meta"><b>Python / JS</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://www.llamaindex.ai/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--purple">LI</span>
+                    <div>
+                      <h3>LlamaIndex</h3>
+                      <p>偏数据连接与索引层，适合把文档、表格和知识库组织成可检索上下文。</p>
+                      <span class="component-mini-meta"><b>Python / TS</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://haystack.deepset.ai/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--cyan">HY</span>
+                    <div>
+                      <h3>Haystack</h3>
+                      <p>端到端搜索与生成框架，适合问答、语义检索和检索增强生成流程。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://dspy.ai/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--blue">DP</span>
+                    <div>
+                      <h3>DSPy</h3>
+                      <p>把 Prompt 组合变成可优化程序，适合有评测集的 pipeline 迭代。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>实验</i></span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+
+              <section class="component-layer" id="agent" aria-labelledby="component-agent-title">
+                <div class="component-layer-head component-layer-head--row">
+                  <div>
+                    <span>02</span>
+                    <h2 id="component-agent-title">Agent 运行</h2>
+                  </div>
+                  <p>处理多步任务、状态流转、分支循环、人审节点和多 Agent 协作。</p>
+                </div>
+                <div class="component-grid component-grid--dense">
+                  <a class="component-mini-card" href="https://www.langchain.com/langgraph" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--blue">LG</span>
+                    <div>
+                      <h3>LangGraph</h3>
+                      <p>用显式状态图承载 Agent 流程，支持分支、循环、持久化和人审节点。</p>
+                      <span class="component-mini-meta"><b>Python / JS</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://github.com/microsoft/autogen" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--rose">AG</span>
+                    <div>
+                      <h3>AutoGen</h3>
+                      <p>面向多 Agent 对话协作，适合研究型任务拆解、角色协商和工具执行。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://www.crewai.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--amber">CR</span>
+                    <div>
+                      <h3>CrewAI</h3>
+                      <p>用角色、任务和工具组织 Agent 团队，适合运营、内容和研究类自动化。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://learn.microsoft.com/en-us/semantic-kernel/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--gold">SK</span>
+                    <div>
+                      <h3>Semantic Kernel</h3>
+                      <p>微软系 Agent 编排框架，强调插件、Planner、Memory 与企业系统集成。</p>
+                      <span class="component-mini-meta"><b>C# / Python / JS</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+
+              <section class="component-layer" id="data" aria-labelledby="component-data-title">
+                <div class="component-layer-head component-layer-head--row">
+                  <div>
+                    <span>03</span>
+                    <h2 id="component-data-title">数据与检索</h2>
+                  </div>
+                  <p>管理文本、向量、多模态样本、元数据和检索索引，是 RAG 与 Data Agent 的地基。</p>
+                </div>
+                <div class="component-grid component-grid--dense">
+                  <a class="component-mini-card component-mini-card--featured" href="https://www.lancedb.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--cyan">LD</span>
+                    <div>
+                      <h3>LanceDB / Lance</h3>
+                      <p>面向 AI 数据的湖仓与向量数据库，适合文本、图片、向量和样本版本共管。</p>
+                      <span class="component-mini-meta"><b>Python / Rust</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://qdrant.tech/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--rose">QD</span>
+                    <div>
+                      <h3>Qdrant</h3>
+                      <p>高性能向量数据库，支持 payload 过滤，适合需要元数据条件的检索。</p>
+                      <span class="component-mini-meta"><b>Rust / Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--green">PG</span>
+                    <div>
+                      <h3>pgvector</h3>
+                      <p>把向量检索放进 PostgreSQL，适合已有关系库和中小规模 RAG。</p>
+                      <span class="component-mini-meta"><b>SQL</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://github.com/milvus-io/milvus" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--purple">MV</span>
+                    <div>
+                      <h3>Milvus</h3>
+                      <p>开源向量数据库，面向大规模相似度检索、推荐和图文检索场景。</p>
+                      <span class="component-mini-meta"><b>Go / Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+
+              <section class="component-layer" id="serving" aria-labelledby="component-serving-title">
+                <div class="component-layer-head component-layer-head--row">
+                  <div>
+                    <span>04</span>
+                    <h2 id="component-serving-title">模型服务</h2>
+                  </div>
+                  <p>负责推理服务、OpenAI-compatible API、路由、限流、成本控制和本地开发体验。</p>
+                </div>
+                <div class="component-grid component-grid--dense">
+                  <a class="component-mini-card" href="https://docs.vllm.ai/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--cyan">VL</span>
+                    <div>
+                      <h3>vLLM</h3>
+                      <p>高吞吐 LLM 推理服务，适合 GPU 部署、批量推理和生产吞吐优化。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://www.litellm.ai/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--blue">LM</span>
+                    <div>
+                      <h3>LiteLLM</h3>
+                      <p>统一多模型 Provider 的网关层，处理路由、预算、Fallback 和日志。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://ollama.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--green">OL</span>
+                    <div>
+                      <h3>Ollama</h3>
+                      <p>本地模型运行工具，适合开发机实验、离线 Demo 和隐私数据试跑。</p>
+                      <span class="component-mini-meta"><b>本地</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://docs.sglang.ai/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--amber">SG</span>
+                    <div>
+                      <h3>SGLang</h3>
+                      <p>面向结构化生成和 Agent 场景的高性能推理运行时。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>活跃</i></span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+
+              <section class="component-layer" id="observe" aria-labelledby="component-observe-title">
+                <div class="component-layer-head component-layer-head--row">
+                  <div>
+                    <span>05</span>
+                    <h2 id="component-observe-title">观测评测</h2>
+                  </div>
+                  <p>把 Prompt、检索片段、工具调用、模型输出、人工反馈和指标记录下来。</p>
+                </div>
+                <div class="component-grid component-grid--dense">
+                  <a class="component-mini-card" href="https://www.langchain.com/langsmith" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--purple">LS</span>
+                    <div>
+                      <h3>LangSmith</h3>
+                      <p>记录 Trace、数据集和评测结果，适合调试 LangChain / LangGraph 应用。</p>
+                      <span class="component-mini-meta"><b>SaaS</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://langfuse.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--rose">LF</span>
+                    <div>
+                      <h3>Langfuse</h3>
+                      <p>开源 LLM 可观测平台，记录 Prompt、Trace、成本、评分和用户反馈。</p>
+                      <span class="component-mini-meta"><b>OSS / Cloud</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://www.ragas.io/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--green">RG</span>
+                    <div>
+                      <h3>Ragas</h3>
+                      <p>面向 RAG 的评测工具，关注忠实度、回答质量和检索质量。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://www.confident-ai.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--gold">DE</span>
+                    <div>
+                      <h3>DeepEval</h3>
+                      <p>LLM 单元测试与质量门禁工具，适合把评测放进发布流程。</p>
+                      <span class="component-mini-meta"><b>Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+
+              <section class="component-layer" id="protocol" aria-labelledby="component-protocol-title">
+                <div class="component-layer-head component-layer-head--row">
+                  <div>
+                    <span>06</span>
+                    <h2 id="component-protocol-title">协议集成</h2>
+                  </div>
+                  <p>让 Agent 安全、标准地连接外部工具、数据源、文件系统和业务 API。</p>
+                </div>
+                <div class="component-grid component-grid--dense">
+                  <a class="component-mini-card component-mini-card--featured" href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--purple">MC</span>
+                    <div>
+                      <h3>MCP</h3>
+                      <p>用统一协议向 AI 客户端暴露资源、工具和提示模板，降低集成成本。</p>
+                      <span class="component-mini-meta"><b>协议</b><i>活跃</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://json-schema.org/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--blue">JS</span>
+                    <div>
+                      <h3>OpenAPI / JSON Schema</h3>
+                      <p>描述工具参数、结构化输出和 API 边界，减少模型调用工具时的歧义。</p>
+                      <span class="component-mini-meta"><b>Schema</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://playwright.dev/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--cyan">PW</span>
+                    <div>
+                      <h3>Playwright</h3>
+                      <p>浏览器自动化工具，可用于 UI 测试、截图验证和网页 Agent 执行。</p>
+                      <span class="component-mini-meta"><b>Node / Python</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                  <a class="component-mini-card" href="https://opentelemetry.io/" target="_blank" rel="noopener noreferrer">
+                    <span class="component-mini-icon component-mini-icon--amber">OT</span>
+                    <div>
+                      <h3>OpenTelemetry</h3>
+                      <p>统一服务级 Trace、Metrics 和 Logs，适合把 AI 应用纳入工程观测。</p>
+                      <span class="component-mini-meta"><b>规范</b><i>稳定</i></span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <section class="component-decision" id="decision" aria-labelledby="component-decision-title">
+            <div class="component-decision-head">
+              <span class="section-tag">组件选型</span>
+              <h2 id="component-decision-title">从任务判断组件，而不是从组件找任务</h2>
+            </div>
+            <div class="component-decision-flow" aria-label="组件选型流程">
+              <article>
+                <span>01</span>
+                <h3>新建 LLM 应用？</h3>
+                <p>先用 LangChain + LlamaIndex 打通模型、数据和检索。</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>需要多步 Agent？</h3>
+                <p>用 LangGraph 或 AutoGen 管理状态、循环和协作。</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>自有数据要接入？</h3>
+                <p>用 LanceDB、Qdrant、pgvector 或 Milvus 建索引。</p>
+              </article>
+              <article>
+                <span>04</span>
+                <h3>模型要部署？</h3>
+                <p>按规模选择 vLLM、LiteLLM、Ollama 或 SGLang。</p>
+              </article>
+              <article>
+                <span>05</span>
+                <h3>要上线和监控？</h3>
+                <p>尽早接入 LangSmith、Langfuse、Ragas 或 DeepEval。</p>
+              </article>
+              <article>
+                <span>06</span>
+                <h3>需要工具访问？</h3>
+                <p>用 MCP、Schema 和浏览器自动化标准化系统边界。</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-copy">© <span data-year></span> Tiammomo</span>
+        <a class="footer-top" href="#top">回到顶部 ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
