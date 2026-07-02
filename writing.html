@@ -10,7 +10,7 @@
     <meta property="og:description" content="把项目经验整理成可复用的产品工程笔记：Agent 工作台、人审边界、模型网关、数据工作台和本地优先系统。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tiammomo.github.io/writing.html" />
-    <meta property="og:image" content="https://tiammomo.github.io/assets/images/generated/anime-portfolio-og.png" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/writing/generated/writing-center-hero-fantasy.png" />
     <title>Writing / Notes · Tiammomo</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
@@ -31,7 +31,6 @@
         <a href="projects/">项目</a>
         <a class="is-active" href="writing.html" aria-current="page">文章</a>
         <a href="components.html">组件</a>
-        <a href="about.html">关于</a>
         <a href="index.html#contact">联系</a>
         <a href="en.html" lang="en">EN</a>
       </nav>
@@ -42,16 +41,14 @@
         <div class="wide-container writing-masthead-inner">
           <div>
             <span class="section-tag">Writing / Notes</span>
-            <h1 id="writing-title">把项目经验写成可复用笔记</h1>
-            <p>记录我在 AI Agent 产品化、真实业务系统落地、工程实践与数据建模过程中的思考、取舍与复盘。所有文章都尽量绑定真实项目，避免停留在空泛概念里。</p>
+            <h1 id="writing-title">写作中心</h1>
+            <p>把项目经验写成可复用笔记。记录我在 AI Agent 产品化、真实业务系统落地、工程实践与数据建模过程中的思考、取舍与复盘。</p>
           </div>
           <div class="writing-signal-strip" aria-label="写作方向">
-            <span>Agent 产品化</span>
-            <span>AI 基础</span>
-            <span>项目复盘</span>
-            <span>工程札记</span>
-            <span>数据系统</span>
-            <span>Hackathon</span>
+            <span>图解专题</span>
+            <span>深度笔记</span>
+            <span>工程实践</span>
+            <span>知识沉淀</span>
           </div>
         </div>
       </section>
@@ -138,78 +135,100 @@
           <section class="writing-index" id="all-notes" aria-labelledby="writing-index-title">
             <div class="writing-index-head">
               <h2 id="writing-index-title">文章索引</h2>
-              <span>持续整理中</span>
+              <span>持续整理中 · 7 个选题</span>
             </div>
             <div class="writing-table" aria-label="文章列表">
+              <div class="writing-table-head" aria-hidden="true">
+                <span>类别</span>
+                <span>所属项目</span>
+                <span>状态</span>
+                <span>标题</span>
+                <span>更新于</span>
+                <span></span>
+              </div>
               <article class="writing-row" id="engineering">
-                <div>
+                <span class="writing-pill writing-pill--engineering">工程札记</span>
+                <span class="writing-project">ModelPort</span>
+                <span class="writing-status writing-status--progress">更新中</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · ModelPort</span>
                   <h3>ModelPort：本地模型网关的协议边界</h3>
                   <p>为什么 Claude Code / VS Code Claude 需要稳定入口，以及 Provider 路由、API Key、用量观测应该怎么收口。</p>
                 </div>
-                <span class="writing-pill">工程札记</span>
-                <span class="writing-project">ModelPort</span>
-                <span class="writing-status">整理中</span>
+                <time datetime="2026-07-02">2026-07-02</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
               <article class="writing-row" id="retrospective">
-                <div>
+                <span class="writing-pill writing-pill--retro">项目复盘</span>
+                <span class="writing-project">Temu Price Studio</span>
+                <span class="writing-status writing-status--progress">整理中</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · Temu Price Studio</span>
                   <h3>从 SKU 数据到最终包：核价生图工作流拆解</h3>
                   <p>把 SKU 事实、素材证据、Prompt 版本、候选审核和 Codex job 串成可追溯流程。</p>
                 </div>
-                <span class="writing-pill">项目复盘</span>
-                <span class="writing-project">Temu Price Studio</span>
-                <span class="writing-status">整理中</span>
+                <time datetime="2026-07-02">2026-07-02</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
               <article class="writing-row">
-                <div>
+                <span class="writing-pill writing-pill--engineering">工程札记</span>
+                <span class="writing-project">Portfolio</span>
+                <span class="writing-status writing-status--draft">草稿</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · Public Portfolio</span>
                   <h3>为什么项目截图要脱敏</h3>
                   <p>公开作品集既要展示真实系统，也要保护 SKU、商品信息、业务数据和局域网环境边界。</p>
                 </div>
-                <span class="writing-pill">工程札记</span>
-                <span class="writing-project">Portfolio</span>
-                <span class="writing-status">草稿</span>
+                <time datetime="2026-06-28">2026-06-28</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
               <article class="writing-row" id="data">
-                <div>
+                <span class="writing-pill writing-pill--data">数据系统</span>
+                <span class="writing-project">QuantPilot</span>
+                <span class="writing-status writing-status--progress">整理中</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · QuantPilot</span>
                   <h3>让投研 Agent 可验证，而不只是会回答</h3>
                   <p>围绕真实行情数据、策略平台、Agent Eval、Skills 和日志，把研究过程做成可复查工作台。</p>
                 </div>
-                <span class="writing-pill">数据系统</span>
-                <span class="writing-project">QuantPilot</span>
-                <span class="writing-status">整理中</span>
+                <time datetime="2026-06-24">2026-06-24</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
               <article class="writing-row">
-                <div>
+                <span class="writing-pill writing-pill--engineering">工程札记</span>
+                <span class="writing-project">多个项目</span>
+                <span class="writing-status writing-status--draft">草稿</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · Local-first</span>
                   <h3>Local-first 工作台的数据归属</h3>
                   <p>JSON、本地文件、PostgreSQL 镜像、MinIO 资产和 snapshot/restore 之间如何划边界。</p>
                 </div>
-                <span class="writing-pill">工程札记</span>
-                <span class="writing-project">多个项目</span>
-                <span class="writing-status">草稿</span>
+                <time datetime="2026-06-18">2026-06-18</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
               <article class="writing-row">
-                <div>
+                <span class="writing-pill writing-pill--agent">Agent 产品化</span>
+                <span class="writing-project">SellerHarbor</span>
+                <span class="writing-status writing-status--idea">选题</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · Product Systems</span>
                   <h3>从 Demo 到可运行产品</h3>
                   <p>判断一个 AI 原型是否进入产品阶段：真实数据、操作闭环、失败处理、可观测和人工边界。</p>
                 </div>
-                <span class="writing-pill">Agent 产品化</span>
-                <span class="writing-project">SellerHarbor</span>
-                <span class="writing-status">选题</span>
+                <time datetime="2026-06-12">2026-06-12</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
               <article class="writing-row" id="hackathon">
-                <div>
+                <span class="writing-pill writing-pill--hackathon">Hackathon</span>
+                <span class="writing-project">比赛经验</span>
+                <span class="writing-status writing-status--idea">选题</span>
+                <div class="writing-row-main">
                   <span class="writing-row-kicker">选题 · Hackathon</span>
                   <h3>Hackathon 原型如何保留产品骨架</h3>
                   <p>在极短时间里优先做清楚目标用户、关键路径、可演示数据和后续可复用的工程边界。</p>
                 </div>
-                <span class="writing-pill">Hackathon</span>
-                <span class="writing-project">比赛经验</span>
-                <span class="writing-status">选题</span>
+                <time datetime="2026-06-08">2026-06-08</time>
+                <span class="writing-row-arrow" aria-hidden="true">›</span>
               </article>
             </div>
           </section>
