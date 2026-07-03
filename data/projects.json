@@ -4,7 +4,7 @@
     "name": "ModelPort",
     "status": "active",
     "availability": {
-      "zh": "Open Source",
+      "zh": "开源可访问",
       "en": "Open Source"
     },
     "categories": ["ai", "infra", "product"],
@@ -19,7 +19,10 @@
       "zh": "面向 Claude Code / VS Code Claude 的本地 Anthropic-compatible 模型网关，带 Dashboard 控制面，覆盖 Provider 路由、模型库存、API Key、用量成本和健康观测。",
       "en": "A local Anthropic-compatible model gateway for Claude Code and VS Code Claude, with a dashboard control plane for provider routing, model inventory, API keys, usage cost, and health checks."
     },
-    "tags": ["Rust", "React Dashboard", "LLM Gateway"],
+    "tags": {
+      "zh": ["Rust 网关", "React 控制台", "模型路由"],
+      "en": ["Rust gateway", "React console", "Model routing"]
+    },
     "meta": {
       "zh": ["模型网关", "Provider 路由"],
       "en": ["Model gateway", "Provider routing"]
@@ -42,7 +45,7 @@
     "name": "Temu Price Studio",
     "status": "active",
     "availability": {
-      "zh": "LAN Demo",
+      "zh": "局域网演示",
       "en": "LAN Demo"
     },
     "categories": ["ai", "data", "product"],
@@ -54,17 +57,20 @@
       }
     },
     "summary": {
-      "zh": "本地优先的 Temu 核价生图工作台，串联 SKU 数据、素材证据、Prompt 版本、抽卡候选、人工审核、QA 和最终包追溯。",
-      "en": "A local-first Temu price-check and image-generation workspace that connects SKU data, evidence assets, prompt versions, candidate draws, human review, QA, and traceable final packages."
+      "zh": "本地优先的 Temu 核价生图工作台，串联 SKU 数据、素材证据、提示词版本管理、候选抽卡、人工审核、QA 和最终包追溯。",
+      "en": "A local-first Temu price-check and image-generation workspace that connects SKU data, evidence assets, prompt versioning, candidate generation, human review, QA, and traceable final packages."
     },
-    "tags": ["React + Vite", "Express", "Codex Workflow"],
+    "tags": {
+      "zh": ["React + Vite", "Express", "任务执行记录"],
+      "en": ["React + Vite", "Express", "Task trace"]
+    },
     "meta": {
-      "zh": ["SKU 工作流", "Prompt 实验室"],
-      "en": ["SKU workflow", "Prompt lab"]
+      "zh": ["SKU 工作流", "提示词版本管理"],
+      "en": ["SKU workflow", "Prompt versioning"]
     },
     "index": {
       "direction": {
-        "zh": "核价生图 / Workflow",
+        "zh": "核价生图 / 审核流程",
         "en": "Pricing image workflow"
       },
       "proof": {
@@ -84,30 +90,33 @@
     "name": "QuantPilot",
     "status": "active",
     "availability": {
-      "zh": "Local Demo",
+      "zh": "本地可运行",
       "en": "Local Demo"
     },
     "categories": ["ai", "data", "product"],
     "image": {
       "png": "assets/images/quantpilot/workbench.png",
       "alt": {
-        "zh": "QuantPilot AI 量化分析工作台真实截图",
-        "en": "QuantPilot AI quantitative research workbench screenshot"
+        "zh": "QuantPilot 量化分析工作台真实截图",
+        "en": "QuantPilot quantitative research workbench screenshot"
       }
     },
     "summary": {
-      "zh": "面向量化投研的 AI 工作台，覆盖自然语言任务、真实行情数据、策略平台、Agent Eval、Skills、日志和运维治理。",
-      "en": "An AI workspace for quantitative research, covering natural-language tasks, market data, strategy modules, Agent Eval, skills, logs, and operations."
+      "zh": "面向量化投研的数据工作台，覆盖自然语言任务、真实行情数据、策略平台、评测记录、工具执行、日志和运维治理。",
+      "en": "A quantitative research workbench covering natural-language tasks, market data, strategy modules, evaluation records, tool execution, logs, and operations."
     },
-    "tags": ["Next.js", "Quant Agent", "TimescaleDB"],
+    "tags": {
+      "zh": ["Next.js", "投研任务流", "TimescaleDB"],
+      "en": ["Next.js", "Research workflow", "TimescaleDB"]
+    },
     "meta": {
       "zh": ["298 symbols", "356K K-lines"],
       "en": ["298 symbols", "356K K-lines"]
     },
     "index": {
       "direction": {
-        "zh": "投研 Agent / Data",
-        "en": "Research Agent / Data"
+        "zh": "投研任务流 / Data",
+        "en": "Research workflow / Data"
       },
       "proof": {
         "zh": "298 symbols、356K K-lines",
@@ -122,7 +131,7 @@
     "name": "SellerHarbor",
     "status": "active",
     "availability": {
-      "zh": "Open Source",
+      "zh": "开源可访问",
       "en": "Open Source"
     },
     "categories": ["ai", "product", "infra"],
@@ -160,7 +169,7 @@
     "name": "Mamoji",
     "status": "active",
     "availability": {
-      "zh": "Open Source",
+      "zh": "开源可访问",
       "en": "Open Source"
     },
     "categories": ["product", "infra"],
@@ -198,7 +207,7 @@
     "name": "RoutePilot",
     "status": "active",
     "availability": {
-      "zh": "Open Source",
+      "zh": "开源可访问",
       "en": "Open Source"
     },
     "categories": ["ai", "data", "product"],
@@ -210,8 +219,8 @@
       }
     },
     "summary": {
-      "zh": "AI 旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。",
-      "en": "An AI travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing."
+      "zh": "旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。",
+      "en": "A travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing."
     },
     "tags": ["Next.js", "LangGraph", "Travel Data"],
     "meta": {
@@ -220,8 +229,8 @@
     },
     "index": {
       "direction": {
-        "zh": "旅行规划 / Agent",
-        "en": "Route planning / Agent"
+        "zh": "旅行任务流",
+        "en": "Route planning workflow"
       },
       "proof": {
         "zh": "城市探索、路线结果、系统状态截图",

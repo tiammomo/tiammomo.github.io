@@ -38,6 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return value[locale] ?? value.zh ?? value.en ?? '';
   };
 
+  const localizedList = (value, locale) => {
+    if (Array.isArray(value)) return value;
+    const selected = localized(value, locale);
+    return Array.isArray(selected) ? selected : [];
+  };
+
   const loadJson = (source) => {
     if (!source) return Promise.reject(new Error('Missing JSON source'));
     if (!jsonCache.has(source)) {
@@ -88,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusAttr = escapeHtml(project.status);
     const alt = escapeHtml(localized(project.image.alt, locale));
     const summary = escapeHtml(localized(project.summary, locale));
-    const meta = localized(project.meta, locale);
+    const tags = localizedList(project.tags, locale);
+    const meta = localizedList(project.meta, locale);
     const urlBase = projectGrid?.dataset.urlBase || '';
     const imageSource = project.image.webp
       ? `<source srcset="${escapeHtml(withBase(project.image.webp, urlBase))}" type="image/webp" />`
@@ -107,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <article class="project-card" data-category="${escapeHtml(categories)}">
         <div class="project-card-top">
           <span class="project-num">${String(index + 1).padStart(2, '0')}</span>
-          <span class="project-status" data-status="${statusAttr}"><span class="status-dot"></span> ${status}</span>
+          <span class="project-status" data-status="${statusAttr}">${status}</span>
         </div>
         <figure class="project-card-media">
           <picture>
@@ -118,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3 class="project-name">${escapeHtml(project.name)}</h3>
         <p class="project-desc">${summary}</p>
         <div class="project-tags">
-          ${project.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
+          ${tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}
         </div>
         <div class="project-meta">
           ${meta.map((item) => `<span>${escapeHtml(item)}</span>`).join('')}

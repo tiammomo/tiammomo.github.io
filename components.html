@@ -42,9 +42,9 @@
       <section class="portfolio-page-hero portfolio-page-hero--components" aria-labelledby="components-title">
         <div class="wide-container">
           <div class="portfolio-page-hero-inner">
-            <p class="hero-label">COMPONENT MAP · LLM ENGINEERING · TOOLING STACK</p>
+            <p class="hero-label">常用组件 · 工程选型 · 集成边界</p>
             <h1 id="components-title">大模型常用组件</h1>
-            <p>把 LLM 应用拆成可理解的工程层：应用编排、Agent 状态机、数据与检索、模型服务、观测评测和协议集成。用于快速判断该用什么、为什么用、边界在哪里。</p>
+            <p>把模型应用拆成可理解的工程层：应用编排、多步任务状态机、数据与检索、模型服务、观测评测和协议集成。用于快速判断该用什么、为什么用、边界在哪里。</p>
             <div class="portfolio-page-hero-tags" aria-label="组件页覆盖范围">
               <span>LangChain / LangGraph</span>
               <span>LanceDB / Lance</span>
@@ -66,32 +66,32 @@
           <nav class="component-taxonomy" aria-label="组件分层总览">
             <span class="component-taxonomy-title">组件分类</span>
             <a href="#app">
-              <span class="component-taxonomy-icon">AF</span>
+              <span class="component-taxonomy-icon">01</span>
               <small>01</small>
               <strong>应用框架</strong>
             </a>
             <a href="#agent">
-              <span class="component-taxonomy-icon">AR</span>
+              <span class="component-taxonomy-icon">02</span>
               <small>02</small>
               <strong>Agent 运行</strong>
             </a>
             <a href="#data">
-              <span class="component-taxonomy-icon">DR</span>
+              <span class="component-taxonomy-icon">03</span>
               <small>03</small>
               <strong>数据与检索</strong>
             </a>
             <a href="#serving">
-              <span class="component-taxonomy-icon">MS</span>
+              <span class="component-taxonomy-icon">04</span>
               <small>04</small>
               <strong>模型服务</strong>
             </a>
             <a href="#observe">
-              <span class="component-taxonomy-icon">OB</span>
+              <span class="component-taxonomy-icon">05</span>
               <small>05</small>
               <strong>观测评测</strong>
             </a>
             <a href="#protocol">
-              <span class="component-taxonomy-icon">PR</span>
+              <span class="component-taxonomy-icon">06</span>
               <small>06</small>
               <strong>协议集成</strong>
             </a>
@@ -126,19 +126,17 @@
                     <span>01</span>
                     <h2 id="component-app-title">应用框架</h2>
                   </div>
-                  <p>把模型、Prompt、检索、工具和输出结构组织成可维护的应用骨架。</p>
+                  <p>把模型调用、提示词、检索、工具和输出结构组织成可维护的应用骨架。</p>
                 </div>
                 <div class="component-grid component-grid--dense">
                   <a class="component-mini-card" href="https://www.langchain.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--green">LC</span>
                     <div>
                       <h3>LangChain</h3>
-                      <p>把模型、Prompt、工具、检索器和记忆串成应用流程，适合快速搭 RAG 与工具调用原型。</p>
+                      <p>把模型调用、提示词、工具、检索器和记忆串成应用流程，适合快速搭 RAG 与工具调用原型。</p>
                       <span class="component-mini-meta"><b>Python / JS</b><i>稳定</i></span>
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://www.llamaindex.ai/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--purple">LI</span>
                     <div>
                       <h3>LlamaIndex</h3>
                       <p>偏数据连接与索引层，适合把文档、表格和知识库组织成可检索上下文。</p>
@@ -146,7 +144,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://haystack.deepset.ai/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--cyan">HY</span>
                     <div>
                       <h3>Haystack</h3>
                       <p>端到端搜索与生成框架，适合问答、语义检索和检索增强生成流程。</p>
@@ -154,10 +151,9 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://dspy.ai/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--blue">DP</span>
                     <div>
                       <h3>DSPy</h3>
-                      <p>把 Prompt 组合变成可优化程序，适合有评测集的 pipeline 迭代。</p>
+                      <p>把提示词组合变成可优化程序，适合有评测集的 pipeline 迭代。</p>
                       <span class="component-mini-meta"><b>Python</b><i>实验</i></span>
                     </div>
                   </a>
@@ -174,7 +170,6 @@
                 </div>
                 <div class="component-grid component-grid--dense">
                   <a class="component-mini-card" href="https://www.langchain.com/langgraph" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--blue">LG</span>
                     <div>
                       <h3>LangGraph</h3>
                       <p>用显式状态图承载 Agent 流程，支持分支、循环、持久化和人审节点。</p>
@@ -182,7 +177,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://github.com/microsoft/autogen" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--rose">AG</span>
                     <div>
                       <h3>AutoGen</h3>
                       <p>面向多 Agent 对话协作，适合研究型任务拆解、角色协商和工具执行。</p>
@@ -190,7 +184,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://www.crewai.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--amber">CR</span>
                     <div>
                       <h3>CrewAI</h3>
                       <p>用角色、任务和工具组织 Agent 团队，适合运营、内容和研究类自动化。</p>
@@ -198,7 +191,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://learn.microsoft.com/en-us/semantic-kernel/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--gold">SK</span>
                     <div>
                       <h3>Semantic Kernel</h3>
                       <p>微软系 Agent 编排框架，强调插件、Planner、Memory 与企业系统集成。</p>
@@ -218,15 +210,13 @@
                 </div>
                 <div class="component-grid component-grid--dense">
                   <a class="component-mini-card component-mini-card--featured" href="https://www.lancedb.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--cyan">LD</span>
                     <div>
                       <h3>LanceDB / Lance</h3>
-                      <p>面向 AI 数据的湖仓与向量数据库，适合文本、图片、向量和样本版本共管。</p>
+                      <p>面向多模态样本的湖仓与向量数据库，适合文本、图片、向量和样本版本共管。</p>
                       <span class="component-mini-meta"><b>Python / Rust</b><i>稳定</i></span>
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://qdrant.tech/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--rose">QD</span>
                     <div>
                       <h3>Qdrant</h3>
                       <p>高性能向量数据库，支持 payload 过滤，适合需要元数据条件的检索。</p>
@@ -234,7 +224,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--green">PG</span>
                     <div>
                       <h3>pgvector</h3>
                       <p>把向量检索放进 PostgreSQL，适合已有关系库和中小规模 RAG。</p>
@@ -242,7 +231,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://github.com/milvus-io/milvus" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--purple">MV</span>
                     <div>
                       <h3>Milvus</h3>
                       <p>开源向量数据库，面向大规模相似度检索、推荐和图文检索场景。</p>
@@ -262,7 +250,6 @@
                 </div>
                 <div class="component-grid component-grid--dense">
                   <a class="component-mini-card" href="https://docs.vllm.ai/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--cyan">VL</span>
                     <div>
                       <h3>vLLM</h3>
                       <p>高吞吐 LLM 推理服务，适合 GPU 部署、批量推理和生产吞吐优化。</p>
@@ -270,7 +257,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://www.litellm.ai/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--blue">LM</span>
                     <div>
                       <h3>LiteLLM</h3>
                       <p>统一多模型 Provider 的网关层，处理路由、预算、Fallback 和日志。</p>
@@ -278,7 +264,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://ollama.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--green">OL</span>
                     <div>
                       <h3>Ollama</h3>
                       <p>本地模型运行工具，适合开发机实验、离线 Demo 和隐私数据试跑。</p>
@@ -286,7 +271,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://docs.sglang.ai/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--amber">SG</span>
                     <div>
                       <h3>SGLang</h3>
                       <p>面向结构化生成和 Agent 场景的高性能推理运行时。</p>
@@ -302,11 +286,10 @@
                     <span>05</span>
                     <h2 id="component-observe-title">观测评测</h2>
                   </div>
-                  <p>把 Prompt、检索片段、工具调用、模型输出、人工反馈和指标记录下来。</p>
+                  <p>把提示词、检索片段、工具调用、模型输出、人工反馈和指标记录下来。</p>
                 </div>
                 <div class="component-grid component-grid--dense">
                   <a class="component-mini-card" href="https://www.langchain.com/langsmith" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--purple">LS</span>
                     <div>
                       <h3>LangSmith</h3>
                       <p>记录 Trace、数据集和评测结果，适合调试 LangChain / LangGraph 应用。</p>
@@ -314,15 +297,13 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://langfuse.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--rose">LF</span>
                     <div>
                       <h3>Langfuse</h3>
-                      <p>开源 LLM 可观测平台，记录 Prompt、Trace、成本、评分和用户反馈。</p>
+                      <p>开源模型调用可观测平台，记录提示词、Trace、成本、评分和用户反馈。</p>
                       <span class="component-mini-meta"><b>OSS / Cloud</b><i>稳定</i></span>
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://www.ragas.io/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--green">RG</span>
                     <div>
                       <h3>Ragas</h3>
                       <p>面向 RAG 的评测工具，关注忠实度、回答质量和检索质量。</p>
@@ -330,7 +311,6 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://www.confident-ai.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--gold">DE</span>
                     <div>
                       <h3>DeepEval</h3>
                       <p>LLM 单元测试与质量门禁工具，适合把评测放进发布流程。</p>
@@ -350,15 +330,13 @@
                 </div>
                 <div class="component-grid component-grid--dense">
                   <a class="component-mini-card component-mini-card--featured" href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--purple">MC</span>
                     <div>
                       <h3>MCP</h3>
-                      <p>用统一协议向 AI 客户端暴露资源、工具和提示模板，降低集成成本。</p>
+                      <p>用统一协议向模型客户端暴露资源、工具和提示模板，降低集成成本。</p>
                       <span class="component-mini-meta"><b>协议</b><i>活跃</i></span>
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://json-schema.org/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--blue">JS</span>
                     <div>
                       <h3>OpenAPI / JSON Schema</h3>
                       <p>描述工具参数、结构化输出和 API 边界，减少模型调用工具时的歧义。</p>
@@ -366,18 +344,16 @@
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://playwright.dev/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--cyan">PW</span>
                     <div>
                       <h3>Playwright</h3>
-                      <p>浏览器自动化工具，可用于 UI 测试、截图验证和网页 Agent 执行。</p>
+                      <p>浏览器自动化工具，可用于 UI 测试、截图验证和网页自动化任务。</p>
                       <span class="component-mini-meta"><b>Node / Python</b><i>稳定</i></span>
                     </div>
                   </a>
                   <a class="component-mini-card" href="https://opentelemetry.io/" target="_blank" rel="noopener noreferrer">
-                    <span class="component-mini-icon component-mini-icon--amber">OT</span>
                     <div>
                       <h3>OpenTelemetry</h3>
-                      <p>统一服务级 Trace、Metrics 和 Logs，适合把 AI 应用纳入工程观测。</p>
+                      <p>统一服务级 Trace、Metrics 和 Logs，适合把模型应用纳入工程观测。</p>
                       <span class="component-mini-meta"><b>规范</b><i>稳定</i></span>
                     </div>
                   </a>
@@ -394,12 +370,12 @@
             <div class="component-decision-flow" aria-label="组件选型流程">
               <article>
                 <span>01</span>
-                <h3>新建 LLM 应用？</h3>
+                <h3>新建模型应用？</h3>
                 <p>先用 LangChain + LlamaIndex 打通模型、数据和检索。</p>
               </article>
               <article>
                 <span>02</span>
-                <h3>需要多步 Agent？</h3>
+                <h3>需要多步任务？</h3>
                 <p>用 LangGraph 或 AutoGen 管理状态、循环和协作。</p>
               </article>
               <article>

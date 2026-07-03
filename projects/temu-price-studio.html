@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="Temu Price Studio 重点案例：本地优先的 Temu 核价生图工作台，覆盖 SKU 数据、素材证据、线上参考、Prompt 版本、图片抽卡、候选审核、QA、Codex job 和最终包追溯。" />
+    <meta name="description" content="Temu Price Studio 重点案例：本地优先的 Temu 核价生图工作台，覆盖 SKU 数据、素材证据、线上参考、提示词版本管理、图片抽卡、候选审核、QA、任务执行记录和最终包追溯。" />
     <link rel="canonical" href="https://tiammomo.github.io/projects/temu-price-studio.html" />
     <meta property="og:title" content="Temu Price Studio · Tiammomo Case Study" />
-    <meta property="og:description" content="Temu 核价生图工作台：SKU 工作流、Prompt 实验室、抽卡候选、人审决策和可追溯最终包。" />
+    <meta property="og:description" content="Temu 核价生图工作台：SKU 工作流、提示词版本管理、抽卡候选、人审决策和可追溯最终包。" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://tiammomo.github.io/projects/temu-price-studio.html" />
     <meta property="og:image" content="https://tiammomo.github.io/assets/images/temu-price-studio/sku-details.png" />
@@ -36,7 +36,7 @@
               <span class="section-tag">Case Study</span>
               <h1>Temu Price Studio</h1>
               <p class="case-hero-lead">
-                本地优先的 Temu 核价生图工作台。它把 SKU 基础数据、素材证据、线上参考、人工 Prompt 版本、图片抽卡、候选审核、QA、执行记录和最终包串成一个可追溯的人工协作流程，让商品图片生成不再散落在文件夹、聊天记录和临时脚本里。
+                本地优先的 Temu 核价生图工作台。它把 SKU 基础数据、素材证据、线上参考、提示词版本管理、图片抽卡、候选审核、QA、执行记录和最终包串成一个可追溯的人工协作流程，让商品图片生成不再散落在文件夹、聊天记录和临时脚本里。
               </p>
               <div class="case-hero-actions">
                 <a class="btn btn-primary btn-lg" href="http://192.168.31.114:33010/" rel="noreferrer">打开局域网演示</a>
@@ -58,13 +58,13 @@
               <div class="case-duo-icon" aria-hidden="true">◇</div>
               <span class="case-duo-kicker">Problem</span>
               <h2>核价、生图和审核过程很容易失去上下文</h2>
-              <p>Temu 商品图生产会牵涉 SKU 事实、仓库库存、价格、原始素材、线上参考、Prompt、生成批次、候选图、QA 和人工选择。只靠文件夹和临时脚本推进时，很难回答“这张图基于哪个 Prompt、哪组参考、哪个 job、为什么被采用”。</p>
+              <p>Temu 商品图生产会牵涉 SKU 事实、仓库库存、价格、原始素材、线上参考、提示词、生成批次、候选图、QA 和人工选择。只靠文件夹和临时脚本推进时，很难回答“这张图基于哪个提示词、哪组参考、哪个任务记录、为什么被采用”。</p>
             </article>
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◆</div>
               <span class="case-duo-kicker">My Role</span>
               <h2>把人工判断和自动执行做成可追踪工作台</h2>
-              <p>项目覆盖 React + Vite + Zustand 前端，Express + TypeScript 后端，PostgreSQL、Redis、MinIO 专用基础设施，以及 Codex job、workflow skills、trace、文件索引、候选人审和数据迁移工具。系统整理信息，最终判断保留给人。</p>
+              <p>项目覆盖 React + Vite + Zustand 前端，Express + TypeScript 后端，PostgreSQL、Redis、MinIO 专用基础设施，以及任务队列、执行技能、trace、文件索引、候选人审和数据迁移工具。系统整理信息，最终判断保留给人。</p>
             </article>
           </div>
         </div>
@@ -83,7 +83,7 @@
               </div>
               <figcaption>
                 <strong>SKU 详情与阶段筛选</strong>
-                <span>公开截图使用匿名 SKU 展示真实卡片布局、素材数量、Prompt 状态、人工审核状态和待办入口，避免暴露业务 SKU 编码。</span>
+                <span>公开截图使用匿名 SKU 展示真实卡片布局、素材数量、提示词状态、人工审核状态和待办入口，避免暴露业务 SKU 编码。</span>
               </figcaption>
             </figure>
             <figure class="case-ss">
@@ -101,7 +101,7 @@
               </div>
               <figcaption>
                 <strong>Agent 接入与 API Catalog</strong>
-                <span>面向 Codex/workflow 提供结构化接口说明、工具目录、调用示例、运行时策略和系统 Prompt 建议。</span>
+                <span>面向自动执行链路提供结构化接口说明、工具目录、调用示例、运行时策略和系统提示词建议。</span>
               </figcaption>
             </figure>
           </div>
@@ -126,7 +126,7 @@
               <span class="case-cap-num">02</span>
               <div>
                 <h3>SKU 工作流</h3>
-                <p>围绕当前 SKU 维护下一步动作：选择参考图、Prompt 版本、抽卡任务、候选审核和最终包。</p>
+                <p>围绕当前 SKU 维护下一步动作：选择参考图、提示词版本、抽卡任务、候选审核和最终包。</p>
               </div>
             </div>
             <div class="case-cap-item">
@@ -139,15 +139,15 @@
             <div class="case-cap-item">
               <span class="case-cap-num">04</span>
               <div>
-                <h3>Prompt 实验室</h3>
-                <p>沉淀高级参考图、Prompt 管理、Prompt 竞技场和 SKU 实验，再把有效方法复制到生产 SKU。</p>
+                <h3>提示词版本管理</h3>
+                <p>沉淀高级参考图、提示词管理、对照实验和 SKU 实验，再把有效方法复制到生产 SKU。</p>
               </div>
             </div>
             <div class="case-cap-item">
               <span class="case-cap-num">05</span>
               <div>
                 <h3>抽卡与候选审核</h3>
-                <p>每次生图记录 Prompt、参考图、job、trace、batch、候选图和 QA；采用与不采用由人工确认。</p>
+                <p>每次生图记录提示词、参考图、任务编号、trace、batch、候选图和 QA；采用与不采用由人工确认。</p>
               </div>
             </div>
             <div class="case-cap-item">
@@ -161,7 +161,7 @@
               <span class="case-cap-num">07</span>
               <div>
                 <h3>知识沉淀</h3>
-                <p>连接 Prompt 模板、规则、Wiki 页面和 SKU 实验结果，避免经验只留在一次性对话里。</p>
+                <p>连接提示词模板、规则、Wiki 页面和 SKU 实验结果，避免经验只留在一次性对话里。</p>
               </div>
             </div>
             <div class="case-cap-item">
@@ -190,13 +190,13 @@
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">02</span>
-              <h3>Prompt 版本</h3>
-              <p>人工维护 SKU 级 Prompt 和参考图选择，系统保留版本、备注和推荐状态。</p>
+              <h3>提示词版本</h3>
+              <p>人工维护 SKU 级提示词和参考图选择，系统保留版本、备注和推荐状态。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">03</span>
               <h3>抽卡与 QA</h3>
-              <p>Codex job 触发 workflow skills，生成候选图、manifest、trace、QA 和执行日志。</p>
+              <p>任务队列触发执行技能，生成候选图、manifest、trace、QA 和执行日志。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">04</span>
@@ -218,7 +218,7 @@
             <article class="case-flow-step">
               <span class="case-flow-num">01</span>
               <h3>React Workbench</h3>
-              <p>数据看板、SKU 详情、SKU 工作流、任务队列、Prompt 实验室、Jobs、知识库和设置组成统一操作台。</p>
+              <p>数据看板、SKU 详情、SKU 工作流、任务队列、提示词版本管理、Jobs、知识库和设置组成统一操作台。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">02</span>
@@ -232,8 +232,8 @@
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">04</span>
-              <h3>Codex Workflow</h3>
-              <p>Codex queue 调用 workflow skills 执行生图、QA、trace 和文件落盘；前端再把产物映射回 SKU、round、Prompt 和人工决策。</p>
+              <h3>任务执行链路</h3>
+              <p>任务队列调用执行技能完成生图、QA、trace 和文件落盘；前端再把产物映射回 SKU、round、提示词和人工决策。</p>
             </article>
           </div>
         </div>
@@ -258,8 +258,8 @@
               <span class="case-duo-kicker">Human Boundary</span>
               <h2>机器 accepted 不等于最终可上传</h2>
               <ul class="case-list">
-                <li>商品事实、核价结果、Prompt、参考图、候选采用和最终包都必须有人确认。</li>
-                <li>系统不会自动改写正式 Prompt；中文就是中文，英文就是英文。</li>
+                <li>商品事实、核价结果、提示词、参考图、候选采用和最终包都必须有人确认。</li>
+                <li>系统不会自动改写正式提示词；中文就是中文，英文就是英文。</li>
                 <li>候选 cleanup 不能影响原始素材和 human-only 最终选择目录。</li>
                 <li>最终包只统计人工采用后的主图和尺寸图，机器 QA 只是辅助信号。</li>
               </ul>
@@ -279,14 +279,14 @@
               <span class="case-roadmap-marker" aria-hidden="true">→</span>
               <div>
                 <h3>更完整的 SKU read model</h3>
-                <p>继续加强 SKU、核价链接、候选图、Prompt 版本、素材证据和 job 之间的索引与筛选体验。</p>
+                <p>继续加强 SKU、核价链接、候选图、提示词版本、素材证据和任务记录之间的索引与筛选体验。</p>
               </div>
             </article>
             <article class="case-roadmap-item">
               <span class="case-roadmap-marker" aria-hidden="true">→</span>
               <div>
-                <h3>Prompt 实验进入生产闭环</h3>
-                <p>把 Prompt 竞技场和 SKU 实验里验证有效的方法，更顺滑地复制成 SKU 级 Prompt 草稿和推荐版本。</p>
+                <h3>提示词实验进入生产闭环</h3>
+                <p>把对照实验和 SKU 实验里验证有效的方法，更顺滑地复制成 SKU 级提示词草稿和推荐版本。</p>
               </div>
             </article>
             <article class="case-roadmap-item">
