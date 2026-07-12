@@ -210,31 +210,34 @@
       "zh": "开源可访问",
       "en": "Open Source"
     },
-    "categories": ["ai", "data", "product"],
+    "categories": ["ai", "data", "product", "infra"],
     "image": {
-      "png": "assets/images/routepilot/city-explorer.png",
+      "png": "assets/images/routepilot/assistant-home.png",
       "alt": {
-        "zh": "RoutePilot 城市探索工作台真实截图",
-        "en": "RoutePilot city exploration workspace screenshot"
+        "zh": "RoutePilot 旅行问答助手首页真实截图",
+        "en": "RoutePilot travel assistant home screen"
       }
     },
     "summary": {
-      "zh": "旅行路线规划工作台，围绕城市探索、北京 POI/UGC 数据、预生成路线库、预算约束、动态重规划和行程结果分享。",
-      "en": "A travel route planning workspace for city discovery, Beijing POI and UGC data, precomputed route libraries, budget constraints, dynamic replanning, and itinerary sharing."
+      "zh": "Artifact-first 多 Agent 旅行决策工作台：先用带来源的快速问答解决真实问题，再把约束、证据、规划、校验与正式方案沉淀为版本化 Artifact。",
+      "en": "An artifact-first, multi-agent travel decision workspace: start with sourced answers, then turn constraints, evidence, planning, validation, and formal itineraries into versioned artifacts."
     },
-    "tags": ["Next.js", "LangGraph", "Travel Data"],
+    "tags": {
+      "zh": ["Next.js", "FastAPI", "A2A Agents"],
+      "en": ["Next.js", "FastAPI", "A2A Agents"]
+    },
     "meta": {
-      "zh": ["北京路线库", "动态重规划"],
-      "en": ["Beijing routes", "Dynamic replanning"]
+      "zh": ["Artifact-first", "5 类 Agent"],
+      "en": ["Artifact-first", "5 agent roles"]
     },
     "index": {
       "direction": {
-        "zh": "旅行任务流",
-        "en": "Route planning workflow"
+        "zh": "多 Agent 旅行决策 / AI",
+        "en": "Multi-agent travel decisions / AI"
       },
       "proof": {
-        "zh": "城市探索、路线结果、系统状态截图",
-        "en": "City exploration, route result, system status screenshots"
+        "zh": "真实运行截图、版本化 Artifact、来源证据",
+        "en": "Live screenshots, versioned artifacts, sourced evidence"
       }
     },
     "caseUrl": "projects/routepilot.html",
