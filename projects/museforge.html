@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="MuseForge 重点案例：本地优先的电商 AI 图像生产工作站，覆盖商品事实、参考图、任务矩阵、批量生成、候选审核与画布精修。" />
+    <link rel="canonical" href="https://tiammomo.github.io/projects/museforge.html" />
+    <meta property="og:title" content="MuseForge · Tiammomo Case Study" />
+    <meta property="og:description" content="把商品资料、事实约束、结构化 Prompt、批量生图、候选审核和画布精修组织成可追踪的电商视觉生产链。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tiammomo.github.io/projects/museforge.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/museforge/overview.png" />
+    <title>MuseForge · Tiammomo Case Study</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="../assets/images/museforge/overview.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="case-header">
+      <a class="case-header-brand" href="../index.html" aria-label="Tiammomo 主页">
+        <span class="case-header-mark" aria-hidden="true">T</span>
+        <span>Tiammomo</span>
+      </a>
+      <nav class="case-nav" aria-label="案例导航">
+        <a href="../projects/">← 返回项目</a>
+        <a class="case-nav-gh" href="https://github.com/tiammomo/MuseForge" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container">
+          <div class="case-hero-grid">
+            <div class="case-hero-text">
+              <span class="section-tag">Case Study</span>
+              <h1>MuseForge</h1>
+              <p class="case-hero-lead">
+                本地优先的电商 AI 图像生产工作站。MuseForge 不把生图停留在一个 Prompt 输入框，而是把商品事实、策展参考、五类商品图任务、批量生成、临时候选、人工审核和画布精修组织成一条可追踪、可恢复、可交付的生产链。
+              </p>
+              <div class="case-hero-actions">
+                <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/MuseForge" rel="noreferrer">查看仓库</a>
+                <a class="btn btn-ghost btn-lg" href="../projects/">更多项目</a>
+              </div>
+            </div>
+            <div class="case-hero-visual">
+              <div class="case-hero-glow" aria-hidden="true"></div>
+              <img src="../assets/images/museforge/overview.png" alt="MuseForge 电商 AI 图像生产工作站概览截图" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◇</div>
+              <span class="case-duo-kicker">Problem</span>
+              <h2>批量商品图需要生产系统，不只是提示词</h2>
+              <p>电商视觉团队既要保证商品外观和事实准确，又要覆盖主图、尺寸图、场景图、细节图和对比图，还要管理组合配件、参考图、候选版本、审核决策和正式交付。零散文件夹与一次性 Prompt 很难保留这些边界，也无法解释一张图为什么被生成、保留或删除。</p>
+            </article>
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◆</div>
+              <span class="case-duo-kicker">My Role</span>
+              <h2>把 AI 生图流程做成可运行的本地工作站</h2>
+              <p>项目覆盖 React 19 / TypeScript / Vite 工作台、Zustand 状态、Konva 编辑画布、FastAPI / Pydantic API、SQLite 与本地工作区文件、异步生成运行记录，以及内置 generate-product-images Skill 的受控执行边界。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Product Screens</span>
+            <h2>当前本地运行系统真实截图</h2>
+          </div>
+          <div class="case-screenshots">
+            <figure class="case-ss case-ss--hero">
+              <div class="case-ss-frame">
+                <img src="../assets/images/museforge/overview.png" alt="MuseForge 项目概览" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>生产工作区概览</strong>
+                <span>集中展示正式输出、待审核、生产任务、Prompt 覆盖、最近项目和当前流水线，让团队先看到生产状态再进入具体操作。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/museforge/assets-and-facts.png" alt="MuseForge 素材与商品事实页面" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>素材、事实与参考边界</strong>
+                <span>商品源素材、商品事实、候选参考图和 reference manifest 在生成前完成核对，避免把无关场景、人物或未经证实的卖点带入结果。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/museforge/task-matrix.png" alt="MuseForge 商品图任务矩阵" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>商品 × 任务 × 图型矩阵</strong>
+                <span>按单品或配件组合选择五类商品图，提交前显示 readiness、资料阻塞、候选数量和本地并发，让不可生成的单元格无法混入批次。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/museforge/studio.png" alt="MuseForge 单张精修画布" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>任务感知的精修画布</strong>
+                <span>保留结果、项目素材、商品事实、结构化 Prompt、图层和版本进入同一画布，支持多选、吸附、缩放、排序、自动保存和 1024 × 1024 PNG 导出。</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Capabilities</span>
+            <h2>核心模块</h2>
+          </div>
+          <div class="case-cap-grid">
+            <div class="case-cap-item">
+              <span class="case-cap-num">01</span>
+              <div>
+                <h3>商品事实与参考门禁</h3>
+                <p>生成前校验商品身份、事实约束、参考角色、数量和 manifest 一致性，不把临时素材默认当作可信证据。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">02</span>
+              <div>
+                <h3>五类商品图矩阵</h3>
+                <p>主图、尺寸图、场景图、细节图和对比图拥有独立规则，并按单品或配件组合展开为明确工作项。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">03</span>
+              <div>
+                <h3>异步批量生成</h3>
+                <p>FastAPI 先持久化完整运行计划，再交给后台执行器；浏览器通过真实运行记录和结构化事件查看进度。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">04</span>
+              <div>
+                <h3>候选暂存与人工审核</h3>
+                <p>生成结果先进入 run 级临时目录，审核者明确保留后才原子移动到正式资产库，被拒候选可安全清理。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">05</span>
+              <div>
+                <h3>Konva 精修画布</h3>
+                <p>图片与文字图层支持拖拽、缩放、旋转、多选、吸附、对齐、分布、锁定、排序、撤销和干净导出。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">06</span>
+              <div>
+                <h3>上下文隔离与恢复</h3>
+                <p>每个 product + task + shot 使用独立画布文档，通过 SQLite、会话缓存和串行保存队列降低覆盖与丢稿风险。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">07</span>
+              <div>
+                <h3>本地工作区契约</h3>
+                <p>源商品、配件、组合任务、Prompt、参考图、临时候选和正式输出拥有明确目录边界，可由内置 Skill 增量准备。</p>
+              </div>
+            </div>
+            <div class="case-cap-item">
+              <span class="case-cap-num">08</span>
+              <div>
+                <h3>受控执行与文件安全</h3>
+                <p>API 绑定 loopback，脚本路径由服务端配置，子进程使用参数数组；路径穿越、隐藏目录、越界文件和目标覆盖会被拒绝。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Architecture</span>
+            <h2>从商品资料到正式交付资产</h2>
+          </div>
+          <div class="case-flow">
+            <div class="case-flow-track" aria-hidden="true"></div>
+            <article class="case-flow-step">
+              <span class="case-flow-num">01</span>
+              <h3>Truth & References</h3>
+              <p>工作区扫描商品、配件、Prompt 和参考清单，建立生成前的事实与视觉边界。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">02</span>
+              <h3>Task Matrix</h3>
+              <p>用户选择任务、图型、候选数和并发，服务端重新验证范围与 readiness 后创建运行。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">03</span>
+              <h3>Stage & Review</h3>
+              <p>Skill 生成的候选先留在私有暂存区，结构化事件更新进度，人工决定保留或删除。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">04</span>
+              <h3>Refine & Deliver</h3>
+              <p>保留候选原子晋升为正式资产，再进入对应任务画布完成构图、文案和最终导出。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card case-duo-card--good">
+              <div class="case-duo-icon" aria-hidden="true">✓</div>
+              <span class="case-duo-kicker">本地实操</span>
+              <h2>当前工作站已实际运行</h2>
+              <ul class="case-list">
+                <li>React 工作台已完成本地访问验证。</li>
+                <li><code>http://localhost:38120/api/health</code> 返回 <code>status: ok</code>，workspace 与 workflow 均 ready。</li>
+                <li>演示工作区当前扫描到 1 个商品、1 个配件、2 个任务和 10 份结构化 Prompt。</li>
+                <li>已验证项目概览、素材与事实、任务矩阵、精修画布和本地 API 数据链路。</li>
+                <li>本页四张产品图均重新采集自当前本地运行页面。</li>
+              </ul>
+            </article>
+            <article class="case-duo-card case-duo-card--bad">
+              <div class="case-duo-icon" aria-hidden="true">!</div>
+              <span class="case-duo-kicker">产品边界</span>
+              <h2>生成能力默认关闭，候选不等于资产</h2>
+              <ul class="case-list">
+                <li>实时图片调用需要服务端显式打开开关并配置 Provider，当前本地实例保持关闭。</li>
+                <li>生成候选只保存在临时 run 目录，只有人工确认保留的文件才进入正式资产库。</li>
+                <li>浏览器不能指定脚本、任意命令或输出目录，也不能通过通用素材路由读取暂存文件。</li>
+                <li>当前版本定位是单机本地工作站，多用户权限、远程 worker 和对象存储属于后续部署层。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Roadmap</span>
+            <h2>后续方向</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>参考清单在线编辑</h3>
+                <p>把 reference manifest 的编辑、校验和发布完整纳入工作台，减少文件系统往返。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>运行取消与重试</h3>
+                <p>补齐持久 worker、心跳、租约、取消、失败项重试和更完整的运行诊断时间线。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>画布生产能力</h3>
+                <p>继续加入裁切与适配、蒙版、行内文字、复用组、标尺、安全区和渠道模板。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">→</span>
+              <div>
+                <h3>本地伴侣与云端审核</h3>
+                <p>通过只出站的本地 companion 同步事件和决策，仅上传被保留的资产，保留本地文件与密钥边界。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="case-footer">
+      <div class="container case-footer-inner">
+        <a href="../projects/">← 返回项目列表</a>
+        <a href="https://github.com/tiammomo/MuseForge" rel="noreferrer">GitHub →</a>
+      </div>
+    </footer>
+  </body>
+</html>

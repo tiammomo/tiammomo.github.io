@@ -61,7 +61,11 @@ def read_project_count(path: Path) -> int:
     projects = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(projects, list):
         raise RuntimeError(f"{path} must contain a JSON list")
-    return len(projects)
+    return sum(
+        1
+        for project in projects
+        if isinstance(project, dict) and project.get("featured", True) is not False
+    )
 
 
 def build_stats(owner: str, projects_path: Path, token: str | None) -> dict:

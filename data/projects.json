@@ -45,8 +45,8 @@
     "name": "Temu Price Studio",
     "status": "active",
     "availability": {
-      "zh": "局域网演示",
-      "en": "LAN Demo"
+      "zh": "本地可运行",
+      "en": "Local Build"
     },
     "categories": ["ai", "data", "product"],
     "image": {
@@ -78,12 +78,7 @@
         "en": "Real screenshots with anonymized SKU data"
       }
     },
-    "caseUrl": "projects/temu-price-studio.html",
-    "liveUrl": "http://192.168.31.114:33010/",
-    "liveLabel": {
-      "zh": "局域网演示",
-      "en": "LAN Demo"
-    }
+    "caseUrl": "projects/temu-price-studio.html"
   },
   {
     "id": "quantpilot",
@@ -127,9 +122,51 @@
     "githubUrl": "https://github.com/tiammomo/QuantPilot"
   },
   {
+    "id": "museforge",
+    "name": "MuseForge",
+    "status": "active",
+    "availability": {
+      "zh": "本地可运行",
+      "en": "Local Demo"
+    },
+    "categories": ["ai", "product", "infra"],
+    "image": {
+      "png": "assets/images/museforge/overview.png",
+      "alt": {
+        "zh": "MuseForge 电商 AI 图像生产工作站概览截图",
+        "en": "MuseForge e-commerce AI image production workspace overview"
+      }
+    },
+    "summary": {
+      "zh": "本地优先的电商 AI 图像生产工作站，把商品事实、参考图、五类商品图任务、批量生成、候选审核和画布精修组织成可追踪的生产链。",
+      "en": "A local-first AI image production workspace that connects product truth, references, five e-commerce shot types, batch generation, candidate review, and canvas refinement in one traceable workflow."
+    },
+    "tags": {
+      "zh": ["React 19", "FastAPI", "Konva 画布"],
+      "en": ["React 19", "FastAPI", "Konva canvas"]
+    },
+    "meta": {
+      "zh": ["Local-first", "5 类商品图"],
+      "en": ["Local-first", "5 shot types"]
+    },
+    "index": {
+      "direction": {
+        "zh": "AI 生图生产 / Product",
+        "en": "AI image production / Product"
+      },
+      "proof": {
+        "zh": "真实运行截图、任务矩阵、审核与画布链路",
+        "en": "Live screenshots, task matrix, review and canvas workflow"
+      }
+    },
+    "caseUrl": "projects/museforge.html",
+    "githubUrl": "https://github.com/tiammomo/MuseForge"
+  },
+  {
     "id": "sellerharbor",
     "name": "SellerHarbor",
     "status": "active",
+    "featured": false,
     "availability": {
       "zh": "开源可访问",
       "en": "Open Source"

@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const renderProjectCard = (project, index, locale) => {
     const caseLabel = locale === 'en' ? 'Case Study' : '案例详情';
-    const liveLabel = localized(project.liveLabel, locale) || (locale === 'en' ? 'Live Demo' : '在线体验');
     const githubLabel = 'GitHub';
     const categories = project.categories.join(' ');
     const status = localized(project.availability, locale) || (project.status === 'wip' ? 'WIP' : 'Active');
@@ -102,9 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
       : '';
     const caseLink = project.caseUrl
       ? `<a class="project-link" href="${escapeHtml(withBase(project.caseUrl, urlBase))}">${caseLabel} →</a>`
-      : '';
-    const liveLink = project.liveUrl
-      ? `<a class="project-link" href="${escapeHtml(project.liveUrl)}" rel="noreferrer">${liveLabel} →</a>`
       : '';
     const githubLink = project.githubUrl
       ? `<a class="project-link project-link-muted" href="${escapeHtml(project.githubUrl)}" rel="noreferrer">${githubLabel} →</a>`
@@ -132,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="project-actions">
           ${caseLink}
-          ${liveLink}
           ${githubLink}
         </div>
       </article>
@@ -189,7 +184,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const source = projectGrid.dataset.projectSrc || 'data/projects.json';
       const projects = await loadJson(source);
       const locale = projectGrid.dataset.locale || 'zh';
-      projectGrid.innerHTML = projects
+      const scope = projectGrid.dataset.projectScope || 'all';
+      const visibleProjects = scope === 'featured'
+        ? projects.filter((project) => project.featured !== false)
+        : projects;
+      projectGrid.innerHTML = visibleProjects
         .map((project, index) => renderProjectCard(project, index, locale))
         .join('');
       applyProjectFilter();
@@ -212,7 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const snapshot = profileStats.stats || {};
       const values = {
         publicRepos: snapshot.publicRepos,
-        selectedProjects: Array.isArray(projects) ? projects.length : snapshot.selectedProjects,
+        selectedProjects: Array.isArray(projects)
+          ? projects.filter((project) => project.featured !== false).length
+          : snapshot.selectedProjects,
         totalStars: snapshot.totalStars,
         authoredPublicPullRequests: snapshot.authoredPublicPullRequests,
       };

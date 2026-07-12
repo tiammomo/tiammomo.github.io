@@ -74,7 +74,7 @@
             </div>
             <div class="center-note">
               <strong>运行状态</strong>
-              <p><b>开源可访问</b> 仓库可查看；<b>本地可运行</b> 已完成本机验证；<b>局域网演示</b> 可在内网环境体验。</p>
+              <p><b>开源可访问</b> 表示仓库可查看；<b>本地可运行</b> 表示已完成本机验证。公开页面不提供本地或局域网服务入口。</p>
             </div>
             <div class="center-note maintenance-note">
               <strong>展示规则</strong>
@@ -108,7 +108,7 @@
                 <div class="archive-row" role="row" data-project-index-row data-category="ai data product">
                   <strong>Temu Price Studio</strong>
                   <span>核价生图 / 审核流程</span>
-                  <span>局域网演示</span>
+                  <span>本地可运行</span>
                   <span>真实运行截图，SKU 已脱敏</span>
                   <a href="temu-price-studio.html">案例 →</a>
                 </div>
@@ -118,6 +118,13 @@
                   <span>本地可运行</span>
                   <span>298 symbols、356K K-lines</span>
                   <a href="quantpilot.html">案例 →</a>
+                </div>
+                <div class="archive-row" role="row" data-project-index-row data-category="ai product infra">
+                  <strong>MuseForge</strong>
+                  <span>AI 生图生产 / Product</span>
+                  <span>本地可运行</span>
+                  <span>真实运行截图、任务矩阵、审核与画布链路</span>
+                  <a href="museforge.html">案例 →</a>
                 </div>
                 <div class="archive-row" role="row" data-project-index-row data-category="ai product infra">
                   <strong>SellerHarbor</strong>
@@ -143,7 +150,7 @@
               </div>
             </section>
 
-            <div class="project-grid project-grid--center" id="project-gallery" data-project-grid data-locale="zh" data-project-src="../data/projects.json" data-url-base="../">
+            <div class="project-grid project-grid--center" id="project-gallery" data-project-grid data-project-scope="featured" data-locale="zh" data-project-src="../data/projects.json" data-url-base="../">
               <article class="project-card" data-category="ai infra product">
                 <div class="project-card-top">
                   <span class="project-num">01</span>
@@ -161,7 +168,7 @@
               <article class="project-card" data-category="ai data product">
                 <div class="project-card-top">
                   <span class="project-num">02</span>
-                  <span class="project-status" data-status="active">局域网演示</span>
+                  <span class="project-status" data-status="active">本地可运行</span>
                 </div>
                 <figure class="project-card-media">
                   <img src="../assets/images/temu-price-studio/sku-details.png" alt="Temu Price Studio SKU 工作台脱敏截图" loading="lazy" />
@@ -170,7 +177,7 @@
                 <p class="project-desc">本地优先的 Temu 核价生图工作台，串联 SKU 数据、素材证据、提示词版本管理、候选抽卡、人工审核、QA 和最终包追溯。</p>
                 <div class="project-tags"><span class="tag">React + Vite</span><span class="tag">Express</span><span class="tag">任务执行记录</span></div>
                 <div class="project-meta"><span>SKU 工作流</span><span>提示词版本管理</span></div>
-                <div class="project-actions"><a class="project-link" href="temu-price-studio.html">案例详情 →</a><a class="project-link" href="http://192.168.31.114:33010/" rel="noreferrer">局域网演示 →</a></div>
+                <div class="project-actions"><a class="project-link" href="temu-price-studio.html">案例详情 →</a></div>
               </article>
               <article class="project-card" data-category="ai data product">
                 <div class="project-card-top">
@@ -189,16 +196,16 @@
               <article class="project-card" data-category="ai product infra">
                 <div class="project-card-top">
                   <span class="project-num">04</span>
-                  <span class="project-status" data-status="active">开源可访问</span>
+                  <span class="project-status" data-status="active">本地可运行</span>
                 </div>
                 <figure class="project-card-media">
-                  <img src="../assets/images/sellerharbor/dashboard.png" alt="SellerHarbor 跨境卖家商品运营看板真实截图" loading="lazy" />
+                  <img src="../assets/images/museforge/overview.png" alt="MuseForge 电商 AI 图像生产工作站概览截图" loading="lazy" />
                 </figure>
-                <h3 class="project-name">SellerHarbor</h3>
-                <p class="project-desc">面向 Temu / TikTok Shop 跨境卖家的商品运营港，统一商品主档、平台 Listing、海外仓库存、真实反馈、内容生成和审核动作。</p>
-                <div class="project-tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">Commerce Ops</span></div>
-                <div class="project-meta"><span>商品运营港</span><span>审核导出</span></div>
-                <div class="project-actions"><a class="project-link" href="sellerharbor.html">案例详情 →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/SellerHarbor" rel="noreferrer">GitHub →</a></div>
+                <h3 class="project-name">MuseForge</h3>
+                <p class="project-desc">本地优先的电商 AI 图像生产工作站，把商品事实、参考图、五类商品图任务、批量生成、候选审核和画布精修组织成可追踪的生产链。</p>
+                <div class="project-tags"><span class="tag">React 19</span><span class="tag">FastAPI</span><span class="tag">Konva 画布</span></div>
+                <div class="project-meta"><span>Local-first</span><span>5 类商品图</span></div>
+                <div class="project-actions"><a class="project-link" href="museforge.html">案例详情 →</a><a class="project-link project-link-muted" href="https://github.com/tiammomo/MuseForge" rel="noreferrer">GitHub →</a></div>
               </article>
               <article class="project-card" data-category="product infra">
                 <div class="project-card-top">

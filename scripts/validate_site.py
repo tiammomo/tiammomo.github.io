@@ -154,8 +154,14 @@ def main() -> int:
                 for field in ("publicRepos", "selectedProjects", "totalStars", "authoredPublicPullRequests"):
                     if not isinstance(stats.get(field), int):
                         errors.append(f"data/profile-stats.json: stats.{field} must be an integer")
-                if isinstance(projects, list) and stats.get("selectedProjects") != len(projects):
-                    errors.append("data/profile-stats.json: stats.selectedProjects does not match data/projects.json")
+                if isinstance(projects, list):
+                    selected_count = sum(
+                        1
+                        for project in projects
+                        if isinstance(project, dict) and project.get("featured", True) is not False
+                    )
+                    if stats.get("selectedProjects") != selected_count:
+                        errors.append("data/profile-stats.json: stats.selectedProjects does not match featured projects")
     except Exception as exc:  # noqa: BLE001
         errors.append(f"data/profile-stats.json: {exc}")
 
