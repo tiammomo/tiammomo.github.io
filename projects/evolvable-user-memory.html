@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Evolvable User Memory 重点案例：面向 AI 应用的证据驱动、结果感知用户记忆服务，用五个平面隔离证据、信念、经验、投影与策略演化。" />
+    <link rel="canonical" href="https://tiammomo.github.io/projects/evolvable-user-memory.html" />
+    <meta property="og:title" content="Evolvable User Memory · Tiammomo Case Study" />
+    <meta property="og:description" content="从可追溯证据、不可变信念修订，到 Recall Trace、真实 Outcome 与有界策略演化：Evolvable User Memory 案例。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tiammomo.github.io/projects/evolvable-user-memory.html" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/evolvable-user-memory/workbench.png" />
+    <title>Evolvable User Memory · Tiammomo Case Study</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="../assets/images/evolvable-user-memory/workbench.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="case-header">
+      <a class="case-header-brand" href="../index.html" aria-label="Tiammomo 主页">
+        <span class="case-header-mark" aria-hidden="true">T</span>
+        <span>Tiammomo</span>
+      </a>
+      <nav class="case-nav" aria-label="案例导航">
+        <a href="../projects/">← 返回项目</a>
+        <a class="case-nav-gh" href="https://github.com/tiammomo/evolvable-user-memory" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container">
+          <div class="case-hero-grid">
+            <div class="case-hero-text">
+              <span class="section-tag">Memory Infrastructure Case Study</span>
+              <h1>Evolvable User Memory</h1>
+              <p class="case-hero-lead">
+                一个面向 AI 应用的证据驱动、结果感知用户记忆服务。它不把“向量库里的文本片段”直接当成用户事实，而是隔离 Evidence、Belief、Experience、Projection 与 Evolution，让每次写入、召回、使用和学习都能回到可审计的因果链。
+              </p>
+              <dl class="case-hero-facts" aria-label="Evolvable User Memory 技术概览">
+                <div>
+                  <dt>Memory model</dt>
+                  <dd>5 planes</dd>
+                </div>
+                <div>
+                  <dt>Authority</dt>
+                  <dd>PostgreSQL</dd>
+                </div>
+                <div>
+                  <dt>Runtime</dt>
+                  <dd>FastAPI · Python 3.12+</dd>
+                </div>
+              </dl>
+              <div class="case-hero-actions">
+                <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/evolvable-user-memory" rel="noreferrer">查看仓库</a>
+                <a class="btn btn-ghost btn-lg" href="#architecture">查看记忆闭环</a>
+              </div>
+            </div>
+            <div class="case-hero-visual">
+              <div class="case-hero-glow" aria-hidden="true"></div>
+              <img src="../assets/images/evolvable-user-memory/workbench.png" alt="Evolvable User Memory 当前记忆工作台" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◇</div>
+              <span class="case-duo-kicker">Problem</span>
+              <h2>“被召回”不能成为“更可信”的理由</h2>
+              <p>朴素记忆系统常把原始对话、当前信念、检索排序和使用效果混在一起。某条记忆只要被多次读到，就可能被错误地当成更重要、更正确，形成难以解释的自我强化；更新、撤回和历史回放也随之失去清晰边界。</p>
+            </article>
+            <article class="case-duo-card">
+              <div class="case-duo-icon" aria-hidden="true">◆</div>
+              <span class="case-duo-kicker">Approach &amp; Role</span>
+              <h2>把记忆建模为有证据的状态演化</h2>
+              <p>我把领域模型、应用端口、基础设施适配器、API 与独立前端串成一条可追溯链路：原始观察形成候选和不可变 Revision，召回冻结 Trace，只有引用该 Trace 的真实 Outcome 才能学习上下文效用。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Current Product</span>
+            <h2>当前版本的三条关键证据</h2>
+          </div>
+          <div class="case-screenshots">
+            <figure class="case-ss case-ss--hero">
+              <div class="case-ss-frame">
+                <img src="../assets/images/evolvable-user-memory/workbench.png" alt="Evolvable User Memory 记忆工作台概览" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>五步记忆工作台</strong>
+                <span>从记录证据、检查信念，到召回上下文、登记使用和记录结果，产品界面直接对应系统的可追溯闭环，并明确显示当前 Scope 与存储状态。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/evolvable-user-memory/evidence-capture.png" alt="Evolvable User Memory 可追溯偏好记录界面" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>证据先于信念</strong>
+                <span>记忆键、值、原始证据、上下文、来源与置信度共同进入 Observation，再形成 Candidate 和不可变 Revision。</span>
+              </figcaption>
+            </figure>
+            <figure class="case-ss">
+              <div class="case-ss-frame">
+                <img src="../assets/images/evolvable-user-memory/five-plane-architecture.png" alt="Evolvable User Memory 五平面架构说明" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>五个平面，一条因果链</strong>
+                <span>Evidence、Belief、Experience、Projection 与 Evolution 各自负责不同事实，硬性不变量防止读操作偷偷改写信念。</span>
+              </figcaption>
+            </figure>
+          </div>
+          <p class="case-evidence-note">截图来自 0.1.0 本地开发预览实例。当前 PostgreSQL 为权威存储，Milvus 投影已启用；采集过程只浏览现有界面，没有写入记忆、登记使用或改变运行状态。</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Memory Model</span>
+            <h2>五个平面隔离五类事实</h2>
+          </div>
+          <div class="case-cap-grid">
+            <article class="case-cap-item">
+              <span class="case-cap-num">01</span>
+              <div>
+                <h3>Evidence</h3>
+                <p>Observation、EvidenceSpan 与 Candidate 保存实际观察到的内容、出处和候选解释，不提前把输入包装成永久事实。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">02</span>
+              <div>
+                <h3>Belief</h3>
+                <p>MemoryRecord、不可变 MemoryRevision 与 BeliefState 表达“当前相信什么”，并保留发生时间与系统获知时间。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">03</span>
+              <div>
+                <h3>Experience</h3>
+                <p>RecallTrace、OutcomeEvent 与 UtilityEstimate 把一次召回和后续真实结果关联起来，让效用学习具有可归因证据。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">04</span>
+              <div>
+                <h3>Projection</h3>
+                <p>词法与 Milvus 只提供候选，PostgreSQL 再校验 Scope 和双时间可见性；Context Projection 冻结最终上下文与摘要指纹。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">05</span>
+              <div>
+                <h3>Evolution</h3>
+                <p>StrategySnapshot、受限提案和追加式实验状态机允许策略演进，但激活与回滚只能经过内部编排路径。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">∅</span>
+              <div>
+                <h3>Hard invariant</h3>
+                <p>列举、查询和召回始终只读；“系统读过它”不会增加信念或效用，只有真实 Outcome 才能形成学习信号。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="architecture">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Memory Lifecycle</span>
+            <h2>从一次观察到有界策略演化</h2>
+          </div>
+          <div class="case-flow">
+            <div class="case-flow-track" aria-hidden="true"></div>
+            <article class="case-flow-step">
+              <span class="case-flow-num">01</span>
+              <h3>Observe</h3>
+              <p>在明确的 tenant、subject、action 与 purpose 下记录原始证据；Scope 内幂等键保证重试稳定，冲突输入被显式拒绝。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">02</span>
+              <h3>Form Belief</h3>
+              <p>候选被接受后形成不可变 Revision；双时间模型同时回答“当时何时有效”和“系统当时知道什么”。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">03</span>
+              <h3>Recall &amp; Project</h3>
+              <p>相关性、上下文、信念、历史 Outcome 效用与新鲜度共同排序，随后冻结时间边界、策略版本、分数组成和 Trace ID。</p>
+            </article>
+            <article class="case-flow-step">
+              <span class="case-flow-num">04</span>
+              <h3>Outcome &amp; Evolve</h3>
+              <p>使用回执只证明上下文被采用；引用 Trace 的真实 Outcome 才更新情境效用，并为受治理的策略实验提供证据。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Shipped System</span>
+            <h2>当前实现的六个系统边界</h2>
+          </div>
+          <div class="case-cap-grid">
+            <article class="case-cap-item">
+              <span class="case-cap-num">01</span>
+              <div>
+                <h3>证据化偏好写入</h3>
+                <p>上下文偏好与证据、来源、置信度一同写入；Scope 内幂等与冲突拒绝让客户端重试不制造重复事实。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">02</span>
+              <div>
+                <h3>不可变与双时间召回</h3>
+                <p>Revision 只追加不覆盖，查询可同时指定 <code>valid_at</code> 与 <code>known_at</code>，重建过去某时点可见的信念。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">03</span>
+              <div>
+                <h3>Trace 与 Outcome 归因</h3>
+                <p>Recall Trace 冻结候选、分数和策略；Outcome 必须指向 Trace，避免把无关反馈误记成某条记忆的效果。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">04</span>
+              <div>
+                <h3>确定性上下文投影</h3>
+                <p>精确去重、Revision 归因、预算裁剪和可复现 digest 共同生成 Context Projection；<code>/v1/usages</code> 另行登记实际采用情况。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">05</span>
+              <div>
+                <h3>有界策略实验</h3>
+                <p>策略提案、实验与追加式状态转换可追踪；只有内部编排路径可以激活或回滚，外部请求不能直接改线上策略。</p>
+              </div>
+            </article>
+            <article class="case-cap-item">
+              <span class="case-cap-num">06</span>
+              <div>
+                <h3>治理与可丢弃投影</h3>
+                <p>授权按 tenant、subject、action、purpose 默认拒绝；Milvus 不保存原始证据和键值，只保留可重建的哈希 Scope 与 Revision 投影。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Engineering Decisions</span>
+            <h2>防止记忆系统越用越偏的三道边界</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">1</span>
+              <div>
+                <h3>读操作绝不强化信念</h3>
+                <p>检索频率只能说明“它常被系统看到”，不能说明“它更真实”。学习入口被限制为可归因的 Outcome，切断流行度与正确性的混淆。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">2</span>
+              <div>
+                <h3>向量索引不是事实来源</h3>
+                <p>Milvus 只是可重建的候选投影。最终可见性、Scope、Revision 和双时间判断全部回到 PostgreSQL 权威状态。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">3</span>
+              <div>
+                <h3>演化不越过治理红线</h3>
+                <p>策略可以在实验边界内调整排序与效用，但不能自我修改隐私、访问控制、保留、删除或审计规则。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="case-duo">
+            <article class="case-duo-card case-duo-card--good">
+              <div class="case-duo-icon" aria-hidden="true">✓</div>
+              <span class="case-duo-kicker">Current Fit</span>
+              <h2>当前版本适合什么</h2>
+              <ul class="case-list">
+                <li>为 AI 助手、Agent 或个性化产品提供可审计、可撤回、可解释的用户记忆服务。</li>
+                <li>需要区分证据、当前信念、检索上下文和真实使用效果，避免召回自我强化的系统。</li>
+                <li>希望以 PostgreSQL 保存权威状态，同时使用 Milvus 提升候选检索效率的自托管团队。</li>
+              </ul>
+            </article>
+            <article class="case-duo-card case-duo-card--bad">
+              <div class="case-duo-icon" aria-hidden="true">!</div>
+              <span class="case-duo-kicker">Honest Boundaries</span>
+              <h2>仍然明确保留的边界</h2>
+              <ul class="case-list">
+                <li>当前为 0.1.0 开发预览；原生快速启动的内存模式是临时状态，默认 Compose 才使用 PostgreSQL。</li>
+                <li>离线哈希 embedding 是确定性基线，不代表生产语义模型质量；压缩目前以确定性抽取、精确去重和字符预算为主。</li>
+                <li>生产 IdP 治理、自动保留与备份过期、RLS 和完整运维仍需部署侧补齐，项目不宣称已经完成端到端法律合规。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="case-footer">
+      <div class="container case-footer-inner">
+        <a href="../projects/">← 返回项目列表</a>
+        <a href="https://github.com/tiammomo/evolvable-user-memory" rel="noreferrer">查看 Evolvable User Memory 源码 →</a>
+      </div>
+    </footer>
+  </body>
+</html>

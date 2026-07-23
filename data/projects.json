@@ -240,44 +240,44 @@
     "githubUrl": "https://github.com/tiammomo/Mamoji"
   },
   {
-    "id": "routepilot",
-    "name": "RoutePilot",
+    "id": "evolvable-user-memory",
+    "name": "Evolvable User Memory",
     "status": "active",
     "availability": {
-      "zh": "开源可访问",
-      "en": "Open Source"
+      "zh": "开源预览",
+      "en": "Open Preview"
     },
-    "categories": ["ai", "data", "product", "infra"],
+    "categories": ["ai", "data", "infra", "product"],
     "image": {
-      "png": "assets/images/routepilot/assistant-home.png",
+      "png": "assets/images/evolvable-user-memory/workbench.png",
       "alt": {
-        "zh": "RoutePilot 旅行问答助手首页真实截图",
-        "en": "RoutePilot travel assistant home screen"
+        "zh": "Evolvable User Memory 当前记忆工作台真实截图",
+        "en": "Current Evolvable User Memory workbench"
       }
     },
     "summary": {
-      "zh": "Artifact-first 多 Agent 旅行决策工作台：先用带来源的快速问答解决真实问题，再把约束、证据、规划、校验与正式方案沉淀为版本化 Artifact。",
-      "en": "An artifact-first, multi-agent travel decision workspace: start with sourced answers, then turn constraints, evidence, planning, validation, and formal itineraries into versioned artifacts."
+      "zh": "面向 AI 应用的证据驱动、结果感知用户记忆服务，把原始证据、不可变信念修订、召回 Trace、真实 Outcome 与有界策略演化组织成可审计闭环。",
+      "en": "An evidence-grounded, outcome-aware user memory service for AI applications, connecting raw evidence, immutable belief revisions, recall traces, real outcomes, and bounded strategy evolution in an auditable loop."
     },
     "tags": {
-      "zh": ["Next.js", "FastAPI", "A2A Agents"],
-      "en": ["Next.js", "FastAPI", "A2A Agents"]
+      "zh": ["Python + FastAPI", "PostgreSQL + Milvus", "Outcome 归因"],
+      "en": ["Python + FastAPI", "PostgreSQL + Milvus", "Outcome attribution"]
     },
     "meta": {
-      "zh": ["Artifact-first", "5 类 Agent"],
-      "en": ["Artifact-first", "5 agent roles"]
+      "zh": ["5 个记忆平面", "读 ≠ 强化"],
+      "en": ["5 memory planes", "Read ≠ reinforce"]
     },
     "index": {
       "direction": {
-        "zh": "多 Agent 旅行决策 / AI",
-        "en": "Multi-agent travel decisions / AI"
+        "zh": "可演化用户记忆 / AI Infra",
+        "en": "Evolvable user memory / AI Infra"
       },
       "proof": {
-        "zh": "真实运行截图、版本化 Artifact、来源证据",
-        "en": "Live screenshots, versioned artifacts, sourced evidence"
+        "zh": "真实工作台、双时间召回、Outcome 归因与治理门禁",
+        "en": "Live workbench, bitemporal recall, outcome attribution, and governance gates"
       }
     },
-    "caseUrl": "projects/routepilot.html",
-    "githubUrl": "https://github.com/tiammomo/RoutePilot"
+    "caseUrl": "projects/evolvable-user-memory.html",
+    "githubUrl": "https://github.com/tiammomo/evolvable-user-memory"
   }
 ]

@@ -27,7 +27,7 @@ SLOTS = [
     ImageSlot("portfolio-og", "anime-portfolio-og", 1440),
     ImageSlot("modelport", "anime-cover-modelport", 1200),
     ImageSlot("quantpilot", "anime-cover-quantpilot", 1200),
-    ImageSlot("routepilot", "anime-cover-routepilot", 1200),
+    ImageSlot("evolvable-user-memory", "anime-cover-evolvable-user-memory", 1200),
     ImageSlot("mamoji", "anime-cover-mamoji", 1200),
     ImageSlot("sellerharbor", "anime-cover-sellerharbor", 1200),
     ImageSlot("museforge", "anime-cover-museforge", 1200),

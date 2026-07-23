@@ -81,7 +81,7 @@ https://tiammomo.github.io/
 - 高密度知识海报通过 `python3 scripts/build_knowledge_posters.py` 生成；公开页面不链接或发布 Markdown 笔记源文件。
 - 后续每张图解海报对应的长文应补到正式文章页，而不是暴露 `content/notes/*.md` 源文件。
 - 写作页原创生成图放在 `assets/images/writing/generated/`，不要直接使用外部原图或聊天参考图；已发布海报使用 `*-knowledge-map-fantasy.png` 命名。
-- 重点案例页放在 `projects/` 目录，目前包含 ModelPort、Temu Price Studio、QuantPilot、MuseForge、RoutePilot、Mamoji 和 SellerHarbor。
+- 重点案例页放在 `projects/` 目录，目前包含 ModelPort、Temu Price Studio、QuantPilot、MuseForge、Evolvable User Memory、Mamoji 和 SellerHarbor。
 - `data/projects.json` 中 `featured: false` 的项目只保留在项目中心，不进入首页精选位；未声明时默认参与首页精选。
 - 项目筛选通过卡片上的 `data-category` 和筛选按钮的 `data-filter` 对应。
 - 新增项目时优先维护 `data/projects.json`：数组顺序就是展示顺序；`categories` 决定筛选；`index.direction` 和 `index.proof` 决定项目索引文案。
@@ -120,7 +120,7 @@ assets/images/replacements/
 ```text
 modelport.png
 quantpilot.png
-routepilot.png
+evolvable-user-memory.png
 mamoji.png
 sellerharbor.png
 museforge.png
