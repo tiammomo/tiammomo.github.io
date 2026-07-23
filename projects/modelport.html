@@ -4,20 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="ModelPort 重点案例：面向 Claude Code / VS Code Claude 的本地 Anthropic-compatible 模型网关，带 Provider 路由、协议适配、用量观测和 Dashboard 控制面。" />
+    <meta name="description" content="ModelPort 重点案例：自托管多协议模型网关，以统一治理链路连接 Anthropic Messages、OpenAI Chat 与多种模型 Provider，并提供策略、预算、请求账本和 Dashboard 控制面。" />
     <link rel="canonical" href="https://tiammomo.github.io/projects/modelport.html" />
     <meta property="og:title" content="ModelPort · Tiammomo Case Study" />
-    <meta property="og:description" content="本地模型网关、Provider 路由、协议转换、API Key、用量观测与 Dashboard 控制面。" />
+    <meta property="og:description" content="从协议适配、确定性路由到租户预算与请求事实账本：ModelPort 自托管多协议模型网关案例。" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://tiammomo.github.io/projects/modelport.html" />
-    <meta property="og:image" content="https://tiammomo.github.io/assets/images/modelport/dashboard-overview.png" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/modelport/dashboard-overview-v2.png" />
     <title>ModelPort · Tiammomo Case Study</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="../assets/images/modelport/dashboard-overview.png" type="image/png" />
+    <link rel="preload" as="image" href="../assets/images/modelport/dashboard-overview-v2.png" type="image/png" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page">
-    <!-- ── Top Bar ── -->
     <header class="case-header">
       <a class="case-header-brand" href="../index.html" aria-label="Tiammomo 主页">
         <span class="case-header-mark" aria-hidden="true">T</span>
@@ -30,242 +29,249 @@
     </header>
 
     <main>
-      <!-- ═══ Hero ═══ -->
       <section class="case-hero">
         <div class="container">
           <div class="case-hero-grid">
             <div class="case-hero-text">
-              <span class="section-tag">Case Study</span>
+              <span class="section-tag">Infrastructure Case Study</span>
               <h1>ModelPort</h1>
               <p class="case-hero-lead">
-                面向 Claude Code / VS Code Claude 的本地 Anthropic-compatible 模型网关。把编辑器里的 API 请求接到 DeepSeek、Mimo、OpenAI-compatible provider、OpenRouter 或本地运行时，同时提供 API Key 管理、用量成本看板和健康观测。
+                一个面向可信主机与小型网络的自托管多协议模型网关。它让 Anthropic Messages 与 OpenAI Chat 客户端共用同一套鉴权、策略、预算、路由和观测链路，再把请求安全地交给 Anthropic-compatible、OpenAI-compatible 或本地模型 Provider。
               </p>
+              <dl class="case-hero-facts" aria-label="ModelPort 技术概览">
+                <div>
+                  <dt>Client edges</dt>
+                  <dd>Anthropic + OpenAI</dd>
+                </div>
+                <div>
+                  <dt>Gateway</dt>
+                  <dd>Rust · Axum · Tokio</dd>
+                </div>
+                <div>
+                  <dt>Control plane</dt>
+                  <dd>React · PostgreSQL</dd>
+                </div>
+              </dl>
               <div class="case-hero-actions">
                 <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/ModelPort" rel="noreferrer">查看仓库</a>
-                <a class="btn btn-ghost btn-lg" href="../projects/">更多项目</a>
+                <a class="btn btn-ghost btn-lg" href="#architecture">查看请求链路</a>
               </div>
             </div>
             <div class="case-hero-visual">
               <div class="case-hero-glow" aria-hidden="true"></div>
-              <img src="../assets/images/modelport/dashboard-overview.png" alt="ModelPort Dashboard 仪表盘总览" />
+              <img src="../assets/images/modelport/dashboard-overview-v2.png" alt="ModelPort 当前版本仪表盘，展示请求、成本、延迟、缓存和 Provider 健康状态" />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ═══ Problem + Role ═══ -->
       <section class="case-section">
         <div class="container">
           <div class="case-duo">
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◇</div>
               <span class="case-duo-kicker">Problem</span>
-              <h2>多模型能力很多，但开发者入口应该稳定</h2>
-              <p>不同模型提供商有不同协议、模型命名、鉴权方式、限流策略和稳定性表现。ModelPort 让开发者继续使用熟悉的 Claude 客户端，在本地网关里统一处理 Provider Routing、协议适配、预算控制、请求日志和健康观测。</p>
+              <h2>模型接得越多，业务越不该感知 Provider 差异</h2>
+              <p>客户端协议、模型命名、Tool Use、流式事件、鉴权、限流和 usage 口径都可能不同。若每个应用直接连接 Provider，这些差异会扩散到业务代码，也很难统一回答“谁在何时、通过哪条路由、花了多少预算”。</p>
             </article>
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◆</div>
-              <span class="case-duo-kicker">My Role</span>
-              <h2>从协议边界到真实 Dashboard 控制面</h2>
-              <p>Rust 后端负责入口 API、鉴权、路由、协议转换、SSE 流式和指标记录；React Dashboard 覆盖 API Keys、用户、额度、请求日志、模型/Provider 管理、系统设置和上线检查——从底层协议到可操作的控制台全部打通。</p>
+              <span class="case-duo-kicker">Approach &amp; Role</span>
+              <h2>把一次模型调用设计成可治理、可结算的尝试</h2>
+              <p>我独立完成 Rust 数据面、React 控制面、PostgreSQL 请求/尝试账本及部署验收。核心不是再包一层转发，而是为协议解析、策略检查、Provider 尝试、流式终态和预算结算建立清晰边界。</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ═══ Screenshots ═══ -->
       <section class="case-section">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Product Screens</span>
-            <h2>本地运行 Dashboard 真实截图</h2>
+            <span class="section-tag">Current Product</span>
+            <h2>当前版本的真实运行界面</h2>
           </div>
           <div class="case-screenshots">
             <figure class="case-ss case-ss--hero">
               <div class="case-ss-frame">
-                <img src="../assets/images/modelport/dashboard-overview.png" alt="ModelPort Dashboard Overview" loading="lazy" />
+                <img src="../assets/images/modelport/dashboard-overview-v2.png" alt="ModelPort 运行仪表盘" loading="lazy" />
               </div>
               <figcaption>
-                <strong>仪表盘总览</strong>
-                <span>请求量、Token 消耗、成本估算、成功率、平均响应延迟、Provider 健康状态和趋势图。</span>
+                <strong>运行仪表盘</strong>
+                <span>把请求量、Token、估算成本、成功率、延迟、缓存命中、默认路由和 Provider 健康放在同一张运行视图里。</span>
               </figcaption>
             </figure>
             <figure class="case-ss">
               <div class="case-ss-frame">
-                <img src="../assets/images/modelport/dashboard-models.png" alt="ModelPort 模型管理" loading="lazy" />
+                <img src="../assets/images/modelport/enterprise-ledger.png" alt="ModelPort 企业请求事实账本" loading="lazy" />
               </div>
               <figcaption>
-                <strong>模型管理</strong>
-                <span>模型库存、Provider 映射、路由别名、模型发现和渠道状态一目了然。</span>
+                <strong>企业请求事实账本</strong>
+                <span>按租户查看请求、Provider 尝试、租约、幂等状态、预算预留与结算，同时不把原始请求体带进控制台。</span>
               </figcaption>
             </figure>
             <figure class="case-ss">
               <div class="case-ss-frame">
-                <img src="../assets/images/modelport/dashboard-settings.png" alt="ModelPort 系统设置" loading="lazy" />
+                <img src="../assets/images/modelport/models-routing.png" alt="ModelPort Provider、模型与路由管理" loading="lazy" />
               </div>
               <figcaption>
-                <strong>系统设置</strong>
-                <span>上线检查、认证、限流、Provider 凭证、运行诊断和配置热加载。</span>
+                <strong>Provider 与模型路由</strong>
+                <span>统一管理模型目录、凭证、协议能力、别名和默认路由，并把缺少密钥或未启用等状态直接暴露给运维者。</span>
               </figcaption>
             </figure>
           </div>
+          <p class="case-evidence-note">截图来自当前本地实例；页面中的 Provider、请求与费用均为实际运行数据，敏感凭证和原始请求内容不会出现在案例页。</p>
         </div>
       </section>
 
-      <!-- ═══ Capabilities ═══ -->
       <section class="case-section">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Capabilities</span>
-            <h2>核心能力</h2>
+            <span class="section-tag">Shipped System</span>
+            <h2>这次重构真正补齐了什么</h2>
           </div>
           <div class="case-cap-grid">
-            <div class="case-cap-item">
+            <article class="case-cap-item">
               <span class="case-cap-num">01</span>
               <div>
-                <h3>Anthropic-compatible 入口</h3>
-                <p>标准 `/v1/messages` 端点，Claude Code / VS Code Claude 零改动接入。</p>
+                <h3>双协议客户端入口</h3>
+                <p><code>/v1/messages</code> 与有明确范围的 <code>/v1/chat/completions</code> 共用治理链路，同时提供模型目录和精确 token counting。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">02</span>
               <div>
-                <h3>Provider Routing</h3>
-                <p>模型别名、前缀匹配、未知模型透传、本地运行时接入和 fallback 策略。</p>
+                <h3>强类型 Exchange IR</h3>
+                <p>文本角色、function tools、Tool Call、结束原因、usage 与流式终态先进入协议中立结构；不支持的语义显式拒绝。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">03</span>
               <div>
-                <h3>Auth & Access Control</h3>
-                <p>x-api-key / Bearer 鉴权、API Keys 管理、用户/项目/团队、配额和模型 Allowlist。</p>
+                <h3>确定性路由与降级</h3>
+                <p>按显式 Provider、别名、精确模型、前缀和默认路由解析，只对可接收模型的 Provider 执行有边界 fallback。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">04</span>
               <div>
-                <h3>Observability</h3>
-                <p>请求日志、Token 用量、缓存命中、延迟、重试、成本估算和 Prometheus 指标。</p>
+                <h3>身份、策略与预算</h3>
+                <p>API Key 绑定用户与租户作用域，叠加模型、Provider、IP、配额和滚动费用策略；PostgreSQL 在出站前原子预留预算。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">05</span>
               <div>
-                <h3>Dashboard 控制面</h3>
-                <p>API Key、用户、额度、Provider、模型库存、备份、运行参数和上线检查。</p>
+                <h3>完整流式生命周期</h3>
+                <p>SSE permit 持有到 body 完成、失败或取消；终态统一结算健康、延迟、usage 与日志，不在首个 HTTP 200 时提前判定成功。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">06</span>
               <div>
-                <h3>部署 & 运维</h3>
-                <p>Docker Compose、PostgreSQL 持久化、配置校验、doctor、provider matrix 和验收脚本。</p>
+                <h3>可恢复的运维控制面</h3>
+                <p>Dashboard 覆盖用户、Key、配额、Provider、模型、审计和账本；同时提供配置校验、诊断、备份恢复、Docker 与 systemd 路径。</p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- ═══ Architecture Flow ═══ -->
-      <section class="case-section">
+      <section class="case-section" id="architecture">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Architecture</span>
-            <h2>请求从编辑器到模型的流转</h2>
+            <span class="section-tag">Request Lifecycle</span>
+            <h2>一条请求怎样形成可信记录</h2>
           </div>
           <div class="case-flow">
             <div class="case-flow-track" aria-hidden="true"></div>
             <article class="case-flow-step">
               <span class="case-flow-num">01</span>
-              <h3>Claude Client</h3>
-              <p>Claude Code / VS Code Claude 调用标准 Anthropic Messages API，开发者工作流不变。</p>
+              <h3>Client Edge</h3>
+              <p>Claude Code、OpenAI SDK 或 API 客户端进入各自协议边界，先完成大小限制、鉴权、参数校验和 request ID 分配。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">02</span>
-              <h3>Local Gateway</h3>
-              <p>入口处理鉴权、限流、模型命名解析、别名匹配、路由选择和 SSE 流式稳定性。</p>
+              <h3>Exchange &amp; Policy</h3>
+              <p>请求解析为强类型 Exchange IR，再执行租户、API Key、模型、Provider、IP、配额、能力和预算检查。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">03</span>
-              <h3>Provider Adapter</h3>
-              <p>适配层完成协议转换、超时控制、健康检查、冷却期和跨 provider fallback。</p>
+              <h3>Provider Attempt</h3>
+              <p>确定性路由选择凭证和 Provider；每次真实出站尝试独立建账、持有租约，并只在可重试失败上考虑下一条路径。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">04</span>
-              <h3>Observability</h3>
-              <p>请求日志、Token、延迟、成本、预算和 Prometheus 指标进入 Dashboard。</p>
+              <h3>Terminal Evidence</h3>
+              <p>响应映射回原客户端协议；完成、失败、超时或取消都会结算 usage、费用、预算、健康和不可变证据。</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ═══ Use Cases + Non-Goals ═══ -->
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Engineering Decisions</span>
+            <h2>比“转发成功”更重要的三件事</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">1</span>
+              <div>
+                <h3>不静默吞掉协议语义</h3>
+                <p>只承诺已经进入类型系统和测试边界的字段。遇到 multimodal、Responses items 或 Provider 扩展等未覆盖语义时明确拒绝，避免“请求成功但含义变了”。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">2</span>
+              <div>
+                <h3>只为真正发出的尝试计费</h3>
+                <p>所有 preflight 拒绝保持零 usage、零费用。只有已经发往上游的尝试才进入结算；租约过期记录收敛为未对账证据，不伪造账单事实。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">3</span>
+              <div>
+                <h3>保留数据的证据来源</h3>
+                <p>Provider 返回的 usage 与本地估算分别标记。Prometheus、运行日志和企业账本服务不同排障层级，Dashboard 不被当作第二套路由真相。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="case-section">
         <div class="container">
           <div class="case-duo">
             <article class="case-duo-card case-duo-card--good">
               <div class="case-duo-icon" aria-hidden="true">✓</div>
-              <span class="case-duo-kicker">适合的场景</span>
-              <h2>什么时候用 ModelPort</h2>
+              <span class="case-duo-kicker">Current Fit</span>
+              <h2>当前版本适合什么</h2>
               <ul class="case-list">
-                <li>个人长期本地使用，希望 Claude Code 稳定接入多个模型提供商。</li>
-                <li>小团队在可信网络内试点统一模型入口、Key 管理和预算控制。</li>
-                <li>需要把模型路由、协议转换、用量观测做成可交付的工具。</li>
+                <li>在单台可信主机或小型可信网络内，为多个应用提供统一模型入口。</li>
+                <li>同时接入 Anthropic 与 OpenAI 客户端，并集中管理路由、Key、策略和 Provider 凭证。</li>
+                <li>需要用请求/尝试账本、预算预留和终态证据解释一次调用发生了什么。</li>
               </ul>
             </article>
             <article class="case-duo-card case-duo-card--bad">
-              <div class="case-duo-icon" aria-hidden="true">✗</div>
-              <span class="case-duo-kicker">明确不做</span>
-              <h2>ModelPort 的边界</h2>
+              <div class="case-duo-icon" aria-hidden="true">!</div>
+              <span class="case-duo-kicker">Honest Boundaries</span>
+              <h2>仍然明确保留的边界</h2>
               <ul class="case-list">
-                <li>不是公开互联网多租户 SaaS 网关。</li>
-                <li>不替代企业级 SSO、外部计费系统或复杂租户隔离。</li>
-                <li>不把所有模型能力做成大而全平台，优先服务本地工作流。</li>
+                <li>它不是可直接暴露公网的成熟多租户 SaaS；企业级网关仍是目标方向。</li>
+                <li>控制台 session、OIDC pending state、部分限流与 stream permit 仍是进程内状态。</li>
+                <li>幂等键可以阻止重复调用，但还不能重放首次响应；Provider 账单始终是最终计费权威。</li>
               </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ═══ Roadmap ═══ -->
-      <section class="case-section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">Roadmap</span>
-            <h2>后续方向</h2>
-          </div>
-          <div class="case-roadmap">
-            <article class="case-roadmap-item">
-              <span class="case-roadmap-marker" aria-hidden="true">→</span>
-              <div>
-                <h3>更清晰的 Provider 能力矩阵</h3>
-                <p>持续记录不同提供商在流式输出、工具调用、上下文长度、错误模式和成本估算上的兼容表现。</p>
-              </div>
-            </article>
-            <article class="case-roadmap-item">
-              <span class="case-roadmap-marker" aria-hidden="true">→</span>
-              <div>
-                <h3>更完整的团队控制面板</h3>
-                <p>围绕 API Keys、项目、预算、模型 Allowlist 和审计事件，让小团队使用模型的入口更可控。</p>
-              </div>
-            </article>
-            <article class="case-roadmap-item">
-              <span class="case-roadmap-marker" aria-hidden="true">→</span>
-              <div>
-                <h3>更可复用的本地运行时接入</h3>
-                <p>继续整理 Ollama、vLLM、SGLang、llama.cpp 等本地运行时的接入方式和验收标准。</p>
-              </div>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- ── Footer ── -->
     <footer class="case-footer">
       <div class="container case-footer-inner">
         <a href="../projects/">← 返回项目列表</a>
-        <a href="https://github.com/tiammomo/ModelPort" rel="noreferrer">GitHub →</a>
+        <a href="https://github.com/tiammomo/ModelPort" rel="noreferrer">查看 ModelPort 源码 →</a>
       </div>
     </footer>
   </body>

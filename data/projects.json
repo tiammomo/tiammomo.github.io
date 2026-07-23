@@ -9,32 +9,32 @@
     },
     "categories": ["ai", "infra", "product"],
     "image": {
-      "png": "assets/images/modelport/dashboard-overview.png",
+      "png": "assets/images/modelport/dashboard-overview-v2.png",
       "alt": {
-        "zh": "ModelPort 本地 Dashboard 仪表盘截图",
-        "en": "ModelPort local dashboard overview screenshot"
+        "zh": "ModelPort 当前版本运行仪表盘截图",
+        "en": "ModelPort current operations dashboard screenshot"
       }
     },
     "summary": {
-      "zh": "面向 Claude Code / VS Code Claude 的本地 Anthropic-compatible 模型网关，带 Dashboard 控制面，覆盖 Provider 路由、模型库存、API Key、用量成本和健康观测。",
-      "en": "A local Anthropic-compatible model gateway for Claude Code and VS Code Claude, with a dashboard control plane for provider routing, model inventory, API keys, usage cost, and health checks."
+      "zh": "自托管多协议模型网关，让 Anthropic Messages 与 OpenAI Chat 共用鉴权、策略、预算、路由和观测链路，并通过控制面管理 Provider、模型与企业请求账本。",
+      "en": "A self-hosted multi-protocol model gateway that unifies authentication, policy, budgets, routing, and observability across Anthropic Messages and OpenAI Chat, with a control plane for providers, models, and the enterprise request ledger."
     },
     "tags": {
-      "zh": ["Rust 网关", "React 控制台", "模型路由"],
-      "en": ["Rust gateway", "React console", "Model routing"]
+      "zh": ["Rust + Axum", "React 控制面", "PostgreSQL 账本"],
+      "en": ["Rust + Axum", "React control plane", "PostgreSQL ledger"]
     },
     "meta": {
-      "zh": ["模型网关", "Provider 路由"],
-      "en": ["Model gateway", "Provider routing"]
+      "zh": ["多协议网关", "租户预算账本"],
+      "en": ["Multi-protocol gateway", "Tenant budget ledger"]
     },
     "index": {
       "direction": {
-        "zh": "模型网关 / Infra",
-        "en": "Model gateway / Infra"
+        "zh": "多协议模型网关 / Infra",
+        "en": "Multi-protocol gateway / Infra"
       },
       "proof": {
-        "zh": "Dashboard 截图、Rust 网关、控制面",
-        "en": "Dashboard screenshots, Rust gateway, control plane"
+        "zh": "本地实机截图、双协议链路、请求/尝试账本",
+        "en": "Live local screenshots, dual-protocol pipeline, request/attempt ledger"
       }
     },
     "caseUrl": "projects/modelport.html",
