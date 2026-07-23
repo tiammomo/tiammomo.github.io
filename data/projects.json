@@ -90,32 +90,32 @@
     },
     "categories": ["ai", "data", "product"],
     "image": {
-      "png": "assets/images/quantpilot/workbench.png",
+      "png": "assets/images/quantpilot/workbench-v2.png",
       "alt": {
-        "zh": "QuantPilot 量化分析工作台真实截图",
-        "en": "QuantPilot quantitative research workbench screenshot"
+        "zh": "QuantPilot 当前版本 Data Agent 量化研究工作台",
+        "en": "QuantPilot current Data Agent quantitative research workbench"
       }
     },
     "summary": {
-      "zh": "面向量化投研的数据工作台，覆盖自然语言任务、真实行情数据、策略平台、评测记录、工具执行、日志和运维治理。",
-      "en": "A quantitative research workbench covering natural-language tasks, market data, strategy modules, evaluation records, tool execution, logs, and operations."
+      "zh": "建立在通用 Data Agent 与 MoAgent Framework 之上的金融量化应用，把自然语言问题、真实数据、独立 Worker、生成工作空间和质量门禁组织成可追溯的研究交付链路。",
+      "en": "A financial research application built on a general Data Agent and MoAgent Framework, connecting natural-language questions, real data, durable workers, generated workspaces, and quality gates in one traceable delivery pipeline."
     },
     "tags": {
-      "zh": ["Next.js", "投研任务流", "TimescaleDB"],
-      "en": ["Next.js", "Research workflow", "TimescaleDB"]
+      "zh": ["Data Agent", "MoAgent Worker", "TimescaleDB"],
+      "en": ["Data Agent", "MoAgent Worker", "TimescaleDB"]
     },
     "meta": {
-      "zh": ["298 symbols", "356K K-lines"],
-      "en": ["298 symbols", "356K K-lines"]
+      "zh": ["finance.quant", "评测 + 交付门禁"],
+      "en": ["finance.quant", "Evaluation + delivery gates"]
     },
     "index": {
       "direction": {
-        "zh": "投研任务流 / Data",
-        "en": "Research workflow / Data"
+        "zh": "金融 Data Agent / Platform",
+        "en": "Financial Data Agent / Platform"
       },
       "proof": {
-        "zh": "298 symbols、356K K-lines",
-        "en": "298 symbols, 356K K-lines"
+        "zh": "实机任务入口、Worker 治理、30 次评测运行",
+        "en": "Live task intake, worker governance, 30 evaluation runs"
       }
     },
     "caseUrl": "projects/quantpilot.html",

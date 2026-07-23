@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <meta name="description" content="QuantPilot 重点案例：面向量化投研、金融数据分析和可视化看板生成的数据工作台，覆盖策略平台、评测平台、能力中心、日志、运维、投研日报和真实行情数据。" />
+    <meta name="description" content="QuantPilot 重点案例：建立在通用 Data Agent 与 MoAgent Framework 之上的金融量化应用，把自然语言研究问题转成有版本合同、真实数据、生成工作空间和质量门禁的可交付任务。" />
     <link rel="canonical" href="https://tiammomo.github.io/projects/quantpilot.html" />
     <meta property="og:title" content="QuantPilot · Tiammomo Case Study" />
-    <meta property="og:description" content="自然语言量化任务、真实行情数据、策略平台、评测平台、能力中心、日志与运维治理。" />
+    <meta property="og:description" content="从自然语言研究问题，到真实数据、受治理 Worker、生成工作空间与评测门禁：QuantPilot Data Agent 案例。" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://tiammomo.github.io/projects/quantpilot.html" />
-    <meta property="og:image" content="https://tiammomo.github.io/assets/images/quantpilot/workbench.png" />
+    <meta property="og:image" content="https://tiammomo.github.io/assets/images/quantpilot/workbench-v2.png" />
     <title>QuantPilot · Tiammomo Case Study</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="../assets/images/quantpilot/workbench.png" type="image/png" />
+    <link rel="preload" as="image" href="../assets/images/quantpilot/workbench-v2.png" type="image/png" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body class="case-page">
@@ -33,19 +33,33 @@
         <div class="container">
           <div class="case-hero-grid">
             <div class="case-hero-text">
-              <span class="section-tag">Case Study</span>
+              <span class="section-tag">Data Agent Case Study</span>
               <h1>QuantPilot</h1>
               <p class="case-hero-lead">
-                面向量化投研、金融数据分析和可视化看板生成的数据工作台。它不只是聊天入口，而是把自然语言任务、真实行情数据、策略平台、评测平台、能力中心、日志、运维和投研日报串成一条可追溯、可验证、可复盘的工作流。
+                一个建立在通用 Data Agent 与 MoAgent Framework 之上的金融量化应用。它把自然语言研究问题组合成版本化任务合同，以真实市场数据和 Finance Domain Pack 驱动独立 Worker，最终交付经过证据、视觉、产物契约和评测验证的可运行工作空间。
               </p>
+              <dl class="case-hero-facts" aria-label="QuantPilot 技术概览">
+                <div>
+                  <dt>Application profile</dt>
+                  <dd>finance.quant</dd>
+                </div>
+                <div>
+                  <dt>Delivery pack</dt>
+                  <dd>Next.js Dashboard</dd>
+                </div>
+                <div>
+                  <dt>Data plane</dt>
+                  <dd>TimescaleDB · FastAPI</dd>
+                </div>
+              </dl>
               <div class="case-hero-actions">
                 <a class="btn btn-primary btn-lg" href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看仓库</a>
-                <a class="btn btn-ghost btn-lg" href="../projects/">更多项目</a>
+                <a class="btn btn-ghost btn-lg" href="#architecture">查看生成链路</a>
               </div>
             </div>
             <div class="case-hero-visual">
               <div class="case-hero-glow" aria-hidden="true"></div>
-              <img src="../assets/images/quantpilot/workbench.png" alt="QuantPilot 量化分析工作台截图" />
+              <img src="../assets/images/quantpilot/workbench-v2.png" alt="QuantPilot 当前版本 AI 量化研究工作台" />
             </div>
           </div>
         </div>
@@ -57,14 +71,14 @@
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◇</div>
               <span class="case-duo-kicker">Problem</span>
-              <h2>投研任务需要真实数据和验证链路</h2>
-              <p>量化研究不是一次回答就结束。它涉及标的解析、行情/K 线、财务与公告、策略假设、生成代码、可视化结果、运行日志和复盘记录。QuantPilot 的核心目标，是让研究结果有数据来源、有质量报告、有评测约束，也能被运维平台追踪。</p>
+              <h2>研究答案不等于可交付的研究工作</h2>
+              <p>金融问题通常同时包含证券身份、时间范围、数据源、研究方法、交付格式和风险边界。只让模型“回答问题”，很难证明它用了什么数据、为什么这样分析、生成物能否运行，也无法稳定处理排队、重试、取消和多人并发。</p>
             </article>
             <article class="case-duo-card">
               <div class="case-duo-icon" aria-hidden="true">◆</div>
-              <span class="case-duo-kicker">My Role</span>
-              <h2>把生成链路做成可运维的数据产品</h2>
-              <p>项目覆盖 Next.js 工作台、Python 市场数据后端、PostgreSQL / TimescaleDB / Redis 数据底座、任务运行时、能力中心、策略平台、评测平台、投研日报、日志中心和运维平台。重点是把复杂能力拆成可操作的产品模块，而不是停留在脚本或单页 demo。</p>
+              <span class="case-duo-kicker">Approach &amp; Role</span>
+              <h2>把金融能力做成可组合的 Domain Pack</h2>
+              <p>我把通用 Task、Dataset、Connector、Agent Profile、Delivery Pack 和 Execution Plan 留在 Data Agent 平台，把证券解析、行情、Skills、工具、Mission 和视觉规则收进 Finance Domain Pack；并打通 Next.js 产品面、MoAgent 执行层、Python 数据服务和 PostgreSQL/TimescaleDB。</p>
             </article>
           </div>
         </div>
@@ -73,171 +87,186 @@
       <section class="case-section">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Product Screens</span>
-            <h2>最新本地运行截图</h2>
+            <span class="section-tag">Current Product</span>
+            <h2>当前版本的三条关键证据</h2>
           </div>
           <div class="case-screenshots">
             <figure class="case-ss case-ss--hero">
               <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/strategy-platform.png" alt="QuantPilot 策略平台 K 线详情" loading="lazy" />
+                <img src="../assets/images/quantpilot/workbench-v2.png" alt="QuantPilot AI 量化研究工作台" loading="lazy" />
               </div>
               <figcaption>
-                <strong>策略平台与 K 线详情</strong>
-                <span>A 股股票池已补充行情、强弱、趋势、流动性和估值；展开通富微电可看到日线、成交量、MA5 / MA10 / MA20 / MA30 / MA60 和事件标记。</span>
+                <strong>自然语言研究入口</strong>
+                <span>在一个入口选择研究类型、Agent、模型和交付方式；系统会继续补全标的、时间范围、数据与验证步骤，而不是直接把输入当成一段 prompt。</span>
               </figcaption>
             </figure>
             <figure class="case-ss">
               <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/workbench.png" alt="QuantPilot 数据工作台" loading="lazy" />
+                <img src="../assets/images/quantpilot/ops-governance.png" alt="QuantPilot Data Agent Worker 运行治理中心" loading="lazy" />
               </div>
               <figcaption>
-                <strong>数据工作台</strong>
-                <span>一句话创建量化任务，选择 Agent 执行器、模型和能力类型，进入项目聊天与生成预览。</span>
+                <strong>Data Agent 运行治理</strong>
+                <span>直接读取 Worker registry、全局槽位、generation queue、租约和工作空间事实，并区分可运行状态与需要处理的风险。</span>
               </figcaption>
             </figure>
             <figure class="case-ss">
               <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/data-platform.png" alt="QuantPilot 数据平台" loading="lazy" />
+                <img src="../assets/images/quantpilot/eval-platform-v2.png" alt="QuantPilot 评测质量总览" loading="lazy" />
               </div>
               <figcaption>
-                <strong>数据平台</strong>
-                <span>能力矩阵展示 8 个能力、19/23 数据 provider、降级状态和市场 API 在线情况。</span>
-              </figcaption>
-            </figure>
-            <figure class="case-ss">
-              <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/skills.png" alt="QuantPilot 能力中心" loading="lazy" />
-              </div>
-              <figcaption>
-                <strong>能力中心</strong>
-                <span>11 个核心能力覆盖运行规划、数据注册、标的解析、图片提取、行情数据、数据质量和可视化看板。</span>
-              </figcaption>
-            </figure>
-            <figure class="case-ss">
-              <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/eval-platform.png" alt="QuantPilot 评测平台测试用例" loading="lazy" />
-              </div>
-              <figcaption>
-                <strong>评测平台</strong>
-                <span>评测平台沉淀 13 个测试用例，覆盖基本面、技术分析、策略回测、标的对比、组合风控和意图澄清。</span>
-              </figcaption>
-            </figure>
-            <figure class="case-ss">
-              <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/ops-platform.png" alt="QuantPilot 运维平台日志" loading="lazy" />
-              </div>
-              <figcaption>
-                <strong>运维日志</strong>
-                <span>运维评分 72，日志中心读取 Loki，并保留 Next.js dev、启动脚本、市场数据后端和评测队列日志兜底。</span>
-              </figcaption>
-            </figure>
-            <figure class="case-ss">
-              <div class="case-ss-frame">
-                <img src="../assets/images/quantpilot/research-reports.png" alt="QuantPilot 投研日报" loading="lazy" />
-              </div>
-              <figcaption>
-                <strong>投研日报</strong>
-                <span>围绕观察池做证据采样、结构化报告、推送记录和数据源矩阵，预留新闻与舆情源接入。</span>
+                <strong>交付质量门禁</strong>
+                <span>当前实例累计 30 次评测运行，覆盖 16 条用例和 6 个能力域；平台同时观察首轮、最终、重复稳定性、变异捕获与 Judge 校准。</span>
               </figcaption>
             </figure>
           </div>
+          <p class="case-evidence-note">截图来自当前本地实例。页面展示真实 Worker、评测和运行状态；案例没有创建额外研究任务，也没有触发模型费用。</p>
         </div>
       </section>
 
       <section class="case-section">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Modules</span>
-            <h2>值得展开介绍的模块</h2>
+            <span class="section-tag">Shipped System</span>
+            <h2>当前实现的六个系统边界</h2>
           </div>
           <div class="case-cap-grid">
-            <div class="case-cap-item">
+            <article class="case-cap-item">
               <span class="case-cap-num">01</span>
               <div>
-                <h3>数据工作台</h3>
-                <p>承接用户的自然语言投研问题，完成能力识别、模型选择、附件接收、项目创建、聊天执行和结果预览。</p>
+                <h3>版本化 Data Agent 合同</h3>
+                <p>项目和任务持久化 Profile、Domain、Delivery、capability 版本锁与 SHA-256，让一次运行能回到当时实际使用的组合。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">02</span>
               <div>
-                <h3>策略平台</h3>
-                <p>股票池、ETF/指数池、策略目录、因子目录、板块资金、基础组件和金融知识组成投研操作台。</p>
+                <h3>LLM-first Query Rewrite</h3>
+                <p>模型生成 schema v4 语义合同，时间、宽域范围和 answer-only 意图必须有原文字面证据；证券 Resolver 再独立核验代码。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">03</span>
               <div>
-                <h3>数据平台</h3>
-                <p>把能力域、数据源、Provider 健康、降级模式、市场 API 和数据契约做成可观察的控制面。</p>
+                <h3>真实金融数据底座</h3>
+                <p>FastAPI 市场服务连接 PostgreSQL、TimescaleDB 与 Redis，承载行情、K 线、估值因子、补数状态和策略平台接口。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">04</span>
               <div>
-                <h3>能力中心</h3>
-                <p>把运行规划、信源选择、标的解析、图片提取、行情数据、数据质量、视觉看板等规则沉淀为技能资产。</p>
+                <h3>持久 Worker 治理</h3>
+                <p>Generation job 与事务 outbox 进入独立 Worker；registry、全局槽位、公平 claim、双层配额、lease、fencing 和资源锁共同约束长任务。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">05</span>
               <div>
-                <h3>评测平台</h3>
-                <p>维护测试用例、评测集、评测器和运行历史，用例覆盖不同投研能力，避免迭代后质量漂移。</p>
+                <h3>受治理的上下文组合</h3>
+                <p>Memory 与 AKEP 通过独立 HTTP 合同接入；运行前冻结无正文使用清单与知识快照，结束后分别记录 usage、outcome 和 feedback。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
+            </article>
+            <article class="case-cap-item">
               <span class="case-cap-num">06</span>
               <div>
-                <h3>日志与运维</h3>
-                <p>Loki 集中日志、本地日志兜底、Docker 容器、workspace 健康、trace 和巡检结果统一进入运维平台。</p>
+                <h3>隔离的构建与预览</h3>
+                <p>生成项目的 build/preview 默认进入 Linux user、mount、network、PID namespace；工作区只读、无平台密钥，预览仅通过受控 Unix Socket 和数据桥暴露。</p>
               </div>
-            </div>
-            <div class="case-cap-item">
-              <span class="case-cap-num">07</span>
-              <div>
-                <h3>投研日报</h3>
-                <p>围绕自选观察池生成证据型日报，沉淀 Markdown / JSON 报告、推送记录和数据源矩阵。</p>
-              </div>
-            </div>
-            <div class="case-cap-item">
-              <span class="case-cap-num">08</span>
-              <div>
-                <h3>生成工作空间</h3>
-                <p>每个任务沉淀 run plan、events、dashboard-data、evidence、validation、repair plan 和视觉检查报告。</p>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="architecture">
         <div class="container">
           <div class="section-header">
-            <span class="section-tag">Architecture</span>
-            <h2>从研究问题到可验证工作空间</h2>
+            <span class="section-tag">Execution Lifecycle</span>
+            <h2>从一句研究问题到可运行工作空间</h2>
           </div>
           <div class="case-flow">
             <div class="case-flow-track" aria-hidden="true"></div>
             <article class="case-flow-step">
               <span class="case-flow-num">01</span>
-              <h3>Task Intake</h3>
-              <p>首页接收自然语言问题和截图附件，识别能力、标的、时间范围、模型和执行器。</p>
+              <h3>Rewrite &amp; Resolve</h3>
+              <p>模型先形成通用任务合同；Finance Domain Pack 再核验证券身份、时间范围、研究能力与交付意图。模型不可用时停止规划，不用关键词结果冒充成功。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">02</span>
-              <h3>Data Prefetch</h3>
-              <p>平台按 run plan 调用市场数据后端，从本地 TimescaleDB 和 provider 获取行情、K 线、因子和证据。</p>
+              <h3>Compose &amp; Freeze</h3>
+              <p>平台组合 Profile、Domain、Delivery、Skills、Memory 与 Knowledge，并把版本哈希、数据身份和上下文清单固化到任务与 workspace。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">03</span>
-              <h3>Research Workspace</h3>
-              <p>任务运行时基于能力中心写入 Next.js 看板、数据文件、来源记录、事件日志、验证报告和修复计划。</p>
+              <h3>Claim &amp; Generate</h3>
+              <p>独立 Worker 公平 claim 任务、持有分层 lease 与 fencing token；MoAgent 按 Mission 调用类型工具，在路径策略、mutation journal 与资源锁保护下写入工作空间。</p>
             </article>
             <article class="case-flow-step">
               <span class="case-flow-num">04</span>
-              <h3>Validation Loop</h3>
-              <p>平台执行 HTTP、数据、证据、截图、产物契约和 eval 回归检查，失败后进入自动修复链路。</p>
+              <h3>Validate &amp; Deliver</h3>
+              <p>生成项目先在 namespace 沙箱中 build/preview；HTTP、数据、证据、视觉、产物合同和 eval 再共同判断是否可交付，失败进入有记录的 repair loop。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Product Surfaces</span>
+            <h2>平台能力如何落到产品界面</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">1</span>
+              <div>
+                <h3>Skills 与业务知识</h3>
+                <p>当前能力市场管理 12 个版本化 Skills 和 64 条验证规则；业务知识中心再把 8 类量化能力映射为业务场景、交付规范和支持资源。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">2</span>
+              <div>
+                <h3>策略平台与真实行情</h3>
+                <p>股票池、ETF/指数、策略、因子、板块资金、基础组件和金融知识共用本地数据契约；页面显式展示同步、补数和降级状态。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">3</span>
+              <div>
+                <h3>投研情报与自动化交付</h3>
+                <p>观察范围、证据采样、报告生成与推送回执形成研究生产链路；报告是可复核材料，不被包装成即时交易信号。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Engineering Decisions</span>
+            <h2>这次架构调整最重要的三点</h2>
+          </div>
+          <div class="case-roadmap">
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">1</span>
+              <div>
+                <h3>通用内核不理解金融</h3>
+                <p>MoAgent 内核不内置证券、量化工具、dashboard 路径或金融 Mission；业务规则由 Domain Pack 注入，避免扩展新行业时继续修改执行引擎。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">2</span>
+              <div>
+                <h3>排队前后使用同一份上下文</h3>
+                <p>Memory Recall 与知识准备快照随任务固化，Worker 真正执行时不重新检索另一套输入，保证 evidence 与实际模型上下文可以对应。</p>
+              </div>
+            </article>
+            <article class="case-roadmap-item">
+              <span class="case-roadmap-marker" aria-hidden="true">3</span>
+              <div>
+                <h3>质量门禁独立于“模型说完成了”</h3>
+                <p>显式 submit-result 只是候选终态；平台仍会检查数据、证据、视觉、产物合同、预览和评测，避免把模型自述当成交付事实。</p>
+              </div>
             </article>
           </div>
         </div>
@@ -248,58 +277,23 @@
           <div class="case-duo">
             <article class="case-duo-card case-duo-card--good">
               <div class="case-duo-icon" aria-hidden="true">✓</div>
-              <span class="case-duo-kicker">本地实操</span>
-              <h2>最新运行数据已验证</h2>
+              <span class="case-duo-kicker">Current Fit</span>
+              <h2>当前版本适合什么</h2>
               <ul class="case-list">
-                <li><code>http://localhost:3000</code> 主工作台可访问，策略、日报、运维、数据、评测和能力中心页面均可打开。</li>
-                <li><code>http://127.0.0.1:8000/health</code> 返回 <code>status: ok</code>。</li>
-                <li>能力中心返回 8 个能力、6 个 ready、19/23 provider 可用、11 个核心能力全部正常。</li>
-                <li>策略平台返回 7 个策略模板、298 个跟踪标的、298 个已同步标的、356511 条 K 线。</li>
-                <li>基础设施健康检查显示 PostgreSQL 已连接、TimescaleDB 2.27.1 可用、量化 schema 表已存在。</li>
-                <li>运维平台日志页可读取 Loki 220 行集中日志，并有 Next.js、启动脚本和市场 API 本地日志兜底。</li>
+                <li>把自然语言金融研究转成带数据、证据、页面与验证记录的可运行工作空间。</li>
+                <li>需要真实行情、量化 Skills、生成 Worker、评测和运行治理共同工作的本地研究平台。</li>
+                <li>希望复用通用 Data Agent 合同，同时让金融业务规则保持在独立 Domain Pack 中。</li>
               </ul>
             </article>
             <article class="case-duo-card case-duo-card--bad">
               <div class="case-duo-icon" aria-hidden="true">!</div>
-              <span class="case-duo-kicker">产品边界</span>
-              <h2>研究辅助，不是交易指令</h2>
+              <span class="case-duo-kicker">Honest Boundaries</span>
+              <h2>仍然明确保留的边界</h2>
               <ul class="case-list">
                 <li>生成内容只用于研究、复盘和辅助决策，不构成投资建议、收益承诺或即时交易指令。</li>
-                <li>外部行情和财务接口可能延迟、缺字段或降级，必须保留来源、时间和数据质量说明。</li>
-                <li>生成结果要经过自动验证、视觉检查、评测回归和人工复核后再进入正式研究材料。</li>
+                <li>外部行情、财务和知识服务可能延迟、缺字段或降级，正式材料仍需要来源说明与人工复核。</li>
+                <li>金融是当前完整实现的第一个 Domain Pack；零售、运营和制造仍是可扩展方向，不是已经交付的应用。</li>
               </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-tag">Roadmap</span>
-            <h2>后续方向</h2>
-          </div>
-          <div class="case-roadmap">
-            <article class="case-roadmap-item">
-              <span class="case-roadmap-marker" aria-hidden="true">→</span>
-              <div>
-                <h3>把生成质量继续收紧</h3>
-                <p>强化自动修复、视觉质量检查、workspace 契约、stale report 识别和评测覆盖。</p>
-              </div>
-            </article>
-            <article class="case-roadmap-item">
-              <span class="case-roadmap-marker" aria-hidden="true">→</span>
-              <div>
-                <h3>补真正有投研价值的数据</h3>
-                <p>继续扩展公告、新闻、舆情、横截面因子、资金流和批量分析能力，而不是只堆页面。</p>
-              </div>
-            </article>
-            <article class="case-roadmap-item">
-              <span class="case-roadmap-marker" aria-hidden="true">→</span>
-              <div>
-                <h3>长任务 worker 化</h3>
-                <p>将评测、补数、日报、生成、推送和日志聚合从请求链路拆成更稳定的队列与 worker。</p>
-              </div>
             </article>
           </div>
         </div>
@@ -309,7 +303,7 @@
     <footer class="case-footer">
       <div class="container case-footer-inner">
         <a href="../projects/">← 返回项目列表</a>
-        <a href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">GitHub →</a>
+        <a href="https://github.com/tiammomo/QuantPilot" rel="noreferrer">查看 QuantPilot 源码 →</a>
       </div>
     </footer>
   </body>
